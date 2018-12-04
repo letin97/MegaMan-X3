@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="burst" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="0" x="1" y="12" w="16" h="15" oX="1" oY="12" oW="-220" oH="264" />
+    <sprite n ="1" x="24" y="3" w="32" h="31" oX="24" oY="3" oW="-220" oH="264" />
+    <sprite n ="2" x="64" y="8" w="28" h="23" oX="64" oY="8" oW="-220" oH="264" />
+    <sprite n ="3" x="96" y="7" w="30" h="26" oX="96" oY="7" oW="-220" oH="264" />
+    <sprite n ="4" x="134" y="6" w="32" h="26" oX="134" oY="6" oW="-220" oH="264" />
+    <sprite n ="5" x="175" y="2" w="32" h="29" oX="175" oY="2" oW="-220" oH="264" />
+    <sprite n ="6" x="216" y="4" w="32" h="19" oX="216" oY="4" oW="-220" oH="264" />
+    <sprite n ="7" x="255" y="4" w="31" h="15" oX="255" oY="4" oW="-220" oH="264" />
+  </Animation>
+  <Animation name="HeadGunner" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="8" x="80" y="37" w="38" h="46" oX="80" oY="37" oW="-2" oH="38" />
+  </Animation>
+  <Animation name="HeadGunnerShoot" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="9" x="9" y="88" w="38" h="46" gX="0.2" gY="0.7" oX="9" oY="88" oW="173" oH="161" />
+    <sprite n ="10" x="49" y="88" w="38" h="46" gX="0.2" gY="0.7" oX="49" oY="88" oW="173" oH="161" />
+    <sprite n ="11" x="89" y="88" w="40" h="46" gX="0.2" gY="0.7" oX="89" oY="88" oW="173" oH="161" />
+    <sprite n ="12" x="130" y="88" w="38" h="46" gX="0.2" gY="0.7" oX="129" oY="88" oW="173" oH="161" />
+    <sprite n ="13" x="7" y="141" w="38" h="46" gX="0.075" gY="0.6" oX="7" oY="141" oW="173" oH="161" />
+    <sprite n ="14" x="47" y="141" w="38" h="46" gX="0.075" gY="0.6" oX="47" oY="141" oW="173" oH="161" />
+    <sprite n ="15" x="87" y="141" w="40" h="46" gX="0.075" gY="0.6" oX="87" oY="141" oW="173" oH="161" />
+    <sprite n ="16" x="128" y="141" w="40" h="46" gX="0.075" gY="0.6" oX="127" oY="141" oW="173" oH="161" />
+  </Animation>
+  <Animation name="rocket" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="17" x="46" y="202" w="20" h="6" oX="46" oY="202" oW="168" oH="44" />
+    <sprite n ="18" x="71" y="201" w="23" h="6" oX="71" oY="201" oW="168" oH="44" />
+  </Animation>
+  <Animation name="bom" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="19" x="109" y="201" w="7" h="8" oX="109" oY="201" oW="98" oH="7" />
+  </Animation>
+  <Animation name="HeadGunnerDie" imagePath="Enemy.png" width="418" height="579">
+    <sprite n ="20" x="1" y="294" w="37" h="15" oX="1" oY="294" oW="359" oH="229" />
+    <sprite n ="21" x="47" y="295" w="14" h="12" oX="47" oY="295" oW="359" oH="229" />
+    <sprite n ="22" x="72" y="295" w="15" h="12" oX="72" oY="295" oW="359" oH="229" />
+    <sprite n ="23" x="95" y="294" w="15" h="15" oX="95" oY="294" oW="359" oH="229" />
+    <sprite n ="24" x="123" y="298" w="11" h="8" oX="123" oY="298" oW="359" oH="229" />
+    <sprite n ="25" x="139" y="297" w="11" h="12" oX="139" oY="297" oW="359" oH="229" />
+    <sprite n ="26" x="159" y="294" w="15" h="15" oX="159" oY="294" oW="359" oH="229" />
+    <sprite n ="27" x="59" y="326" w="18" h="7" oX="59" oY="326" oW="359" oH="229" />
+    <sprite n ="28" x="91" y="321" w="8" h="11" oX="91" oY="321" oW="359" oH="229" />
+    <sprite n ="29" x="108" y="318" w="15" h="13" oX="108" oY="318" oW="359" oH="229" />
+    <sprite n ="30" x="131" y="326" w="7" h="7" oX="131" oY="326" oW="359" oH="229" />
+    <sprite n ="31" x="151" y="326" w="4" h="7" oX="151" oY="326" oW="359" oH="229" />
+    <sprite n ="32" x="163" y="326" w="8" h="4" oX="163" oY="326" oW="359" oH="229" />
+    <sprite n ="33" x="179" y="329" w="8" h="4" oX="179" oY="329" oW="359" oH="229" />
+  </Animation>
+</Animations>

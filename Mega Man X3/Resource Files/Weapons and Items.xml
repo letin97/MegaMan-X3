@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="bulletlv1" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="0" x="111" y="533" w="10" h="8" oX="111" oY="533" oW="431" oH="55" />
+    <sprite n ="1" x="125" y="530" w="14" h="13" oX="125" oY="530" oW="431" oH="55" />
+    <sprite n ="2" x="142" y="529" w="15" h="14" oX="142" oY="529" oW="431" oH="55" />
+    <sprite n ="3" x="160" y="529" w="18" h="16" oX="160" oY="529" oW="431" oH="55" />
+  </Animation>
+  <Animation name="bulletlv2" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="4" x="127" y="562" w="14" h="14" oX="127" oY="562" oW="454" oH="322" />
+    <sprite n ="5" x="145" y="557" w="25" h="24" oX="145" oY="557" oW="454" oH="322" />
+    <sprite n ="6" x="174" y="562" w="30" h="13" oX="174" oY="562" oW="454" oH="322" />
+    <sprite n ="7" x="208" y="564" w="33" h="9" oX="208" oY="564" oW="454" oH="322" />
+    <sprite n ="8" x="249" y="562" w="37" h="14" oX="249" oY="562" oW="454" oH="322" />
+    <sprite n ="9" x="291" y="557" w="36" h="23" oX="291" oY="557" oW="454" oH="322" />
+    <sprite n ="10" x="332" y="562" w="38" h="14" oX="332" oY="562" oW="454" oH="322" />
+    <sprite n ="11" x="378" y="560" w="38" h="18" oX="378" oY="560" oW="454" oH="322" />
+    <sprite n ="12" x="423" y="562" w="14" h="14" oX="423" oY="562" oW="454" oH="322" />
+    <sprite n ="13" x="441" y="556" w="26" h="26" oX="441" oY="556" oW="454" oH="322" />
+  </Animation>
+  <Animation name="bulletlv3" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="14" x="142" y="598" w="17" h="21" oX="142" oY="598" oW="477" oH="274" />
+    <sprite n ="15" x="164" y="599" w="25" h="18" oX="164" oY="599" oW="477" oH="274" />
+    <sprite n ="16" x="194" y="593" w="44" h="32" oX="194" oY="593" oW="477" oH="274" />
+    <sprite n ="17" x="243" y="593" w="45" h="31" oX="243" oY="593" oW="477" oH="274" />
+    <sprite n ="18" x="293" y="592" w="41" h="33" oX="293" oY="592" oW="477" oH="274" />
+    <sprite n ="19" x="386" y="599" w="14" h="19" oX="386" oY="599" oW="477" oH="274" />
+    <sprite n ="20" x="403" y="593" w="25" h="29" oX="403" oY="593" oW="477" oH="274" />
+  </Animation>
+  <Animation name="hpItem1" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="21" x="299" y="138" w="8" h="7" oX="299" oY="138" oW="-205" oH="58" />
+    <sprite n ="22" x="315" y="138" w="10" h="8" oX="315" oY="138" oW="-205" oH="58" />
+    <sprite n ="23" x="333" y="138" w="10" h="8" oX="333" oY="138" oW="-205" oH="58" />
+    <sprite n ="24" x="351" y="138" w="10" h="8" oX="351" oY="138" oW="-205" oH="58" />
+  </Animation>
+  <Animation name="hpItem2" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="25" x="296" y="150" w="14" h="11" oX="296" oY="150" oW="-185" oH="64" />
+    <sprite n ="26" x="312" y="150" w="16" h="12" oX="312" oY="150" oW="-185" oH="64" />
+    <sprite n ="27" x="330" y="150" w="16" h="12" oX="330" oY="150" oW="-185" oH="64" />
+    <sprite n ="28" x="348" y="150" w="16" h="12" oX="348" oY="150" oW="-185" oH="64" />
+  </Animation>
+  <Animation name="lifebar" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite n ="29" x="2" y="13" w="14" h="4" oX="2" oY="13" oW="55" oH="13" />
+    <sprite n ="30" x="2" y="19" w="14" h="16" oX="2" oY="19" oW="55" oH="13" />
+    <sprite n ="31" x="2" y="37" w="14" h="16" oX="2" oY="37" oW="55" oH="13" />
+    <sprite n ="32" x="2" y="55" w="14" h="16" oX="2" oY="55" oW="55" oH="13" />
+  </Animation>
+</Animations>

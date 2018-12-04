@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="appear" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="0" x="115" y="3" w="8" h="47" oX="115" oY="3" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="1" x="127" y="22" w="21" h="28" oX="127" oY="22" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="2" x="153" y="9" w="30" h="41" oX="153" oY="9" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="3" x="187" y="12" w="30" h="38" oX="187" oY="12" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="4" x="221" y="15" w="30" h="35" oX="221" oY="15" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="5" x="255" y="17" w="30" h="33" oX="255" oY="17" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+    <sprite n ="6" x="289" y="19" w="30" h="31" oX="289" oY="19" oW="-235" oH="178" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="stand" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="7" x="323" y="17" w="30" h="34" oX="323" oY="17" oW="-342" oH="98" gX="1.0" gY="0.55" pX="0.5" pY="0.5"/>
+    <sprite n ="8" x="357" y="17" w="30" h="34" oX="357" oY="17" oW="-342" oH="98" pX="0.5" gX="1.0" gY="0.55" pY="0.5"/>
+    <sprite n ="9" x="391" y="17" w="30" h="34" oX="391" oY="17" oW="-342" oH="98" pX="0.5" gX="1.0" gY="0.55" pY="0.5"/>
+  </Animation>
+  <Animation name="standshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="10" x="133" y="66" w="30" h="34" oX="133" oY="66" oW="-71" oH="66" gX="1.0" gY="0.55" pX="0.5" pY="0.5"/>
+    <sprite n ="11" x="168" y="66" w="30" h="34" oX="168" oY="66" oW="-71" oH="66" gX="1.0" gY="0.55" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="jump" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="12" x="202" y="63" w="24" h="38" oX="202" oY="63" oW="-153" oH="77" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="13" x="231" y="59" w="16" h="42" oX="231" oY="59" oW="-153" oH="77" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="14" x="252" y="54" w="20" h="46" oX="252" oY="54" oW="-153" oH="77" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="fall" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="15" x="274" y="59" w="24" h="42" oX="274" oY="59" oW="-184" oH="23" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+    <sprite n ="16" x="299" y="58" w="28" h="42" oX="299" oY="58" oW="-258" oH="83" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="land" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="17" x="331" y="62" w="23" h="37" oX="331" oY="62" oW="-258" oH="83" pX="0.5" pY="0.5"/>
+    <sprite n ="18" x="356" y="68" w="29" h="31" oX="356" oY="68" oW="-258" oH="83" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="run" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="19" x="106" y="107" w="30" h="34" oX="106" oY="107" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="20" x="137" y="107" w="20" h="34" oX="137" oY="107" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="21" x="158" y="107" w="22" h="35" oX="158" oY="106" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="22" x="181" y="107" w="32" h="34" oX="181" oY="107" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="23" x="214" y="108" w="32" h="34" oX="213" oY="108" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="24" x="247" y="108" w="26" h="34" oX="247" oY="108" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="25" x="274" y="107" w="24" h="34" oX="276" oY="107" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="26" x="299" y="106" w="26" h="36" oX="298" oY="106" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="27" x="326" y="107" w="30" h="34" oX="326" oY="107" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="28" x="357" y="108" w="34" h="34" oX="357" oY="108" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="29" x="391" y="108" w="30" h="34" oX="391" oY="108" oW="-253" oH="314" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="jumpshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="30" x="66" y="151" w="30" h="38" oX="66" oY="152" oW="118" oH="85" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="31" x="97" y="148" w="24" h="42" oX="97" oY="148" oW="118" oH="85" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+    <sprite n ="32" x="121" y="143" w="28" h="46" oX="121" oY="143" oW="118" oH="85" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="fallshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="33" x="149" y="148" w="32" h="42" oX="149" oY="148" oW="34" oH="30" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+    <sprite n ="34" x="181" y="147" w="32" h="42" oX="181" oY="147" oW="-53" oH="90" gX="1.0" gY="0.7" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="landshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="35" x="213" y="151" w="29" h="37" oX="213" oY="151" oW="-53" oH="90" pX="0.5" pY="0.5"/>
+    <sprite n ="36" x="243" y="157" w="35" h="31" oX="243" oY="157" oW="-53" oH="90" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="glide" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="37" x="285" y="158" w="30" h="32" oX="285" oY="158" oW="-122" oH="55" sX="0" sY="0.1" gX="1.0" gY="0.6" pX="0.5" pY="1.0"/>
+    <sprite n ="38" x="317" y="163" w="38" h="26" oX="317" oY="163" oW="-122" oH="55" sX="0.25" sY="0.1" gX="1.0" gY="0.6" pX="0.5" pY="1.0"/>
+  </Animation>
+  <Animation name="glideshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="39" x="361" y="158" w="38" h="32" oX="361" oY="158" oW="-204" oH="76" sX="0" sY="0.1" gX="1.0" gY="0.6" pX="0.5" pY="1.0"/>
+    <sprite n ="40" x="404" y="163" w="50" h="26" oX="404" oY="163" oW="-204" oH="76" sX="0.25" sY="0.1" gX="1.0" gY="0.6" pX="0.5" pY="1.0"/>
+  </Animation>
+  <Animation name="runshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="41" x="62" y="192" w="34" h="34" oX="61" oY="192" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="42" x="96" y="193" w="30" h="34" oX="97" oY="193" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="43" x="126" y="192" w="32" h="36" oX="126" oY="192" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="44" x="158" y="193" w="36" h="34" oX="158" oY="193" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="45" x="194" y="193" w="38" h="34" oX="194" oY="194" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="46" x="233" y="194" w="34" h="34" oX="233" oY="194" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="47" x="267" y="193" w="30" h="36" oX="267" oY="193" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="48" x="299" y="192" w="32" h="36" oX="298" oY="192" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="49" x="331" y="193" w="36" h="34" oX="331" oY="193" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="50" x="368" y="193" w="36" h="34" oX="367" oY="194" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+    <sprite n ="51" x="404" y="193" w="36" h="34" oX="404" oY="194" oW="167" oH="377" gX="1.0" gY="0.6" pX="0.5" pY="0.5"/>
+  </Animation>
+  <Animation name="clamp" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="52" x="88" y="527" w="26" h="42" gX="1.0" gY="0.6" oX="88" oY="527" oW="472" oH="79" />
+    <sprite n ="53" x="114" y="526" w="30" h="44" gX="0.0" gY="0.55" oX="115" oY="526" oW="472" oH="79" />
+    <sprite n ="54" x="144" y="526" w="30" h="44" sX="1.0" sY="0.1" gX="0.0" gY="0.5" oX="144" oY="527" oW="472" oH="79" />
+  </Animation>
+  <Animation name="kick" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="55" x="177" y="530" w="30" h="40" gX="1.0" gY="0.7" oX="177" oY="530" oW="386" oH="58" />
+    <sprite n ="56" x="207" y="525" w="30" h="44" gX="1.0" gY="0.7" oX="206" oY="525" oW="386" oH="58" />
+  </Animation>
+  <Animation name="clampshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="57" x="237" y="531" w="32" h="38" gX="1.0" gY="0.7" oX="237" oY="531" oW="328" oH="104" />
+    <sprite n ="58" x="272" y="527" w="32" h="44" gX="0.0" gY="0.55" oX="272" oY="527" oW="328" oH="104" />
+    <sprite n ="59" x="310" y="526" w="32" h="44" sX="1.0" sY="0.1" gX="0.0" gY="0.5" oX="310" oY="526" oW="328" oH="104" />
+  </Animation>
+  <Animation name="kickshoot" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="60" x="346" y="530" w="32" h="40" oX="346" gX="1.0" gY="0.7" oY="530" oW="218" oH="63" />
+    <sprite n ="61" x="379" y="529" w="34" h="44" oX="379" gX="0.0" gY="0.7" oY="529" oW="218" oH="63" />
+  </Animation>
+  <Animation name="bleed" imagePath="MegaMan.png" width="538" height="930">
+    <sprite n ="62" x="51" y="640" w="26" h="35" oX="51" oY="640" oW="623" oH="357" />
+    <sprite n ="63" x="80" y="642" w="29" h="33" oX="80" oY="642" oW="623" oH="357" />
+    <sprite n ="64" x="113" y="642" w="29" h="33" oX="113" oY="642" oW="623" oH="357" />
+    <sprite n ="65" x="146" y="632" w="32" h="47" oX="146" oY="632" oW="623" oH="357" />
+    <sprite n ="66" x="180" y="642" w="29" h="33" oX="180" oY="642" oW="623" oH="357" />
+    <sprite n ="67" x="213" y="632" w="32" h="47" oX="213" oY="632" oW="623" oH="357" />
+    <sprite n ="68" x="248" y="642" w="29" h="33" oX="248" oY="642" oW="623" oH="357" />
+    <sprite n ="69" x="281" y="632" w="32" h="47" oX="281" oY="632" oW="623" oH="357" />
+    <sprite n ="70" x="316" y="642" w="30" h="33" oX="316" oY="642" oW="623" oH="357" />
+    <sprite n ="71" x="350" y="642" w="29" h="33" oX="350" oY="642" oW="623" oH="357" />
+    <sprite n ="72" x="382" y="640" w="26" h="35" oX="382" oY="640" oW="623" oH="357" />
+  </Animation>
+</Animations>

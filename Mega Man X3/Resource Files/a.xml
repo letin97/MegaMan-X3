@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="a" imagePath="Enemy.png" width="418" height="579">
+    <sprite x="1" y="294" w="37" h="15" oX="1" oY="294" oW="359" oH="229" />
+    <sprite x="47" y="295" w="14" h="12" oX="47" oY="295" oW="359" oH="229" />
+    <sprite x="72" y="295" w="15" h="12" oX="72" oY="295" oW="359" oH="229" />
+    <sprite x="95" y="294" w="15" h="15" oX="95" oY="294" oW="359" oH="229" />
+    <sprite x="123" y="298" w="11" h="8" oX="123" oY="298" oW="359" oH="229" />
+    <sprite x="139" y="297" w="11" h="12" oX="139" oY="297" oW="359" oH="229" />
+    <sprite x="159" y="294" w="15" h="15" oX="159" oY="294" oW="359" oH="229" />
+    <sprite x="59" y="326" w="18" h="7" oX="59" oY="326" oW="359" oH="229" />
+    <sprite x="91" y="321" w="8" h="11" oX="91" oY="321" oW="359" oH="229" />
+    <sprite x="108" y="318" w="15" h="13" oX="108" oY="318" oW="359" oH="229" />
+    <sprite x="131" y="326" w="7" h="7" oX="131" oY="326" oW="359" oH="229" />
+    <sprite x="151" y="326" w="4" h="7" oX="151" oY="326" oW="359" oH="229" />
+    <sprite x="163" y="326" w="8" h="4" oX="163" oY="326" oW="359" oH="229" />
+    <sprite x="179" y="329" w="8" h="4" oX="179" oY="329" oW="359" oH="229" />
+  </Animation>
+</Animations>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="smoke" imagePath="Effect.png" width="878" height="338">
+    <sprite x="8" y="8" w="8" h="7" oX="8" oY="8" oW="-67" oH="83" pX="0.5" pY="0.5"/>0
+    <sprite x="18" y="9" w="10" h="10" oX="18" oY="9" oW="-67" oH="83" pX="0.5" pY="0.5"/>
+    <sprite x="31" y="9" w="13" h="12" oX="31" oY="9" oW="-67" oH="83" pX="0.5" pY="0.5"/>
+    <sprite x="49" y="8" w="14" h="13" oX="49" oY="8" oW="-67" oH="83" pX="0.5" pY="0.5"/>
+    <sprite x="66" y="8" w="14" h="13" oX="66" oY="8" oW="-67" oH="83" pX="0.5" pY="0.5"/>
+    <sprite x="84" y="9" w="11" h="5" oX="84" oY="9" oW="-67" oH="83" pX="0.5" pY="0.5"/>5
+  </Animation>
+  <Animation name="fire" imagePath="Effect.png" width="878" height="338">
+    <sprite x="0" y="321" w="19" h="15" oX="0" oY="321" oW="338" oH="127" pX="0.5" pY="0.5"/>6
+    <sprite x="24" y="312" w="22" h="24" oX="24" oY="312" oW="338" oH="127" pX="0.5" pY="0.5"/>
+    <sprite x="52" y="311" w="22" h="25" oX="52" oY="311" oW="338" oH="127" pX="0.5" pY="0.5"/>
+    <sprite x="80" y="309" w="26" h="27" oX="80" oY="309" oW="338" oH="127" pX="0.5" pY="0.5"/>
+    <sprite x="112" y="309" w="27" h="27" oX="112" oY="309" oW="338" oH="127" pX="0.5" pY="0.5"/>10
+  </Animation>
+  <Animation name="bluelight" imagePath="Effect.png" width="878" height="338">
+    <sprite x="29" y="52" w="45" h="43" oX="29" oY="52" oW="98" oH="717" pX="0.5" pY="0.5"/>11
+    <sprite x="97" y="55" w="39" h="35" oX="97" oY="55" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="153" y="56" w="34" h="33" oX="153" oY="56" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="203" y="57" w="33" h="31" oX="203" oY="57" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="251" y="52" w="31" h="41" oX="251" oY="52" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="298" y="53" w="29" h="39" oX="298" oY="53" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="343" y="54" w="39" h="35" oX="343" oY="54" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="395" y="52" w="35" h="39" oX="395" oY="52" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="442" y="54" w="39" h="35" oX="442" oY="54" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="495" y="55" w="37" h="31" oX="495" oY="55" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="540" y="56" w="35" h="29" oX="540" oY="56" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="587" y="57" w="31" h="27" oX="587" oY="57" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="628" y="58" w="41" h="25" oX="628" oY="58" oW="98" oH="717" pX="0.5" pY="0.5"/>
+    <sprite x="696" y="66" w="34" h="9" oX="696" oY="66" oW="98" oH="717" pX="0.5" pY="0.5"/>24
+  </Animation>
+  <Animation name="orangelight" imagePath="Effect.png" width="878" height="338">
+    <sprite x="39" y="122" w="45" h="43" oX="39" oY="122" oW="146" oH="780" pX="0.5" pY="0.5"/>25
+    <sprite x="98" y="123" w="42" h="39" oX="98" oY="123" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="155" y="122" w="37" h="35" oX="155" oY="122" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="209" y="120" w="35" h="33" oX="209" oY="120" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="261" y="117" w="33" h="43" oX="261" oY="117" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="311" y="119" w="31" h="41" oX="311" oY="119" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="356" y="119" w="43" h="38" oX="356" oY="119" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="412" y="122" w="41" h="35" oX="412" oY="122" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="463" y="122" w="39" h="43" oX="463" oY="122" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="515" y="124" w="37" h="41" oX="515" oY="124" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="567" y="128" w="43" h="38" oX="567" oY="128" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="629" y="126" w="41" h="36" oX="629" oY="126" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="682" y="132" w="36" h="31" oX="682" oY="132" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="727" y="133" w="33" h="27" oX="727" oY="133" oW="146" oH="780" pX="0.5" pY="0.5"/>
+    <sprite x="776" y="129" w="49" h="25" oX="776" oY="129" oW="146" oH="780" pX="0.5" pY="0.5"/>39
+  </Animation>
+  <Animation name="bulletlv1" imagePath="Effect.png" width="878" height="338">
+    <sprite x="104" y="6" w="12" h="11" oX="104" oY="6" oW="-106" oH="33" pX="0.5" pY="0.5"/>40
+    <sprite x="123" y="10" w="8" h="6" oX="123" oY="10" oW="-106" oH="33" pX="0.5" pY="0.5"/>41
+  </Animation>
+  <Animation name="bulletlv2" imagePath="Effect.png" width="878" height="338">
+    <sprite x="135" y="6" w="24" h="15" oX="135" oY="6" oW="-245" oH="162" pX="0.5" pY="0.5"/>42
+    <sprite x="161" y="4" w="32" h="18" oX="161" oY="4" oW="-245" oH="162" pX="0.5" pY="0.5"/>
+    <sprite x="195" y="4" w="36" h="20" oX="195" oY="4" oW="-245" oH="162" pX="0.5" pY="0.5"/>
+    <sprite x="234" y="7" w="44" h="14" oX="234" oY="7" oW="-245" oH="162" pX="0.5" pY="0.5"/>
+    <sprite x="281" y="6" w="40" h="16" oX="281" oY="6" oW="-245" oH="162" pX="0.5" pY="0.5"/>46
+  </Animation>
+  <Animation name="bulletlv3" imagePath="Effect.png" width="878" height="338">
+    <sprite x="327" y="4" w="21" h="20" oX="327" oY="4" oW="-389" oH="116" pX="0.5" pY="0.5"/>47
+    <sprite x="351" y="1" w="37" h="26" oX="351" oY="1" oW="-389" oH="116" pX="0.5" pY="0.5"/>
+    <sprite x="391" y="3" w="41" h="22" oX="391" oY="3" oW="-389" oH="116" pX="0.5" pY="0.5"/>
+    <sprite x="434" y="0" w="44" h="29" oX="434" oY="0" oW="-389" oH="116" pX="0.5" pY="0.5"/>50
+  </Animation>
+  <Animation name="brust" imagePath="Effect.png" width="878" height="338">
+    <sprite x="104" y="6" w="12" h="11" oX="104" oY="6" oW="-86" oH="12" />
+  </Animation>
+</Animations>
