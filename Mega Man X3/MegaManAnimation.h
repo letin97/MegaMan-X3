@@ -23,6 +23,7 @@ public:
 	void GlideAnimation();
 	void ClampAnimation();
 	void KickAnimation();
+	void JouncingAnimation();
 
 	void StandShootAnimation();
 	void RunShootAnimation();

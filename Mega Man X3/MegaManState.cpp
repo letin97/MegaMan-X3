@@ -31,10 +31,14 @@ bool MegaManState::GetAllowDrawSpark()
 	return allowDrawSpark;
 }
 
-//Set trạng thái
 void MegaManState::SetAllowDrawSpark(bool b)
 {
 	this->allowDrawSpark = b;
+}
+
+bool MegaManState::GetAllowDrawSmoke()
+{
+	return allowDrawSmoke;
 }
 
 bool MegaManState::IsShoot()
@@ -64,6 +68,13 @@ float MegaManState::GetEnergyLevel()
 	return energyLevel;
 }
 
+int MegaManState::GetStyleSpark()
+{
+	if (state == State::Jouncing)
+		return 2;
+	return 1;
+}
+
 
 float MegaManState::GetGlideWidth()
 {
@@ -84,7 +95,8 @@ float MegaManState::GetStarGlide()
 //Kiểm tra hướng
 void MegaManState::CheckSide(Keyboard* keyboard)
 {
-	if (state == State::Gliding || state == State::GlidingShoot || 
+	if (state == State::Gliding || state == State::GlidingShoot ||
+		state == State::GlidingAerial || state == State::GlidingAerialShoot ||
 		state == State::Kicking || state == State::KickingShoot ||
 		state == State::Clamping || state == State::ClampingShoot) 
 		return;
@@ -108,8 +120,10 @@ void MegaManState::StandState(Keyboard* keyboard)
 	isJump = false;
 	isGlide = false;
 	isFall = false;
+	isJounce = false;
 	isShoot = false;
 	allowDrawSpark = false;
+	allowDrawSmoke = false;
 
 	if (keyboard->GIsKeyUp(DIK_A)) allowGlide = true;
 
@@ -154,6 +168,7 @@ void MegaManState::RunState(Keyboard* keyboard)
 	isGlide = false;
 	isShoot = false;
 	allowDrawSpark = false;
+	allowDrawSmoke = false;
 
 	if (keyboard->GIsKeyUp(DIK_A)) allowGlide = true;
 
@@ -196,9 +211,9 @@ void MegaManState::RunState(Keyboard* keyboard)
 //Trang thái nhảy
 void MegaManState::JumpState(Keyboard* keyboard)
 {
-	isGlide = false;
 	isShoot = false;
 	allowDrawSpark = false;
+	allowDrawSmoke = false;
 
 	if (!isJump)
 	{
@@ -209,16 +224,31 @@ void MegaManState::JumpState(Keyboard* keyboard)
 
 	if (keyboard->IsKeyDown(DIK_SPACE))
 	{
-		if ((megaMan->GetPosition().y - startJump) >= JumpMax)
+		if (keyboard->IsKeyDown(DIK_W))
 		{
-			megaMan->SetVelocityY(-Gravity);
-			state = State::Falling;
+			state = State::Jouncing;
 		}
-		else
+		else 
 		{
-			if (keyboard->IsKeyDown(DIK_S)) state = State::JumpingShoot;
-			else state = State::Jumping;
+			if ((megaMan->GetPosition().y - startJump) >= JumpMax)
+			{
+				megaMan->SetVelocityY(-Gravity);
+				state = State::Falling;
+			}
+			else
+			{
+				if (keyboard->IsKeyDown(DIK_A))
+				{
+					megaMan->SetVelocityY(-Gravity);
+					state = State::Falling;
+				}
+				else if (keyboard->IsKeyDown(DIK_S))
+					state = State::JumpingShoot;
+				else
+					state = State::Jumping;
+			}
 		}
+			
 	}
 	else
 	{
@@ -229,8 +259,15 @@ void MegaManState::JumpState(Keyboard* keyboard)
 		}
 		else
 		{
-			if (keyboard->IsKeyDown(DIK_S)) state = State::JumpingShoot;
-			else state = State::Jumping;
+			if (keyboard->IsKeyDown(DIK_A))
+			{
+				megaMan->SetVelocityY(-Gravity);
+				state = State::Falling;
+			}	
+			else if (keyboard->IsKeyDown(DIK_S)) 
+				state = State::JumpingShoot;
+			else 
+				state = State::Jumping;
 		}
 	}	
 }
@@ -238,29 +275,38 @@ void MegaManState::JumpState(Keyboard* keyboard)
 //Trang thái rơi
 void MegaManState::FallState(Keyboard* keyboard)
 {
-	isJump = false;
+	isGlide = false;
 	isShoot = false;
 	allowDrawSpark = false;
+	allowDrawSmoke = false;
+
+	if (keyboard->GIsKeyUp(DIK_A)) allowGlide = true;
 
 	if (megaMan->GetVelocity().y == 0)
 	{
 		state = State::Standing;
 	}
-	else
+	else 
 	{
 		megaMan->SetVelocityY(megaMan->GetVelocity().y - FallAcceleration);
-		if (keyboard->IsKeyDown(DIK_S)) state = State::FallingShoot;
-		else state = State::Falling;
+		if (keyboard->IsKeyDown(DIK_A))
+		{
+			if(allowGlide) state = State::GlidingAerial;
+		}
+		else if (keyboard->IsKeyDown(DIK_S))
+			state = State::FallingShoot;
+		else
+			state = State::Falling;
 	}
 }
 
 //Trang thái lướt
 void MegaManState::GlideState(Keyboard* keyboard)
 {
-	isJump = false;
 	isShoot = false;
 	allowGlide = false;
 	allowDrawSpark = true;
+	allowDrawSmoke = true;
 
 	if (!isGlide)
 	{
@@ -268,6 +314,7 @@ void MegaManState::GlideState(Keyboard* keyboard)
 		startGlide = megaMan->GetPosition().x;
 		if (!megaMan->GetFlipFlag()) megaMan->SetVelocityX(GlideSpeed);
 		else megaMan->SetVelocityX(-GlideSpeed);
+		megaMan->SetVelocityY(0);
 		isGlide = true;
 	}
 
@@ -277,10 +324,6 @@ void MegaManState::GlideState(Keyboard* keyboard)
 		if (keyboard->IsKeyDown(DIK_RIGHT) && megaMan->GetFlipFlag() || keyboard->IsKeyDown(DIK_LEFT) && !megaMan->GetFlipFlag())
 		{
 			state = State::Standing;
-		}
-		else if (keyboard->IsKeyDown(DIK_SPACE))
-		{
-			state = State::Jumping;
 		}
 		else
 		{
@@ -298,7 +341,7 @@ void MegaManState::GlideState(Keyboard* keyboard)
 				else
 				{
 					megaMan->SetVelocityY(-Gravity);
-					if (keyboard->IsKeyDown(DIK_S)) state = State::GlidingShoot; 
+					if (keyboard->IsKeyDown(DIK_S)) state = State::GlidingShoot;
 					else state = State::Gliding;
 				}
 			}
@@ -326,12 +369,78 @@ void MegaManState::GlideState(Keyboard* keyboard)
 	}
 }
 
+//Trang thái lướt
+void MegaManState::GlidingAerialState(Keyboard* keyboard)
+{
+	isShoot = false;
+	allowGlide = false;
+	allowDrawSpark = true;
+	allowDrawSmoke = false;
+
+	if (!isGlide)
+	{
+		//Vị trí bắt đầu lướt
+		startGlide = megaMan->GetPosition().x;
+		if (!megaMan->GetFlipFlag()) megaMan->SetVelocityX(GlideSpeed);
+		else megaMan->SetVelocityX(-GlideSpeed);
+		megaMan->SetVelocityY(0);
+		isGlide = true;
+	}
+
+	if (keyboard->GIsKeyDown(DIK_A))
+	{
+		// Hủy lươt nếu chuyển động ngược hướng lướt
+		if (keyboard->IsKeyDown(DIK_RIGHT) && megaMan->GetFlipFlag() || keyboard->IsKeyDown(DIK_LEFT) && !megaMan->GetFlipFlag())
+		{
+			megaMan->SetVelocityY(-Gravity);
+			state = State::Falling;
+		}
+		else
+		{
+			//Khoảng cách lướt xa tối đa
+			if (GetGlideWidth() >= GlideMax)
+			{
+				megaMan->SetVelocityY(-Gravity);
+				state = State::Falling;
+			}
+			else
+			{
+				if (keyboard->IsKeyDown(DIK_S)) state = State::GlidingAerialShoot;
+				else state = State::GlidingAerial;
+			}
+		}
+	}
+	else
+	{
+		if (keyboard->IsKeyDown(DIK_RIGHT) || keyboard->IsKeyDown(DIK_LEFT))
+		{
+			megaMan->SetVelocityY(-Gravity);
+			state = State::Falling;
+		}
+		else
+		{
+			//Khoảng cách lướt xa tối thiểu
+			if (GetGlideWidth() >= GlideMin)
+			{
+				megaMan->SetVelocityY(-Gravity);
+				state = State::Falling;
+			}
+			else
+			{
+				if (keyboard->IsKeyDown(DIK_S)) state = State::GlidingAerialShoot;
+				else state = State::GlidingAerial;
+			}
+		}
+	}
+}
+
 //Trang thái bám
 void MegaManState::ClampState(Keyboard* keyboard)
 {
 	isJump = false;
 	isShoot = false;
-	allowDrawSpark = true;
+	allowDrawSpark = false;
+	allowDrawSmoke = true;
 
 	if (!isGlide)
 	{
@@ -377,6 +486,8 @@ void MegaManState::KickState(Keyboard* keyboard)
 	isGlide = false;
 	isShoot = false;
 	allowDrawSpark = false;
+	allowDrawSmoke = false;
+
 
 	if (!isJump)
 	{
@@ -403,6 +514,33 @@ void MegaManState::KickState(Keyboard* keyboard)
 	}
 }
 
+//Trang thái nẩy
+void MegaManState::JounceState(Keyboard* keyboard)
+{
+	isGlide = false;
+	isShoot = false;
+	allowDrawSpark = true;
+	allowDrawSmoke = false;
+
+	if (!isJounce)
+	{
+		startJump = megaMan->GetPosition().y;
+		megaMan->SetVelocityY(0);
+		isJounce = true;
+	}
+
+	if ((megaMan->GetPosition().y - startJump) >= 100)
+	{
+		megaMan->SetVelocityY(-Gravity);
+		state = State::Falling;
+	}
+	else
+	{
+		megaMan->SetVelocityY(megaMan->GetVelocity().y + 0.08f);
+		state = State::Jouncing;
+	}
+}
+
 //Trang thái bắn
 void MegaManState::ShootState(Keyboard* keyboard)
 {
@@ -424,6 +562,9 @@ void MegaManState::ShootState(Keyboard* keyboard)
 		break;
 	case MegaManState::GlidingShoot:
 		GlideState(keyboard);
+		break;
+	case MegaManState::GlidingAerialShoot:
+		GlidingAerialState(keyboard);
 		break;
 	case MegaManState::ClampingShoot:
 		ClampState(keyboard);
@@ -531,6 +672,7 @@ void MegaManState::Update(float dt, Keyboard* keyboard)
 	case MegaManState::JumpingShoot:
 	case MegaManState::FallingShoot:
 	case MegaManState::GlidingShoot:
+	case MegaManState::GlidingAerialShoot:
 	case MegaManState::ClampingShoot:
 	case MegaManState::KickingShoot:
 	{

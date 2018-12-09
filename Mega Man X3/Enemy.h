@@ -18,11 +18,6 @@ protected:
 	//Đạn quái
 	Bullet* bullets[3];
 	int numBullet;
-	Sprite* sprite_Bullet;
-
-	//Time
-	float timeDelayShoot = 0;
-	bool isSeePlayer;
 	
 	//Vật phẩm rơi khi quái chết
 	Item* item;
@@ -37,36 +32,25 @@ protected:
 	Collapse* collapse;
 
 public:
-	enum EnemyType
-	{
-		HeadGunner
-	};
-	EnemyType enemyType;
 
 	enum EnemyState
 	{
-		Moving,
-		Attacking,
+		Aliving,
 		Dying
 	};
 	EnemyState enemyState;
 
 	Enemy();
-	Enemy(MegaMan *megaMan, Sprite* sprite_enemy, Sprite* sprite_Item, SpriteSheet* spriteSheet_Enemy, SpriteSheet* spriteSheet_Item);
 	~Enemy();
-
-	EnemyType GetEnemyType();
-	EnemyType GetEnemyType(string name);
-	void SetEnemyType(EnemyType type);
 
 	EnemyState GetEnemyState();
 	void SetEnemyState(EnemyState state);
 
-	void NewEnemy(D3DXVECTOR2 pos, EnemyType enemyType);
-	void ChangeAnimation(Keyboard* key);
-	void Update(float dt, Keyboard* key);
-	void Render(Viewport* viewport);
-	void OnCollision(Object *obj, D3DXVECTOR2 distance);
-	void OnCollision(Object *obj);
+	virtual void New(D3DXVECTOR2 pos);
+	virtual void ChangeAnimation(Keyboard* key);
+	virtual void Update(float dt, Keyboard* key);
+	virtual void Render(Viewport* viewport);
+	virtual void OnCollision(Object *obj, D3DXVECTOR2 distance);
+	virtual void OnCollision(Object *obj);
 };
 

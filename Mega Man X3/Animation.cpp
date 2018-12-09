@@ -140,6 +140,26 @@ void Animation::Update(float dt, Keyboard* keyboard)
 	//Lấy center
 	center.x = (rect.right - rect.left) * 0.5;
 	center.y = (rect.bottom - rect.top) * 0.5;
+
+	if (spriteSheet->GetTransform(index).x != 0)
+	{
+		if (flipFlag)
+		{
+			transform.x = -spriteSheet->GetTransform(index).x;
+		}
+		else
+		{
+			transform.x = spriteSheet->GetTransform(index).x;
+		}
+		
+	}
+	else transform.x = 0;
+
+	if (spriteSheet->GetTransform(index).y != 0)
+	{
+		transform.y = spriteSheet->GetTransform(index).y;
+	}
+	else transform.y = 0;
 	
 }
 

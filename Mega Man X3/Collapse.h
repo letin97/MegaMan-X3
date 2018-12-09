@@ -13,6 +13,14 @@ protected:
 	int listRECT[4];
 	bool appear;
 public:
+	enum CollapseType
+	{
+		CollapseHeadGunner,
+		CollapseNotorBanger,
+		CollapseHelit
+	};
+	CollapseType type;
+
 	Collapse(Sprite *sprite_collapse, SpriteSheet* spriteSheet);
 	Collapse();
 	~Collapse();

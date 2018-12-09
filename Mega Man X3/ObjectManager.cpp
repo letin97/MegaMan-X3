@@ -1,6 +1,5 @@
 ﻿#include "ObjectManager.h"
 #include "string.h"
-#include <iostream>
 
 ObjectManager::ObjectManager()
 {
@@ -19,6 +18,8 @@ ObjectManager::~ObjectManager()
 	delete sprite_Weapons_And_Items;
 	delete sprite_Enemy;
 
+	delete mGenjibo;
+
 }
 
 //Load Game
@@ -29,14 +30,18 @@ void ObjectManager::Init(Graphic* graphic)
 	sprite_Weapons_And_Items = new Sprite(graphic, WeaponsAndItemsPNG);
 	sprite_Enemy = new Sprite(graphic, EnemyPNG);
 	sprite_Lifebar = new Sprite(graphic, WeaponsAndItemsPNG);
+	sprite_Boss_Genjibo = new Sprite(graphic, BossGenjiboPNG);
 
 	spriteSheetMegaMan = new SpriteSheet(MegaManXML);
 	spriteSheetEffect = new SpriteSheet(EffectXML);
 	spriteSheetWeaponsAndItems = new SpriteSheet(WeaponsAndItemsEffectXML);
 	spriteSheetEnemy = new SpriteSheet(EnemyXML);
+	spriteSheetBossGenjibo = new SpriteSheet(BossGenjiboXML);
 
 	megaMan = new MegaMan(sprite_MegaMan, sprite_Effect, sprite_Weapons_And_Items,
 		spriteSheetMegaMan, spriteSheetEffect, spriteSheetWeaponsAndItems);
+
+	mGenjibo = new Genjibo(sprite_Boss_Genjibo, spriteSheetBossGenjibo, D3DXVECTOR2(2480, 870));
 
 	viewport = new Viewport(0, 1248);
 
@@ -63,8 +68,6 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 {
 	megaMan->ChangeAnimation(dt, keyboard);
 
-	std::cout << megaMan->GetPosition().x;
-
 	//Kiểm tra va chạm
 	if (prePosView != viewport->GetPosition())
 	{
@@ -87,6 +90,7 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	//Va chạm Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
 	{
+
 		for (size_t j = 0; j < listWall.size(); j++)
 		{
 			D3DXVECTOR2 disEnemy = listObjectCollison.at(i)->Distance(dt);
@@ -113,7 +117,6 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 					}
 				}
 			}
-
 			//Kiểm tra con quái nào còn trong màn hình và chưa chết
 			if (viewport->isContains(listObjectCollison.at(i)->GetBound()))
 				listObject.push_back(listObjectCollison.at(i));
@@ -123,6 +126,30 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 		listObjectCollison.at(i)->Update(dt, keyboard);
 	}
 
+	//Boss
+	if (mGenjibo->GetAllowDraw())
+	{
+		//Va chạm boss với tường
+		for (size_t i = 0; i < listWall.size(); i++)
+		{
+			D3DXVECTOR2 disGenjibo = mGenjibo->Distance(dt);
+			mGenjibo->OnCollision(listWall.at(i), disGenjibo);
+		}
+
+		//Đạn Mega Man
+		for (int i = 0; i < 4; i++)
+		{
+			if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
+			{
+				if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mGenjibo->GetBound()))
+				{
+					mGenjibo->OnCollision(megaMan->bullets[i]);
+					megaMan->bullets[i]->OnCollision();
+				}
+			}
+		}
+		mGenjibo->Update(dt, keyboard);
+	}
 
 	megaMan->Update(dt, keyboard);
 
@@ -135,6 +162,8 @@ void ObjectManager::Render()
 	map->Render(viewport);
 
 	megaMan->Render(viewport);
+
+	mGenjibo->Render(viewport);
 
 	//Vẽ Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
@@ -199,13 +228,29 @@ void ObjectManager::ReadQuadTree(TiXmlElement *root, QuadTree *node, QuadTree *f
 			string name = (char*)child->Attribute("name");
 			Object::Tag tag = Object::GetTag(name);
 			
-			if (tag == Object::Tag::Enemys)
+			if (name == "HeadGunner")
 			{
-				Enemy *enemy = new Enemy(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
-				enemy->NewEnemy(D3DXVECTOR2(x, y), enemy->GetEnemyType(name));
+				HeadGunner *enemy = new HeadGunner(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				//node->mListObject.push_back(enemy);
+			}
+			else if (name == "NotorBanger")
+			{
+				NotorBanger *enemy = new NotorBanger(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
+				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;
 				node->mListObject.push_back(enemy);
+			}
+			else if (name == "Helit")
+			{
+				Helit *enemy = new Helit(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				//node->mListObject.push_back(enemy);
 			}
 			else
 			{

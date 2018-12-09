@@ -65,13 +65,13 @@ void LightEnergy::ChangeAnimation()
 	{
 	case LightEnergy::BlueLight:
 	{
-		animationLight->SetFrame(position, flipFlag, 1, 11, 23);
+		animationLight->SetFrame(position, flipFlag, 1, 20, 33);
 		break;
 	}
 
 	case LightEnergy::OrangeLight:
 	{
-		animationLight->SetFrame(position, flipFlag, 1, 24, 39);
+		animationLight->SetFrame(position, flipFlag, 1, 34, 48);
 		break;
 	}
 	}

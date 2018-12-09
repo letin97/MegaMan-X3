@@ -11,8 +11,8 @@ class MegaManState
 {
 protected:
 	Object* megaMan;
-	bool isJump, isFall, isGlide, appear;
-	bool allowGlide, allowDrawSpark;
+	bool isJump, isFall, isGlide, isJounce, appear;
+	bool allowGlide, allowDrawSpark, allowDrawSmoke;
 	float startJump, startGlide;
 
 	bool isShoot = false;
@@ -32,15 +32,18 @@ public:
 		Running,		//Chạy
 		Jumping,		//Nhảy
 		Gliding,		//Trượt
+		GlidingAerial,	//Trượt trên không
 		Falling,		//Rơi
 		Clamping,		//Bám
 		Kicking,		//Đạp
+		Jouncing,			//Nảy lên
 		
 		StandingShoot,	//Đứng bắn
 		RunningShoot,	//Chạy bắn
 		JumpingShoot,	//Nhảy bắn
 		FallingShoot,	//Rơi bắn
 		GlidingShoot,	//Trượt bắn
+		GlidingAerialShoot,	//Trượt trên bắn trên không
 		ClampingShoot,	//Bám bắn
 		KickingShoot,	//Đạp
 	};
@@ -57,9 +60,12 @@ public:
 	void JumpState(Keyboard *key);
 	void FallState(Keyboard *key);
 	void GlideState(Keyboard * key);
+	void GlidingAerialState(Keyboard * key);
 	void ClampState(Keyboard * key);
 	void KickState(Keyboard * key);
 	void ShootState(Keyboard* key);
+
+	void JounceState(Keyboard * key);
 	void BleedState(int side, int dame);
 
 	State GetState();
@@ -68,11 +74,14 @@ public:
 	bool GetAllowDrawSpark();
 	void SetAllowDrawSpark(bool b);
 
+	bool GetAllowDrawSmoke();
+
 	bool IsShoot();
 	bool IsClamping();
 	bool IsBleeding();
 	bool GetIsDelayShoot();
 	float GetEnergyLevel();
+	int GetStyleSpark();
 	
 	float GetGlideWidth();
 	float GetClampHeight();

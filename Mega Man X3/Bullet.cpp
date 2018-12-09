@@ -51,7 +51,19 @@ void Bullet::NewBullet(D3DXVECTOR2 position, bool flipflag, int energyLevel)
 	}
 	case 3:
 	{
-		bulletType = Rocket;
+		bulletType = BulletHeadGunner;
+		damage = 4;
+		break;
+	}
+	case 4:
+	{
+		bulletType = BulletNotorBanger;
+		damage = 4;
+		break;
+	}
+	case 5:
+	{
+		bulletType = BulletHelit;
 		damage = 4;
 		break;
 	}
@@ -67,13 +79,11 @@ void Bullet::NewBullet(D3DXVECTOR2 position, bool flipflag, int energyLevel)
 	
 	if (flipFlag)
 	{
-		if (bulletType == Rocket) SetVelocity(2, 0);
-		else SetVelocity(-BulletSpeed, 0);
+		SetVelocity(-BulletSpeed, 0);
 	}
 	else
 	{
-		if (bulletType == Rocket) SetVelocity(-2, 0);
-		else SetVelocity(BulletSpeed, 0);
+		SetVelocity(BulletSpeed, 0);
 	}
 }
 
@@ -149,10 +159,22 @@ void Bullet::ChangeAnimation()
 		}
 		break;
 	}
-	case Bullet::Rocket:
+	case Bullet::BulletHeadGunner:
 	{
 		SetBound(8, 4);
 		animationBullet->SetFrame(position, flipFlag, 10, 17, 18, true);
+		break;
+	}
+	case Bullet::BulletNotorBanger:
+	{
+		SetBound(2, 2);
+		animationBullet->SetFrame(position, flipFlag, 0, 19, 19, false);
+		break;
+	}
+	case Bullet::BulletHelit:
+	{
+		SetBound(8, 4);
+		animationBullet->SetFrame(position, flipFlag, 10, 81, 82, true);
 		break;
 	}
 	}

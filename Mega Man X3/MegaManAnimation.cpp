@@ -39,7 +39,6 @@ void MegaManAnimation::FallAnimation()
 	start = 16; end = 16;
 }
 
-
 void MegaManAnimation::GlideAnimation()
 {
 	repeat = false;
@@ -61,6 +60,12 @@ void MegaManAnimation::KickAnimation()
 	start = 55; end = 56;
 }
 
+void MegaManAnimation::JouncingAnimation()
+{
+	repeat = false;
+	delay = 5;
+	start = 73; end = 79;
+}
 
 void MegaManAnimation::StandShootAnimation()
 {

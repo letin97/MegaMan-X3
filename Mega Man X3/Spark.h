@@ -13,11 +13,18 @@ protected:
 
 public:
 
+	enum SparkType
+	{
+		Dash,
+		Jounce,
+	};
+	SparkType sparkType;
+
 	Spark();
 	Spark(Sprite* sprite_spark, SpriteSheet* sprite_sheet);
 	~Spark();
 
-	void NewSpark(D3DXVECTOR2 position, bool flipflag);
+	void NewSpark(D3DXVECTOR2 position, bool flipflag, int type);
 
 	bool GetIsDone();
 	void SetIsDone(bool b);

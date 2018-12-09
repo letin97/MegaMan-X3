@@ -35,8 +35,8 @@ void SpriteSheet::ReadXML(const char* path)
 			sprite->QueryFloatAttribute("y", &this->tile[n].y);
 			sprite->QueryFloatAttribute("w", &this->tile[n].w);
 			sprite->QueryFloatAttribute("h", &this->tile[n].h);
-			sprite->QueryFloatAttribute("pX", &this->tile[n].px);
-			sprite->QueryFloatAttribute("pY", &this->tile[n].py);
+			sprite->QueryFloatAttribute("tX", &this->tile[n].tx);
+			sprite->QueryFloatAttribute("tY", &this->tile[n].ty);
 			sprite->QueryFloatAttribute("gX", &this->tile[n].gx);
 			sprite->QueryFloatAttribute("gY", &this->tile[n].gy);
 			sprite->QueryFloatAttribute("sX", &this->tile[n].sx);
@@ -68,6 +68,14 @@ RECT SpriteSheet::GetRect(int index)
 	rect.right = rect.left + tile[index].w;
 	rect.bottom = rect.top + tile[index].h;
 	return rect;
+}
+
+D3DXVECTOR2 SpriteSheet::GetTransform(int index)
+{
+	D3DXVECTOR2 pTransform;
+	pTransform.x = tile[index].tx ;
+	pTransform.y = tile[index].ty;
+	return pTransform;
 }
 
 D3DXVECTOR2 SpriteSheet::GetGun(int index)

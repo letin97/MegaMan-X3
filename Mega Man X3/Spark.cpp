@@ -8,7 +8,7 @@ Spark::Spark()
 Spark::Spark(Sprite* sprite_spark, SpriteSheet* sprite_sheet)
 {
 	sprite = sprite_spark;
-	animationSpark = new Animation(sprite_sheet, 6, 10, 10, false);
+	animationSpark = new Animation(sprite_sheet, 6, 9, 13, false);
 	allowDraw = false;
 	isDone = false;
 
@@ -23,8 +23,27 @@ Spark::~Spark()
 	delete animationSpark;
 }
 
-void Spark::NewSpark(D3DXVECTOR2 position, bool flipflag)
+void Spark::NewSpark(D3DXVECTOR2 position, bool flipflag, int type)
 {
+	switch (type)
+	{
+	case 1:
+	{
+		sparkType = Dash;
+		allowDraw = true;
+		break;
+	}
+	case 2:
+	{
+		sparkType = Jounce;
+		allowDraw = true;
+		break;
+	}
+	default:
+		allowDraw = false;
+		break;
+	}
+
 	this->allowDraw = true;
 	this->position = position;
 	this->flipFlag = flipflag;
@@ -43,7 +62,20 @@ void Spark::SetIsDone(bool b)
 
 void Spark::ChangeAnimation()
 {
-	animationSpark->SetFrame(position, flipFlag, 10, 6, 10);
+	switch (sparkType)
+	{
+	case SparkType::Dash:
+	{
+		animationSpark->SetFrame(position, flipFlag, 5, 6, 10);
+		break;
+	}
+	case SparkType::Jounce:
+	{
+		animationSpark->SetFrame(position, flipFlag, 5, 11, 19);
+		break;
+	}
+	}
+	
 	if (animationSpark->GetIndex() == animationSpark->GetEnd())
 	{
 		allowDraw = false;

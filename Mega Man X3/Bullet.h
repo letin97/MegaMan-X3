@@ -18,7 +18,9 @@ public:
 		BulletLv1,
 		BulletLv2,
 		BulletLv3,
-		Rocket
+		BulletHeadGunner,
+		BulletNotorBanger,
+		BulletHelit
 	};
 	BulletType bulletType;
 

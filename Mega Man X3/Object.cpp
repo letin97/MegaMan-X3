@@ -205,7 +205,7 @@ Object::Tag Object::GetTag()
 
 Object::Tag Object::GetTag(string name)
 {
-	if (name == "HeadGunner")
+	if (name == "HeadGunner" || name == "NotorBanger")
 	{
 		return Tag::Enemys;
 	}

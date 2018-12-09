@@ -6,7 +6,10 @@
 #include "Viewport.h"
 #include "Map.h"
 #include "QuadTree.h"
-#include "Enemy.h"
+#include "HeadGunner.h"
+#include "NotorBanger.h"
+#include "Helit.h"
+#include "Genjibo.h"
 #include "Lifebar.h"
 
 class ObjectManager
@@ -29,11 +32,15 @@ protected:
 	Sprite *sprite_Weapons_And_Items;
 	Sprite *sprite_Enemy;
 	Sprite *sprite_Lifebar;
+	Sprite *sprite_Boss_Genjibo;
 
 	SpriteSheet* spriteSheetMegaMan;
 	SpriteSheet* spriteSheetEffect;
 	SpriteSheet* spriteSheetWeaponsAndItems;
 	SpriteSheet* spriteSheetEnemy;
+	SpriteSheet *spriteSheetBossGenjibo;
+
+	Genjibo* mGenjibo;
 	
 public:
 	ObjectManager();

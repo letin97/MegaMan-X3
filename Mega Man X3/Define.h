@@ -24,8 +24,12 @@ namespace Define
 	const char EnemyPNG[] = "./Resource Files/Enemy.png";
 	const char EnemyXML[] = "./Resource Files/Enemy.xml";
 
+	//Boss
+	const char BossGenjiboPNG[] = "./Resource Files/Boss Genjibo.png";
+	const char BossGenjiboXML[] = "./Resource Files/Boss Genjibo.xml";
+
 	//Map
-	const char TileSetPNG[] = "./Resource Files/megaman_x3__blast_hornet_stage_by_darksamus993-d8lave3.png";
+	const char TileSetPNG[] = "./Resource Files/Blast Hornet Stage.png";
 	const char MapXML[] = "./Resource Files/Map.tmx";
 
 	//QuadTree
@@ -44,7 +48,7 @@ namespace Define
 	//Distance
 	const float JumpMax = 80.0f;
 	const float JumpMin = 50.0f;
-	const float GlideMax = 150.0f;
+	const float GlideMax = 100.0f;
 	const float GlideMin = 30.f;
 
 	//Time

@@ -91,7 +91,7 @@ Map::Map(Graphic* graphic)
 			mQuadTree->InsertObject(obj);
 		}
 	}
-	//WriteQuadtree(mQuadTree);
+	WriteQuadtree(mQuadTree);
 }
 
 Map::~Map()

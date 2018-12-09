@@ -30,8 +30,8 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_Effect, Sprite* sprite_W
 	//Tạo StateSamus lấy state
 	stateMegaMan = new MegaManState(this);
 
-	// 500, 1280
-	// 2880 1280
+	// 16 1280
+	// 2350 900
 	position = D3DXVECTOR2(16, 1280);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
@@ -94,6 +94,13 @@ void MegaMan::ChangeAnimation(float dt, Keyboard* keyboard)
 		else animationMegaMan->GlideShootAnimation();
 		break;
 	}
+	case MegaManState::GlidingAerial:
+	{
+		stateMegaMan->GlidingAerialState(keyboard);
+		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->GlideAnimation();
+		else animationMegaMan->GlideShootAnimation();
+		break;
+	}
 	case MegaManState::Clamping:
 	{
 		stateMegaMan->ClampState(keyboard);
@@ -106,6 +113,12 @@ void MegaMan::ChangeAnimation(float dt, Keyboard* keyboard)
 		stateMegaMan->KickState(keyboard);
 		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->KickAnimation();
 		else animationMegaMan->KickShootAnimation();
+		break;
+	}
+	case MegaManState::Jouncing:
+	{
+		stateMegaMan->JounceState(keyboard);
+		animationMegaMan->JouncingAnimation();
 		break;
 	}
 	case MegaManState::StandingShoot:
@@ -137,6 +150,7 @@ void MegaMan::ChangeAnimation(float dt, Keyboard* keyboard)
 		break;
 	}
 	case MegaManState::GlidingShoot:
+	case MegaManState::GlidingAerialShoot:
 	{
 		stateMegaMan->ShootState(keyboard);
 		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->GlideAnimation();
@@ -200,6 +214,11 @@ void MegaMan::OnCollision(Object *other, D3DXVECTOR2 distance, D3DXVECTOR2 disMa
 					case MegaManState::GlidingShoot:
 						stateMegaMan->SetState(MegaManState::State::Standing);
 						break;
+					case MegaManState::GlidingAerial:
+					case MegaManState::GlidingAerialShoot:
+						velocity.y = -Gravity;
+						stateMegaMan->SetState(MegaManState::State::Falling);
+						break;
 					case MegaManState::Jumping:
 					case MegaManState::JumpingShoot:
 					case MegaManState::Falling:
@@ -255,7 +274,7 @@ void MegaMan::Update(float dt, Keyboard* key)
 		bool k = spark->GetIsDone();
 		if (!spark->GetIsDone() && !spark->GetAllowDraw())
 		{
-			spark->NewSpark(position + animationMegaMan->GetSpark(animationMegaMan->GetIndex()) / 2, flipFlag);
+			spark->NewSpark(position + animationMegaMan->GetSpark(animationMegaMan->GetIndex()) / 2, flipFlag, stateMegaMan->GetStyleSpark());
 		}		
 	}
 	else
@@ -268,7 +287,7 @@ void MegaMan::Update(float dt, Keyboard* key)
 		spark->Update(dt, key);
 
 	//Tạo khói khi lướt
-	if (stateMegaMan->GetAllowDrawSpark())
+	if (stateMegaMan->GetAllowDrawSmoke())
 	{
 		if ((int)stateMegaMan->GetGlideWidth() % 20 == 0 || (int)stateMegaMan->GetClampHeight() % 10 == 0)
 		{

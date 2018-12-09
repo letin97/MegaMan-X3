@@ -25,9 +25,18 @@ void Collapse::NewCollapse(D3DXVECTOR2 pos, int type)
 {
 	switch (type)
 	{
-	case 0:
+	case Collapse::CollapseHeadGunner:
 		start = 21;
 		end = 33;
+		break;
+	case Collapse::CollapseNotorBanger:
+		start = 53;
+		end = 66;
+		break;
+	case Collapse::CollapseHelit:
+		start = 72;
+		end = 80;
+		break;
 	default:
 		break;
 	}

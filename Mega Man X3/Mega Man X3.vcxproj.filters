@@ -29,17 +29,20 @@
     <Filter Include="Object\Effect">
       <UniqueIdentifier>{a315f682-3a18-4656-8ff8-a384bf5fe3cc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Enemy">
-      <UniqueIdentifier>{470a3100-6c21-45d7-aebd-8cb075ee92d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Map">
-      <UniqueIdentifier>{cb233923-355b-4c55-9492-874ff70a2e36}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\Items">
       <UniqueIdentifier>{38179e53-16a5-4e21-8908-1c374c4aa418}</UniqueIdentifier>
     </Filter>
     <Filter Include="Lifebar">
       <UniqueIdentifier>{3b9656fd-7212-4f9a-9f99-572672cbaefe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{cb233923-355b-4c55-9492-874ff70a2e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Enemy">
+      <UniqueIdentifier>{470a3100-6c21-45d7-aebd-8cb075ee92d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Boss">
+      <UniqueIdentifier>{47096851-f9d5-4f02-8265-3bd08a299929}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +142,21 @@
     <ClInclude Include="Collapse.h">
       <Filter>Object\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="HeadGunner.h">
+      <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="NotorBanger.h">
+      <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Helit.h">
+      <Filter>Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Genjibo.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -234,14 +252,29 @@
     <ClCompile Include="Item.cpp">
       <Filter>Object\Items</Filter>
     </ClCompile>
-    <ClCompile Include="Explosion.cpp">
-      <Filter>Object\Effect</Filter>
-    </ClCompile>
     <ClCompile Include="Collapse.cpp">
       <Filter>Object\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="HeadGunner.cpp">
+      <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="NotorBanger.cpp">
+      <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Object\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Helit.cpp">
+      <Filter>Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Genjibo.cpp">
+      <Filter>Object\Boss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

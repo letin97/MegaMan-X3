@@ -12,8 +12,8 @@ protected:
 		float y;
 		float w;
 		float h;
-		float px;
-		float py;
+		float tx;
+		float ty;
 		float gx;
 		float gy;
 		float sx;
@@ -31,6 +31,7 @@ public:
 
 	void ReadXML(const char* path);
 	RECT GetRect(int index);
+	D3DXVECTOR2 GetTransform(int index);
 	D3DXVECTOR2 GetGun(int index);
 	D3DXVECTOR2 GetSpark(int index);
 };

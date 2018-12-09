@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Collapse.h" />
     <ClInclude Include="Collision.h" />
@@ -157,11 +158,15 @@
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Genjibo.h" />
     <ClInclude Include="Graphic.h" />
+    <ClInclude Include="HeadGunner.h" />
+    <ClInclude Include="Helit.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Lifebar.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MapObjectGroup.h" />
+    <ClInclude Include="NotorBanger.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Smoke.h" />
     <ClInclude Include="LightEnergy.h" />
@@ -184,19 +189,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collapse.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Genjibo.cpp" />
     <ClCompile Include="Graphic.cpp" />
+    <ClCompile Include="HeadGunner.cpp" />
+    <ClCompile Include="Helit.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Lifebar.cpp" />
     <ClCompile Include="LightEnergy.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="MapObjectGroup.cpp" />
+    <ClCompile Include="NotorBanger.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Smoke.cpp" />
     <ClCompile Include="Spark.cpp" />
