@@ -8,7 +8,7 @@ Spark::Spark()
 Spark::Spark(Sprite* sprite_spark, SpriteSheet* sprite_sheet)
 {
 	sprite = sprite_spark;
-	animationSpark = new Animation(sprite_sheet, 6, 9, 13, false);
+	animationSpark = new Animation(sprite_sheet, 0, 4, 5, false);
 	allowDraw = false;
 	isDone = false;
 
@@ -66,12 +66,12 @@ void Spark::ChangeAnimation()
 	{
 	case SparkType::Dash:
 	{
-		animationSpark->SetFrame(position, flipFlag, 5, 6, 10);
+		animationSpark->SetFrame(position, flipFlag, 5, 0, 4);
 		break;
 	}
 	case SparkType::Jounce:
 	{
-		animationSpark->SetFrame(position, flipFlag, 5, 11, 19);
+		animationSpark->SetFrame(position, flipFlag, 5, 5, 13);
 		break;
 	}
 	}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="Smoke.png" width="110" height="35">
+    <sprite n="0" x="7" y="11" w="9" h="9" oX="7" oY="11" oW="-61" oH="83" tX ="0" tY="0"/>
+    <sprite n="1" x="17" y="12" w="11" h="12" oX="17" oY="12" oW="-61" oH="83" tX ="0" tY="0"/>
+    <sprite n="2" x="30" y="12" w="14" h="14" oX="30" oY="12" oW="-61" oH="83" tX ="0" tY="0"/>
+    <sprite n="3" x="48" y="11" w="15" h="15" oX="48" oY="11" oW="-61" oH="83" tX ="0" tY="0"/>
+    <sprite n="4" x="65" y="11" w="15" h="15" oX="65" oY="11" oW="-61" oH="83" tX ="0" tY="0"/>
+    <sprite n="5" x="83" y="12" w="12" h="7" oX="83" oY="12" oW="-61" oH="83" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

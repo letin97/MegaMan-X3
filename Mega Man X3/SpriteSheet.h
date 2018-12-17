@@ -31,8 +31,9 @@ public:
 
 	void ReadXML(const char* path);
 	RECT GetRect(int index);
+
 	D3DXVECTOR2 GetTransform(int index);
 	D3DXVECTOR2 GetGun(int index);
-	D3DXVECTOR2 GetSpark(int index);
+	D3DXVECTOR2 GetSmoke(int index);
 };
 

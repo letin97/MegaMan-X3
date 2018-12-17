@@ -176,3 +176,17 @@ D3DXVECTOR2 Animation::GetGun(int index)
 
 	return pGun;
 }
+
+//Lấy tọa độ phóng ra khói so với vị trí vẽ
+D3DXVECTOR2 Animation::GetSmoke(int index)
+{
+	D3DXVECTOR2 pSmoke;
+	if (flipFlag)
+		pSmoke.x = -spriteSheet->GetSmoke(index).x;
+	else
+		pSmoke.x = spriteSheet->GetSmoke(index).x;
+
+	pSmoke.y = spriteSheet->GetSmoke(index).y;
+
+	return pSmoke;
+}

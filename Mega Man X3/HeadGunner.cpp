@@ -1,22 +1,23 @@
 ﻿#include"HeadGunner.h"
 
-HeadGunner::HeadGunner(MegaMan *megaMan, Sprite* sprite_enemy, Sprite* sprite_Item, SpriteSheet* spriteSheet_Enemy, SpriteSheet* spriteSheet_Item)
+HeadGunner::HeadGunner(MegaMan *megaMan, Sprite* sprite_HeadGunner, Sprite* sprite_Item, Sprite* sprite_Explosion,
+	SpriteSheet* spriteSheet_HeadGunner, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
-	sprite = sprite_enemy;
-	animationEnemy = new Animation(spriteSheet_Enemy);
+	sprite = sprite_HeadGunner;
+	animationEnemy = new Animation(spriteSheet_HeadGunner);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_enemy, spriteSheet_Enemy);
+		bullets[i] = new Bullet(sprite_HeadGunner, spriteSheet_HeadGunner);
 	}
 	numBullet = 0;
 
 	item = new Item(megaMan, sprite_Item, spriteSheet_Item);
 
-	explosion = new Explosion(sprite_enemy, spriteSheet_Enemy);
+	explosion = new Explosion(sprite_Explosion, spriteSheet_Explosion);
 	
-	collapse = new Collapse(sprite_enemy, spriteSheet_Enemy);
+	collapse = new Collapse(sprite_HeadGunner, spriteSheet_HeadGunner);
 }
 
 void HeadGunner::New(D3DXVECTOR2 pos)
@@ -34,10 +35,10 @@ void HeadGunner::ChangeAnimation(Keyboard* key)
 	switch (action)
 	{
 	case HeadGunner::Standing:
-		animationEnemy->SetFrame(position, flipFlag, 0, 8, 8, false);
+		animationEnemy->SetFrame(position, flipFlag, 0, 0, 0, false);
 		break;
 	case HeadGunner::Shooting:
-		animationEnemy->SetFrame(position, flipFlag, 15, 9, 12, true);
+		animationEnemy->SetFrame(position, flipFlag, 15, 1, 4, true);
 		break;
 	}
 }

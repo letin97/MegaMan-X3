@@ -125,7 +125,7 @@
                     <obj id="83" name="Wall" x="3596" y="617" w="31" h="398" />
                     <obj id="82" name="Wall" x="3726" y="570" w="31" h="503" />
                     <obj id="81" name="Wall" x="3438" y="831" w="349" h="25" />
-                    <obj id="90" name="Wall" x="4129" y="835" w="898" h="25" />
+                    <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
                 </node>
                 <node level="5" left="2976" top="496" right="3472" bottom="0" numObj="3">
                     <obj id="84" name="Wall" x="3441" y="302" w="606" h="30" />
@@ -140,8 +140,89 @@
             </node>
         </node>
     </node>
-    <node level="2" left="3968" top="3968" right="7936" bottom="0" numObj="2">
-        <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
-        <obj id="90" name="Wall" x="4129" y="835" w="898" h="25" />
+    <node level="2" left="3968" top="3968" right="7936" bottom="0" numObj="0">
+        <node level="3" left="3968" top="3968" right="5952" bottom="1984" numObj="0" />
+        <node level="3" left="5952" top="3968" right="7936" bottom="1984" numObj="0" />
+        <node level="3" left="3968" top="1984" right="5952" bottom="0" numObj="0">
+            <node level="4" left="3968" top="1984" right="4960" bottom="992" numObj="1">
+                <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+            </node>
+            <node level="4" left="4960" top="1984" right="5952" bottom="992" numObj="3">
+                <obj id="113" name="Wall" x="5633" y="928" w="31" h="158" />
+                <obj id="114" name="Wall" x="5889" y="927" w="31" h="158" />
+                <obj id="115" name="Wall" x="5761" y="1015" w="286" h="16" />
+            </node>
+            <node level="4" left="3968" top="992" right="4960" bottom="0" numObj="1">
+                <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+            </node>
+            <node level="4" left="4960" top="992" right="5952" bottom="0" numObj="0">
+                <node level="5" left="4960" top="992" right="5456" bottom="496" numObj="1">
+                    <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                </node>
+                <node level="5" left="5456" top="992" right="5952" bottom="496" numObj="0">
+                    <node level="6" left="5456" top="992" right="5704" bottom="744" numObj="2">
+                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                        <obj id="113" name="Wall" x="5633" y="928" w="31" h="158" />
+                    </node>
+                    <node level="6" left="5704" top="992" right="5952" bottom="744" numObj="3">
+                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                        <obj id="114" name="Wall" x="5889" y="927" w="31" h="158" />
+                        <obj id="123" name="Wall" x="5896" y="567" w="17" h="370" />
+                    </node>
+                    <node level="6" left="5456" top="744" right="5704" bottom="496" numObj="0" />
+                    <node level="6" left="5704" top="744" right="5952" bottom="496" numObj="3">
+                        <obj id="122" name="Wall" x="6048" y="655" w="191" h="31" />
+                        <obj id="123" name="Wall" x="5896" y="567" w="17" h="370" />
+                        <obj id="124" name="Wall" x="6000" y="560" w="129" h="30" />
+                    </node>
+                </node>
+                <node level="5" left="4960" top="496" right="5456" bottom="0" numObj="0" />
+                <node level="5" left="5456" top="496" right="5952" bottom="0" numObj="4">
+                    <obj id="123" name="Wall" x="5896" y="567" w="17" h="370" />
+                    <obj id="126" name="Wall" x="5975" y="366" w="176" h="30" />
+                    <obj id="129" name="Wall" x="5903" y="176" w="29" h="350" />
+                    <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                </node>
+            </node>
+        </node>
+        <node level="3" left="5952" top="1984" right="7936" bottom="0" numObj="0">
+            <node level="4" left="5952" top="1984" right="6944" bottom="992" numObj="0" />
+            <node level="4" left="6944" top="1984" right="7936" bottom="992" numObj="0" />
+            <node level="4" left="5952" top="992" right="6944" bottom="0" numObj="0">
+                <node level="5" left="5952" top="992" right="6448" bottom="496" numObj="0">
+                    <node level="6" left="5952" top="992" right="6200" bottom="744" numObj="3">
+                        <obj id="121" name="Wall" x="6128" y="829" w="29" h="320" />
+                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                        <obj id="120" name="Wall" x="6015" y="839" w="61" h="109" />
+                    </node>
+                    <node level="6" left="6200" top="992" right="6448" bottom="744" numObj="0" />
+                    <node level="6" left="5952" top="744" right="6200" bottom="496" numObj="4">
+                        <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
+                        <obj id="124" name="Wall" x="6000" y="560" w="129" h="30" />
+                        <obj id="122" name="Wall" x="6048" y="655" w="191" h="31" />
+                        <obj id="121" name="Wall" x="6128" y="829" w="29" h="320" />
+                    </node>
+                    <node level="6" left="6200" top="744" right="6448" bottom="496" numObj="0" />
+                </node>
+                <node level="5" left="6448" top="992" right="6944" bottom="496" numObj="0" />
+                <node level="5" left="5952" top="496" right="6448" bottom="0" numObj="5">
+                    <obj id="125" name="Wall" x="6032" y="464" w="129" h="30" />
+                    <obj id="126" name="Wall" x="5975" y="366" w="176" h="30" />
+                    <obj id="127" name="Wall" x="6071" y="271" w="176" h="30" />
+                    <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
+                    <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                </node>
+                <node level="5" left="6448" top="496" right="6944" bottom="0" numObj="2">
+                    <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                    <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
+                </node>
+            </node>
+            <node level="4" left="6944" top="992" right="7936" bottom="0" numObj="4">
+                <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
+                <obj id="132" name="Wall" x="7928" y="161" w="13" h="158" />
+                <obj id="133" name="Wall" x="7678" y="159" w="31" h="158" />
+                <obj id="134" name="Wall" x="7799" y="249" w="274" h="16" />
+            </node>
+        </node>
     </node>
 </Node>

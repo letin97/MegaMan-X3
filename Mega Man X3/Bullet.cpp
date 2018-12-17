@@ -67,6 +67,12 @@ void Bullet::NewBullet(D3DXVECTOR2 position, bool flipflag, int energyLevel)
 		damage = 4;
 		break;
 	}
+	case 6:
+	{
+		bulletType = BulletByte;
+		damage = 0;
+		break;
+	}
 	default:
 		break;
 	}
@@ -76,15 +82,6 @@ void Bullet::NewBullet(D3DXVECTOR2 position, bool flipflag, int energyLevel)
 	this->allowDraw = true;
 	this->position = position;
 	this->flipFlag = flipflag;
-	
-	if (flipFlag)
-	{
-		SetVelocity(-BulletSpeed, 0);
-	}
-	else
-	{
-		SetVelocity(BulletSpeed, 0);
-	}
 }
 
 Bullet::BulletType Bullet::GetBulletType()
@@ -162,7 +159,7 @@ void Bullet::ChangeAnimation()
 	case Bullet::BulletHeadGunner:
 	{
 		SetBound(8, 4);
-		animationBullet->SetFrame(position, flipFlag, 10, 17, 18, true);
+		animationBullet->SetFrame(position, flipFlag, 10, 5, 6, true);
 		break;
 	}
 	case Bullet::BulletNotorBanger:
@@ -174,8 +171,23 @@ void Bullet::ChangeAnimation()
 	case Bullet::BulletHelit:
 	{
 		SetBound(8, 4);
-		animationBullet->SetFrame(position, flipFlag, 10, 81, 82, true);
+		animationBullet->SetFrame(position, flipFlag, 10, 5, 6, true);
 		break;
+	}
+	case Bullet::BulletByte:
+	{
+		switch (bulletState)
+		{
+		case Bullet::Firing:
+			SetBound(7, 7);
+			animationBullet->SetFrame(position, flipFlag, 10, 9, 15, true);
+			break;
+		case Bullet::Cling:
+			SetBound(7, 7);
+			animationBullet->SetFrame(position, flipFlag, 10, 16, 17, false);
+			break;
+		}
+		
 	}
 	}
 }
@@ -226,6 +238,29 @@ void Bullet::Render(Viewport* viewport)
 		}
 	}
 }
+
+void Bullet::OnCollision(Object *obj, D3DXVECTOR2 distance)
+{
+	RECT board = this->GetBoard(distance);
+
+	//Nếu other trong vùng di chuyển
+	if (Collision::isCollision(board, obj->GetBound()))
+	{
+		//Lấy cạnh va chạm
+		D3DXVECTOR2 sideCollision;
+
+		//lấy thời gian va chạm
+		float time = Collision::CollisionAABB(GetBound(), obj->GetBound(), distance, sideCollision);
+
+		//bé hơn 1 thì có va chạm
+		if (time < 1.0f)
+		{
+			this->SetVelocity(0, 0);
+			bulletState = BulletState::Cling;
+		}
+	}
+}
+
 void Bullet::OnCollision()
 {
 	this->SetVelocity(0, 0);

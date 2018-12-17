@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="bum" imagePath="Explosion.png" width="300" height="42">
+    <sprite n="0" x="6" y="15" w="16" h="15" oX="6" oY="15" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="1" x="29" y="6" w="32" h="31" oX="29" oY="6" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="2" x="69" y="11" w="28" h="23" oX="69" oY="11" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="3" x="101" y="10" w="30" h="26" oX="101" oY="10" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="4" x="139" y="9" w="32" h="26" oX="139" oY="9" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="5" x="180" y="5" w="32" h="29" oX="180" oY="5" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="6" x="221" y="4" w="31" h="22" oX="221" oY="4" oW="-222" oH="264" tX ="0" tY="0"/>
+    <sprite n="7" x="260" y="7" w="31" h="15" oX="260" oY="7" oW="-222" oH="264" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

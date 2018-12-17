@@ -18,8 +18,8 @@ void Genjibo::New()
 	allowDraw = true;
 	flipFlag = false;
 	state = Attack1;
-	delay = 40;
-	SetVelocity(-1, 0);
+	delay = 200;
+	SetVelocity(-2, 0);
 	HP = 20;
 	damage = 4;
 }
@@ -29,11 +29,26 @@ void Genjibo::ChangeAnimation(Keyboard* key)
 	SetBound(50, 50);
 	switch (state)
 	{
-	case Attack1:
-		animationBoss->SetFrame(position, flipFlag, 1, 58, 67, true);
+	case Genjibo::Appearing:
+		break;
+	case Genjibo::Attack1:
+		animationBoss->SetFrame(position, flipFlag, 0.5, 58, 67, true);
+		break;
+	case Genjibo::Trans:
+		animationBoss->SetFrame(position, flipFlag, 2, 58, 67, true);
+		break;
+	case Genjibo::Attack2:
+		animationBoss->SetFrame(position, flipFlag, 0.3, 58, 67, true);
+		break;
+	case Genjibo::Attack3:
+		animationBoss->SetFrame(position, flipFlag, 0.2, 68, 84, true);
+		break;
+	case Genjibo::Dying:
+		break;
+	default:
 		break;
 	}
-
+	
 }
 void Genjibo::Update(float dt, Keyboard* key)
 {
@@ -55,17 +70,51 @@ void Genjibo::Update(float dt, Keyboard* key)
 		case Genjibo::Attack1:
 		{
 			if (velocity.y != 0)
-				AddVelocity(0, -0.015f);
+				AddVelocity(0, -0.05f);
 
-			if (HP < 10)
+			if (HP < 15)
 			{
-				SetVelocity(-1, -1);
-				state = Attack2;
+				state = Trans;
 			}
+			break;
+		}
+		case Genjibo::Trans:
+		{
+			if (velocity.x == 0 && velocity.y == 0)
+			{
+				if (delay <= 0)
+					delay = 200;
+				delay--;
+
+				if (delay <= 0)
+				{
+					SetVelocity(-2, 0);
+					state = Attack2;
+				}
+			}
+			break;
 		}
 		case Genjibo::Attack2:
 		{
-			
+			if (velocity.x == 0 && velocity.y == 0)
+			{
+				if (delay <= 0)
+					delay = 200;
+				delay--;
+
+				if (delay <= 0)
+				{
+					SetVelocity(-2, 2);
+					state = Attack3;
+				}
+			}
+			break;
+		}
+		case Genjibo::Attack3:
+		{
+			if (velocity.y != 0)
+				AddVelocity(0, -0.05f);
+			break;
 		}
 		}
 	}
@@ -85,50 +134,62 @@ void Genjibo::OnCollision(Object *obj, D3DXVECTOR2 distance)
 		if (time < 1.0f)
 		{
 			if (sideCollision.x != 0)
-				position.x += distance.x*time;
+				position.x += distance.x * time;
 			else if (sideCollision.y != 0)
-				position.y += distance.y*time;
+				position.y += distance.y * time;
 
 			if (sideCollision.x == -1)	//trái
 			{
-				if (state == Attack1)
+				if (state == Attack1 || state == Trans || state == Attack3)
 				{
-					velocity.x = 1;		
+					velocity.x = 2;		
 				}
-				else
+				else if (state == Attack2)
 				{
 					velocity.x = 0;
-					velocity.y = 1;
+					velocity.y = 2;
 				}
 			}
 			else if (sideCollision.x == 1)	//phải
 			{
-				if (state == Attack1)
+				if (state == Attack1 || state == Attack3)
 				{
-					velocity.x = -1;
+					velocity.x = -2;
+				}
+				else if (state == Trans)
+				{
+					velocity.x = 0;
+					velocity.y = -2;
 				}
 				else
 				{
 					velocity.x = 0;
-					velocity.y = -1;
+					velocity.y = -2;
 				}		
 			}
 			else if (sideCollision.y == 1)	//dưới
 			{
 				if (state == Attack1)
 				{
-					velocity.x = 1;
 					velocity.y = 0;
 				}
-				else
+				else if (state == Trans)
 				{
-					velocity.x = -1;
 					velocity.y = 0;
-				}		
+				}
+				else if (state == Attack2)
+				{
+					velocity.y = 0;
+				}
+				else if (state == Attack3)
+				{
+					velocity.y = 2;
+				}
+
 			}
 			else if (sideCollision.y == -1)	//trên
 			{
-				velocity.x = 1;
+				velocity.x = 2;
 				velocity.y = 0;	
 			}
 			
@@ -141,7 +202,8 @@ void Genjibo::OnCollision(Object *obj)
 	{
 		if (state == Attack1)
 		{
-			velocity.y = 1;
+			if (velocity.y == 0)
+				velocity.y = 2;
 		}
 
 		HP -= obj->GetDamage();

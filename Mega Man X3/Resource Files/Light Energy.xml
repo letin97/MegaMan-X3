@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="blue" imagePath="LightEnergy.png" width="877" height="262">
+    <sprite n="0" x="28" y="4" w="46" h="44" oX="28" oY="4" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="1" x="96" y="7" w="40" h="36" oX="96" oY="7" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="2" x="152" y="8" w="35" h="34" oX="152" oY="8" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="3" x="202" y="9" w="34" h="32" oX="202" oY="9" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="4" x="250" y="4" w="32" h="42" oX="250" oY="4" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="5" x="296" y="5" w="31" h="40" oX="296" oY="5" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="6" x="341" y="6" w="40" h="36" oX="341" oY="6" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="7" x="393" y="4" w="36" h="40" oX="393" oY="4" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="8" x="440" y="6" w="40" h="36" oX="440" oY="6" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="9" x="493" y="7" w="38" h="32" oX="493" oY="7" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="10" x="538" y="8" w="36" h="30" oX="538" oY="8" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="11" x="584" y="9" w="33" h="28" oX="584" oY="9" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="12" x="625" y="10" w="30" h="26" oX="625" oY="10" oW="-625" oH="689" tX ="0" tY="0"/>
+    <sprite n="13" x="666" y="18" w="37" h="10" oX="666" oY="18" oW="-625" oH="689" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="orange" imagePath="LightEnergy.png" width="877" height="262">
+    <sprite n="14" x="38" y="74" w="46" h="44" oX="38" oY="74" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="15" x="97" y="75" w="43" h="40" oX="97" oY="75" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="16" x="154" y="74" w="38" h="36" oX="154" oY="74" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="17" x="208" y="72" w="36" h="34" oX="208" oY="72" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="18" x="259" y="69" w="35" h="44" oX="259" oY="69" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="19" x="309" y="71" w="32" h="42" oX="309" oY="71" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="20" x="354" y="71" w="44" h="39" oX="354" oY="71" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="21" x="410" y="74" w="42" h="36" oX="410" oY="74" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="22" x="461" y="74" w="40" h="44" oX="461" oY="74" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="23" x="513" y="76" w="38" h="42" oX="513" oY="76" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="24" x="564" y="80" w="45" h="39" oX="564" oY="80" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="25" x="626" y="78" w="42" h="37" oX="626" oY="78" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="26" x="679" y="84" w="37" h="32" oX="679" oY="84" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="27" x="724" y="85" w="34" h="28" oX="724" oY="85" oW="100" oH="788" tX ="0" tY="0"/>
+    <sprite n="28" x="773" y="81" w="32" h="26" oX="773" oY="81" oW="100" oH="788" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

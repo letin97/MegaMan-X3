@@ -86,11 +86,11 @@ D3DXVECTOR2 SpriteSheet::GetGun(int index)
 	return pGun;
 }
 
-D3DXVECTOR2 SpriteSheet::GetSpark(int index)
+D3DXVECTOR2 SpriteSheet::GetSmoke(int index)
 {
-	D3DXVECTOR2 pSpark;
-	pSpark.x = tile[index].w * (tile[index].sx - 0.5);
-	pSpark.y = tile[index].h * (tile[index].sy - 0.5);
-	return pSpark;
+	D3DXVECTOR2 pSmoke;
+	pSmoke.x = tile[index].w * (tile[index].sx - 0.5);
+	pSmoke.y = tile[index].h * (tile[index].sy - 0.5);
+	return pSmoke;
 }
 

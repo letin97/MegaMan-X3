@@ -33,4 +33,5 @@ public:
 	void Update(float dt, Keyboard* keyborad);
 
 	D3DXVECTOR2 GetGun(int index);
+	D3DXVECTOR2 GetSmoke(int index);
 };

@@ -5,14 +5,16 @@
 class Genjibo : public Boss
 {
 protected:
-	bool isJump;
+
 public:
 
 	enum GenjiboState
 	{
-		Aliving,
+		Appearing,
 		Attack1,
+		Trans,
 		Attack2,
+		Attack3,
 		Dying
 	};
 	GenjiboState state;

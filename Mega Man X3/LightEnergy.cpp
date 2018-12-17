@@ -8,7 +8,7 @@ LightEnergy::LightEnergy()
 LightEnergy::LightEnergy(Sprite* sprite_light, SpriteSheet* sprite_sheet)
 {
 	sprite = sprite_light;
-	animationLight = new Animation(sprite_sheet, 11, 23, 1, true);
+	animationLight = new Animation(sprite_sheet, 0, 13, 1, true);
 	allowDraw = false;
 
 	lightType = LightType::BlueLight;
@@ -65,13 +65,12 @@ void LightEnergy::ChangeAnimation()
 	{
 	case LightEnergy::BlueLight:
 	{
-		animationLight->SetFrame(position, flipFlag, 1, 20, 33);
+		animationLight->SetFrame(position, flipFlag, 1, 0, 13);
 		break;
 	}
-
 	case LightEnergy::OrangeLight:
 	{
-		animationLight->SetFrame(position, flipFlag, 1, 34, 48);
+		animationLight->SetFrame(position, flipFlag, 1, 14, 28);
 		break;
 	}
 	}

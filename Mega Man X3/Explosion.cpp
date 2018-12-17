@@ -8,7 +8,7 @@ Explosion::Explosion()
 Explosion::Explosion(Sprite* sprite_explosion, SpriteSheet* sprite_sheet)
 {
 	sprite = sprite_explosion;
-	animationExplosion = new Animation(sprite_sheet, 5, 0, 7, false);
+	animationExplosion = new Animation(sprite_sheet, 0, 7, 5, false);
 	allowDraw = false;
 	position = D3DXVECTOR2(0, 0);
 	velocity = D3DXVECTOR2(0, 0);

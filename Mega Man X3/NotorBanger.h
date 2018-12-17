@@ -25,7 +25,8 @@ public:
 
 	NotorBanger() {}
 	~NotorBanger() {}
-	NotorBanger(MegaMan *megaMan, Sprite* sprite_enemy, Sprite* sprite_Item, SpriteSheet* spriteSheet_Enemy, SpriteSheet* spriteSheet_Item);
+	NotorBanger(MegaMan *megaMan, Sprite* sprite_NotorBanger, Sprite* sprite_Item, Sprite* sprite_Explosion,
+		SpriteSheet* spriteSheet_NotorBanger, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion);
 
 	void New(D3DXVECTOR2 pos);
 	void ChangeAnimation(Keyboard* key);

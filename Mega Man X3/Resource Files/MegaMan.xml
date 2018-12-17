@@ -58,11 +58,11 @@
     <sprite n ="36" x="243" y="157" w="35" h="31" oX="243" oY="157" oW="-53" oH="90" tX ="0" tY="0"/>
   </Animation>
   <Animation name="glide" imagePath="MegaMan.png" width="538" height="930">
-    <sprite n ="37" x="285" y="158" w="30" h="32" oX="285" oY="158" oW="-122" oH="55" sX="0" sY="0.1" gX="1.0" gY="0.6" tX ="0" tY="0"/>
+    <sprite n ="37" x="285" y="158" w="30" h="32" oX="285" oY="158" oW="-122" oH="55" gX="1.0" gY="0.6" tX ="0" tY="0"/>
     <sprite n ="38" x="317" y="163" w="38" h="26" oX="317" oY="163" oW="-122" oH="55" sX="0.25" sY="0" gX="1.0" gY="0.6" tX ="0" tY="4"/>
   </Animation>
   <Animation name="glideshoot" imagePath="MegaMan.png" width="538" height="930">
-    <sprite n ="39" x="361" y="158" w="38" h="32" oX="361" oY="158" oW="-204" oH="76" sX="0" sY="0" gX="1.0" gY="0.6" tX ="0" tY="0"/>
+    <sprite n ="39" x="361" y="158" w="38" h="32" oX="361" oY="158" oW="-204" oH="76" gX="1.0" gY="0.6" tX ="0" tY="0"/>
     <sprite n ="40" x="404" y="163" w="50" h="26" oX="404" oY="163" oW="-204" oH="76" sX="0.25" sY="0" gX="1.0" gY="0.6" tX ="0" tY="4"/>
   </Animation>
   <Animation name="runshoot" imagePath="MegaMan.png" width="538" height="930">

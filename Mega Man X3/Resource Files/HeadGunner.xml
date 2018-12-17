@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="stand" imagePath="HeadGunner.png" width="418" height="309">
+   <sprite n="0" x="88" y="3" w="38" h="46" oX="88" oY="3" oW="-44" oH="38" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="shoot" imagePath="HeadGunner.png" width="418" height="309">
+   <sprite n="1" x="17" y="54" w="38" h="46" gX="0.2" gY="0.7" oX="17" oY="54" oW="78" oH="159" tX ="0" tY="0"/>
+   <sprite n="2" x="57" y="54" w="38" h="46" gX="0.2" gY="0.7" oX="57" oY="54" oW="78" oH="159" tX ="0" tY="0"/>
+   <sprite n="3" x="97" y="54" w="40" h="46" gX="0.2" gY="0.7" oX="97" oY="54" oW="78" oH="159" tX ="0" tY="0"/>
+   <sprite n="4" x="137" y="54" w="38" h="46" gX="0.2" gY="0.7" oX="137" oY="54" oW="78" oH="159" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="bullet" imagePath="HeadGunner.png" width="418" height="309">
+   <sprite n="5" x="54" y="168" w="21" h="6" oX="54" oY="168" oW="126" oH="45" tX ="0" tY="0"/>
+   <sprite n="6" x="79" y="167" w="23" h="6" oX="79" oY="167" oW="126" oH="45" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="die" imagePath="HeadGunner.png" width="418" height="309">
+   <sprite n="7" x="55" y="261" w="14" h="12" oX="55" oY="261" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="8" x="80" y="261" w="15" h="12" oX="80" oY="261" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="9" x="103" y="260" w="15" h="15" oX="103" oY="260" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="10" x="131" y="264" w="11" h="8" oX="131" oY="264" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="11" x="147" y="263" w="11" h="12" oX="147" oY="263" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="12" x="167" y="260" w="15" h="15" oX="167" oY="260" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="13" x="67" y="292" w="18" h="7" oX="67" oY="292" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="14" x="99" y="287" w="8" h="11" oX="99" oY="287" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="15" x="116" y="284" w="15" h="13" oX="116" oY="284" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="16" x="139" y="292" w="7" h="7" oX="139" oY="292" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="17" x="159" y="292" w="4" h="7" oX="159" oY="292" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="18" x="171" y="292" w="8" h="4" oX="171" oY="292" oW="257" oH="149" tX ="0" tY="0"/>
+   <sprite n="19" x="187" y="295" w="8" h="4" oX="187" oY="295" oW="257" oH="149" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

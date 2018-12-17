@@ -157,6 +157,18 @@
     <ClInclude Include="Genjibo.h">
       <Filter>Object\Boss</Filter>
     </ClInclude>
+    <ClInclude Include="Byte.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="BlastHornet.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Bee.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Parasitic.h">
+      <Filter>Object\Boss</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -274,6 +286,18 @@
       <Filter>Object\Boss</Filter>
     </ClCompile>
     <ClCompile Include="Genjibo.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Byte.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="BlastHornet.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Bee.cpp">
+      <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Parasitic.cpp">
       <Filter>Object\Boss</Filter>
     </ClCompile>
   </ItemGroup>

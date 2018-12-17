@@ -1,22 +1,23 @@
 ﻿#include"Helit.h"
 
-Helit::Helit(MegaMan *megaMan, Sprite* sprite_enemy, Sprite* sprite_Item, SpriteSheet* spriteSheet_Enemy, SpriteSheet* spriteSheet_Item)
+Helit::Helit(MegaMan *megaMan, Sprite* sprite_Helit, Sprite* sprite_Item, Sprite* sprite_Explosion,
+	SpriteSheet* spriteSheet_Helit, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
-	sprite = sprite_enemy;
-	animationEnemy = new Animation(spriteSheet_Enemy);
+	sprite = sprite_Helit;
+	animationEnemy = new Animation(spriteSheet_Helit);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_enemy, spriteSheet_Enemy);
+		bullets[i] = new Bullet(sprite_Helit, spriteSheet_Helit);
 	}
 	numBullet = 0;
 
 	item = new Item(megaMan, sprite_Item, spriteSheet_Item);
 
-	explosion = new Explosion(sprite_enemy, spriteSheet_Enemy);
+	explosion = new Explosion(sprite_Explosion, spriteSheet_Explosion);
 
-	collapse = new Collapse(sprite_enemy, spriteSheet_Enemy);
+	collapse = new Collapse(sprite_Helit, spriteSheet_Helit);
 }
 
 void Helit::New(D3DXVECTOR2 pos)
@@ -31,7 +32,7 @@ void Helit::New(D3DXVECTOR2 pos)
 void Helit::ChangeAnimation(Keyboard* key)
 {
 	SetBound(40, 30);
-	animationEnemy->SetFrame(position, flipFlag, 5, 67, 71, true);
+	animationEnemy->SetFrame(position, flipFlag, 5, 0, 4, true);
 }
 
 void Helit::Update(float dt, Keyboard* key)

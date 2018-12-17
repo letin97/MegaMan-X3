@@ -27,7 +27,7 @@ void Smoke::NewSmoke(D3DXVECTOR2 position, bool flipflag)
 	this->allowDraw = true;
 	this->position = position;
 	this->flipFlag = flipflag;
-	velocity = D3DXVECTOR2(0, 0.2);
+	velocity = D3DXVECTOR2(0, 0.25f);
 }
 
 void Smoke::ChangeAnimation()

@@ -60,7 +60,7 @@
     <sprite n="56" x="451" y="273" w="46" h="46" oX="451" oY="273" oW="230" oH="533" tX="0" tY="0" />
     <sprite n="57" x="502" y="274" w="48" h="48" oX="502" oY="274" oW="230" oH="533" tX="0" tY="0" />
   </Animation>
-  <Animation name="move" imagePath="x3_subboss_genjibo.png" width="555" height="469">
+  <Animation name="attack1" imagePath="x3_subboss_genjibo.png" width="555" height="469">
     <sprite n="58" x="0" y="356" w="45" h="46" oX="0" oY="356" oW="403" oH="542" tX="0" tY="0" />
     <sprite n="59" x="52" y="355" w="47" h="46" oX="52" oY="355" oW="403" oH="542" tX="0" tY="0" />
     <sprite n="60" x="106" y="357" w="45" h="44" oX="106" oY="357" oW="403" oH="542" tX="0" tY="0" />
@@ -71,5 +71,24 @@
     <sprite n="65" x="390" y="353" w="47" h="46" oX="390" oY="353" oW="403" oH="542" tX="0" tY="0" />
     <sprite n="66" x="446" y="355" w="45" h="44" oX="446" oY="355" oW="403" oH="542" tX="0" tY="0" />
     <sprite n="67" x="498" y="353" w="47" h="46" oX="498" oY="353" oW="403" oH="542" tX="0" tY="0" />
+  </Animation>
+  <Animation name="attack3" imagePath="Boss Genjibo.png" width="555" height="469">
+    <sprite n="68" x="2" y="412" w="46" h="48" oX="2" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="69" x="54" y="412" w="44" h="48" oX="54" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="70" x="103" y="412" w="42" h="48" oX="103" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="71" x="150" y="412" w="40" h="48" oX="150" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="72" x="197" y="412" w="36" h="48" oX="197" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="73" x="238" y="412" w="35" h="48" oX="238" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="74" x="278" y="412" w="33" h="48" oX="278" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="75" x="314" y="412" w="30" h="48" oX="314" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="76" x="348" y="412" w="29" h="48" oX="348" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="77" x="381" y="412" w="27" h="48" oX="381" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="78" x="412" y="412" w="22" h="48" oX="412" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="79" x="441" y="412" w="18" h="48" oX="441" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="80" x="465" y="412" w="12" h="48" oX="465" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="81" x="487" y="413" w="8" h="48" oX="487" oY="413" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="82" x="504" y="412" w="9" h="48" oX="504" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="83" x="518" y="412" w="7" h="48" oX="518" oY="412" oW="458" oH="593" tX="0" tY="0" />
+    <sprite n="84" x="530" y="412" w="9" h="48" oX="530" oY="412" oW="458" oH="593" tX="0" tY="0" />
   </Animation>
 </Animations>

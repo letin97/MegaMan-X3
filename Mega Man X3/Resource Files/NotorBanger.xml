@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="target" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="0" x="34" y="19" w="38" h="31" oX="34" oY="19" oW="-132" oH="207" tX ="0" tY="0" />
+    <sprite n="1" x="76" y="12" w="36" h="38" oX="76" oY="12" oW="-132" oH="207" tX ="1" tY="-3.5" />
+    <sprite n="2" x="117" y="7" w="33" h="43" oX="117" oY="7" oW="-132" oH="207" tX ="2.5" tY="-6" />
+    <sprite n="3" x="161" y="4" w="28" h="46" oX="161" oY="4" oW="-132" oH="207" tX ="5" tY="-7.5" />
+    <sprite n="4" x="197" y="2" w="26" h="48" oX="197" oY="2" oW="-132" oH="207" tX ="6" tY="-8.5" />
+  </Animation>
+  <Animation name="back" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="5" x="197" y="2" w="26" h="48" oX="197" oY="2" oW="20" oH="207" tX ="6" tY="-8.5" />
+    <sprite n="6" x="161" y="4" w="28" h="46" oX="161" oY="4" oW="20" oH="207" tX ="5" tY="-7.5" />
+    <sprite n="7" x="117" y="7" w="33" h="43" oX="117" oY="7" oW="20" oH="207" tX ="2.5" tY="-6" />
+    <sprite n="8" x="76" y="12" w="36" h="38" oX="76" oY="12" oW="20" oH="207" tX ="1" tY="-3.5" />
+    <sprite n="9" x="34" y="19" w="38" h="31" oX="34" oY="19" oW="20" oH="207" tX ="0" tY="0" />
+  </Animation>
+  <Animation name="shooting vetical" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="10" x="24" y="60" w="26" h="47" gX="0.6" gY="1" oX="24" oY="60" oW="76" oH="61" tX ="6" tY="-5.5" />
+    <sprite n="11" x="59" y="62" w="27" h="45" gX="0.6" gY="1" oX="59" oY="62" oW="76" oH="61" tX ="6" tY="-4.5" />
+  </Animation>
+  <Animation name="shooting skew" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="12" x="103" y="65" w="32" h="42" gX="0.1" gY="1" oX="103" oY="65" oW="-47" oH="79" tX ="3.5" tY="-5" />
+    <sprite n="13" x="149" y="67" w="31" h="40" gX="0.1" gY="1" oX="149" oY="67" oW="-47" oH="79" tX ="4" tY="-4" />
+  </Animation>
+  <Animation name="move" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="14" x="9" y="118" w="39" h="30" oX="9" oY="118" oW="146" oH="222" tX ="0" tY="0" />
+    <sprite n="15" x="53" y="120" w="40" h="28" oX="53" oY="120" oW="146" oH="222" tX ="0" tY="0" />
+    <sprite n="16" x="102" y="118" w="39" h="30" oX="102" oY="118" oW="146" oH="222" tX ="0" tY="0" />
+    <sprite n="17" x="153" y="117" w="38" h="31" oX="153" oY="117" oW="146" oH="222" tX ="0" tY="0" />
+    <sprite n="18" x="196" y="108" w="47" h="40" oX="196" oY="108" oW="146" oH="222" tX ="0" tY="0" />
+  </Animation>
+  <Animation name="bullet" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="19" x="193" y="86" w="8" h="7" oX="193" oY="86" oW="-99" oH="8" tX ="0" tY="0" />
+  </Animation>
+  <Animation name="die" imagePath="NotorBanger.png" width="278" height="248">
+    <sprite n="20" x="21" y="170" w="8" h="7" oX="21" oY="170" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="21" x="39" y="170" w="22" h="26" oX="39" oY="170" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="22" x="77" y="173" w="11" h="11" oX="77" oY="173" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="23" x="101" y="178" w="24" h="7" oX="101" oY="178" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="24" x="133" y="170" w="21" h="14" oX="133" oY="170" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="25" x="167" y="166" w="18" h="19" oX="167" oY="166" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="26" x="197" y="163" w="14" h="21" oX="197" oY="163" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="27" x="221" y="162" w="8" h="23" oX="221" oY="162" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="28" x="239" y="162" w="21" h="22" oX="239" oY="162" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="29" x="38" y="215" w="27" h="10" oX="38" oY="215" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="30" x="78" y="213" w="26" h="12" oX="78" oY="213" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="31" x="118" y="212" w="25" h="13" oX="118" oY="212" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="32" x="157" y="203" w="18" h="22" oX="157" oY="203" oW="205" oH="231" tX ="0" tY="0" />
+    <sprite n="33" x="188" y="218" w="18" h="7" oX="188" oY="218" oW="205" oH="231" tX ="0" tY="0" />
+  </Animation>
+</Animations>

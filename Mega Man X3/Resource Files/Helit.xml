@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="Helit.png" width="171" height="92">
+    <sprite n="0" x="9" y="6" w="39" h="36" gX="0.2" gY="0.1" oX="9" oY="6" oW="-99" oH="172" tX ="0" tY="0"/>
+    <sprite n="1" x="50" y="6" w="27" h="36" gX="0.2" gY="0.1" oX="50" oY="6" oW="-99" oH="172" tX ="0" tY="0"/>
+    <sprite n="2" x="80" y="6" w="24" h="36" gX="0.2" gY="0.1" oX="80" oY="6" oW="-99" oH="172" tX ="0" tY="0"/>
+    <sprite n="3" x="108" y="6" w="24" h="36" gX="0.2" gY="0.1" oX="108" oY="6" oW="-99" oH="172" tX ="0" tY="0"/>
+    <sprite n="4" x="136" y="6" w="27" h="36" gX="0.2" gY="0.1" oX="136" oY="6" oW="-99" oH="172" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="bullet" imagePath="Helit.png" width="171" height="92">
+    <sprite n="5" x="115" y="68" w="15" h="8" oX="115" oY="68" oW="-57" oH="37" tX ="0" tY="0"/>
+    <sprite n="6" x="138" y="68" w="15" h="10" oX="138" oY="68" oW="-57" oH="37" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="die" imagePath="Helit.png" width="171" height="92">
+    <sprite n="7" x="11" y="52" w="23" h="30" oX="11" oY="52" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="8" x="46" y="53" w="41" h="6" oX="46" oY="53" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="9" x="101" y="53" w="26" h="6" oX="101" oY="53" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="10" x="139" y="53" w="16" h="6" oX="139" oY="53" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="11" x="43" y="68" w="9" h="7" oX="43" oY="68" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="12" x="67" y="68" w="12" h="10" oX="67" oY="68" oW="95" oH="154" tX ="0" tY="0"/>
+    <sprite n="13" x="91" y="68" w="16" h="14" oX="91" oY="68" oW="95" oH="154" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

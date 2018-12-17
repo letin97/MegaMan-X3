@@ -35,9 +35,6 @@ public:
 
 	void BleedAnimation();
 
-	D3DXVECTOR2 GetGun(int index);
-	D3DXVECTOR2 GetSpark(int index);
-
 	void Update(float dt, Keyboard* key);
 };
 

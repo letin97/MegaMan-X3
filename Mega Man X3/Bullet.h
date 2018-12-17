@@ -20,7 +20,8 @@ public:
 		BulletLv3,
 		BulletHeadGunner,
 		BulletNotorBanger,
-		BulletHelit
+		BulletHelit,
+		BulletByte
 	};
 	BulletType bulletType;
 
@@ -28,6 +29,7 @@ public:
 	{
 		Firing,
 		Bursting,
+		Cling
 	};
 	BulletState bulletState;
 
@@ -46,5 +48,6 @@ public:
 	void ChangeAnimation();
 	void Update(float dt, Keyboard* key);
 	void Render(Viewport* viewport);
+	void OnCollision(Object *obj, D3DXVECTOR2 distance);
 	void OnCollision();
 };

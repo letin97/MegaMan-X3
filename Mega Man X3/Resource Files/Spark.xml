@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="dash" imagePath="Spark.png" width="338" height="73">
+    <sprite n="0" x="4" y="21" w="19" h="16" oX="4" oY="21" oW="-60" oH="125" tX ="0" tY="0"/>
+    <sprite n="1" x="27" y="12" w="23" h="24" oX="27" oY="12" oW="-60" oH="125" tX ="0" tY="0"/>
+    <sprite n="2" x="55" y="11" w="24" h="26" oX="55" oY="11" oW="-60" oH="125" tX ="0" tY="0"/>
+    <sprite n="3" x="83" y="9" w="27" h="28" oX="83" oY="9" oW="-60" oH="125" tX ="0" tY="0"/>
+    <sprite n="4" x="115" y="9" w="28" h="28" oX="115" oY="9" oW="-60" oH="125" tX ="0" tY="0"/>
+  </Animation>
+  <Animation name="jounce" imagePath="Spark.png" width="338" height="73">
+    <sprite n="5" x="4" y="43" w="15" h="15" oX="4" oY="43" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="6" x="29" y="38" w="20" h="25" oX="29" oY="38" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="7" x="59" y="41" w="32" h="26" oX="59" oY="41" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="8" x="100" y="41" w="32" h="31" oX="100" oY="41" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="9" x="147" y="42" w="28" h="26" oX="147" oY="42" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="10" x="188" y="40" w="28" h="28" oX="188" oY="40" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="11" x="227" y="42" w="28" h="26" oX="227" oY="42" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="12" x="263" y="40" w="29" h="27" oX="263" oY="40" oW="54" oH="306" tX ="0" tY="0"/>
+    <sprite n="13" x="303" y="42" w="31" h="25" oX="303" oY="42" oW="54" oH="306" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

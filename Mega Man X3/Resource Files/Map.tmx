@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="113">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="136">
  <tileset firstgid="1" name="megaman_x3__blast_hornet_stage_by_darksamus993-d8lave3" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
   <image source="Blast Hornet Stage.png" width="7946" height="2846"/>
  </tileset>
@@ -87,7 +87,11 @@
   <object id="112" x="3264" y="1536" width="352" height="224"/>
   <object id="113" x="3552" y="1024" width="256" height="736"/>
   <object id="114" x="3680" y="1024" width="576" height="224"/>
-  <object id="115" x="4256" y="768" width="1368.67" height="480"/>
+  <object id="115" x="4256" y="768" width="1376" height="480"/>
+  <object id="116" x="5632" y="1024" width="256" height="224"/>
+  <object id="117" x="5888" y="1024" width="256" height="1024"/>
+  <object id="118" x="6144" y="1792" width="1536" height="224"/>
+  <object id="119" x="7680" y="1792" width="256" height="224"/>
  </objectgroup>
  <objectgroup id="20" name="NotorBanger">
   <object id="105" x="237.875" y="907.708" width="28.25" height="31.25"/>
@@ -132,9 +136,27 @@
   <object id="84" x="3138.17" y="1730.33" width="606.167" height="30.666"/>
   <object id="87" x="3136.5" y="1215.5" width="31" height="514.665"/>
   <object id="88" x="3265.33" y="1229.33" width="31" height="401.165"/>
-  <object id="90" x="3680" y="1199.17" width="898.666" height="25.6663"/>
+  <object id="90" x="3680" y="1199.17" width="2303.34" height="25.6663"/>
   <object id="107" x="2303.29" y="1039.96" width="15.8337" height="160"/>
   <object id="108" x="2303.04" y="1024.87" width="254.25" height="14.8864"/>
   <object id="109" x="2545.08" y="1040" width="15.8337" height="160"/>
+  <object id="113" x="5617.95" y="1040.82" width="31" height="158.166"/>
+  <object id="114" x="5874" y="1040.92" width="31" height="158.166"/>
+  <object id="115" x="5618.5" y="1023.92" width="286" height="16.666"/>
+  <object id="120" x="5984.5" y="1153.58" width="61" height="109.499"/>
+  <object id="121" x="6113.5" y="1057.58" width="29.5" height="320.999"/>
+  <object id="122" x="5952.75" y="1377.25" width="191" height="31.499"/>
+  <object id="123" x="5887.25" y="1295.5" width="17.5" height="370.499"/>
+  <object id="124" x="5935.5" y="1472.75" width="129" height="30.499"/>
+  <object id="125" x="5968" y="1568.25" width="129" height="30.499"/>
+  <object id="126" x="5887.5" y="1666.25" width="176.5" height="30.499"/>
+  <object id="127" x="5982.75" y="1761.25" width="176.5" height="30.499"/>
+  <object id="128" x="6128.58" y="1406.08" width="17.5" height="355.166"/>
+  <object id="129" x="5888.58" y="1696.83" width="29.5" height="350.332"/>
+  <object id="130" x="5918.42" y="1968.75" width="592.5" height="18.499"/>
+  <object id="131" x="6560.75" y="1967.75" width="1374.5" height="25.499"/>
+  <object id="132" x="7921.83" y="1807.58" width="13" height="158.166"/>
+  <object id="133" x="7663.17" y="1808.92" width="31" height="158.166"/>
+  <object id="134" x="7662.58" y="1790.45" width="274" height="16.666"/>
  </objectgroup>
 </map>

@@ -11,6 +11,7 @@ class Boss : public Object
 protected:
 	int delay;
 	Animation *animationBoss;
+
 public:
 	
 	Boss();

@@ -23,15 +23,18 @@ protected:
 
 	int numBullet;
 	int numSmoke;
+	int delay;
 	
 public:
 	MegaMan() {}
-	MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_Effect,Sprite* sprite_Weapons_And_Items,
-		SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_Effect, SpriteSheet* spriteSheet_Weapons_And_Items);
+	MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
+		Sprite* sprite_Smoke, Sprite* sprite_Weapons_And_Items,
+		SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_LightEnergy, SpriteSheet* spriteSheet_Spark,
+		SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items);
 	~MegaMan();
 
 	Bullet* bullets[3];
-	Smoke* smokes[6];
+	Smoke* smokes[8];
 
 	const char* pathPNG;
 

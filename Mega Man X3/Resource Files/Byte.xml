@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="stand" imagePath="Boss Byte.png" width="507" height="380">
+    <sprite n="0" x="34" y="4" w="60" h="84" oX="34" oY="4" oW="-26" oH="128" tX="0" tY="0" />
+    <sprite n="1" x="102" y="4" w="60" h="84" oX="102" oY="4" oW="-26" oH="128" tX="0" tY="0" />
+  </Animation>
+  <Animation name="shoot" imagePath="Boss Byte.png" width="507" height="380">
+    <sprite n="2" x="119" y="274" w="60" h="74" oX="119" oY="274" oW="232" oH="243" tX="0" tY="5" />
+    <sprite n="3" x="187" y="274" w="61" h="74" oX="187" oY="274" oW="232" oH="243" tX="0" tY="5" />
+    <sprite n="4" x="255" y="278" w="54" h="70" oX="255" oY="278" oW="232" oH="243" tX="0" tY="7" />
+    <sprite n="5" x="314" y="281" w="84" h="66" oX="314" oY="281" oW="232" oH="243" gX="0" gY="0.55" tX="-12" tY="9" />
+  </Animation>
+  <Animation name="glide" imagePath="Boss Byte.png" width="507" height="380">
+    <sprite n="6" x="258" y="198" w="54" h="70" oX="258" oY="198" oW="-124" oH="180" tX="0" tY="7" />
+    <sprite n="7" x="320" y="202" w="62" h="66" oX="320" oY="202" oW="-124" oH="180" tX="0" tY="9" />
+    <sprite n="8" x="390" y="204" w="62" h="62" sX="1" sY="-0.1" oX="390" oY="204" oW="-124" oH="180" tX="0" tY="11" />
+  </Animation>
+  <Animation name="bullet" imagePath="Boss Byte.png" width="507" height="380">
+    <sprite n="9" x="164" y="356" w="19" h="19" oX="164" oY="356" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="10" x="185" y="354" w="21" h="21" oX="185" oY="354" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="11" x="208" y="356" w="19" h="19" oX="208" oY="356" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="12" x="229" y="354" w="21" h="21" oX="229" oY="354" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="13" x="252" y="356" w="19" h="19" oX="252" oY="356" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="14" x="273" y="356" w="19" h="19" oX="273" oY="356" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="15" x="294" y="354" w="21" h="21" oX="294" oY="354" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="16" x="317" y="354" w="13" h="21" oX="317" oY="354" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="17" x="332" y="354" w="11" h="21" oX="332" oY="354" oW="211" oH="206" tX="0" tY="0" />
+    <sprite n="18" x="345" y="354" w="7" h="21" oX="345" oY="354" oW="211" oH="206" tX="0" tY="0" />
+  </Animation>
+</Animations>

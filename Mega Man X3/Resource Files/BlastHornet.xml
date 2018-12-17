@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="0" x="66" y="3" w="50" h="90" oX="66" oY="3" oW="-197" oH="263" tX="0" tY="0" />
+    <sprite n="1" x="122" y="4" w="74" h="89" oX="122" oY="4" oW="-197" oH="263" tX="0" tY="0.5" />
+    <sprite n="2" x="200" y="21" w="96" h="72" oX="200" oY="21" oW="-197" oH="263" tX="0.5" tY="9" />
+    <sprite n="3" x="302" y="22" w="96" h="71" oX="302" oY="22" oW="-197" oH="263" tX="0.5" tY="9.5" />
+  </Animation>
+  <Animation name="swoop" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="4" x="248" y="275" w="47" h="79" oX="248" oY="275" oW="118" oH="151" tX="0" tY="0" />
+    <sprite n="5" x="299" y="276" w="74" h="78" oX="299" oY="276" oW="118" oH="151" tX="0" tY="0" />
+    <sprite n="6" x="377" y="294" w="96" h="60" oX="377" oY="294" oW="118" oH="151" tX="0" tY="9.5" />
+  </Animation>
+  <Animation name="needles" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="7" x="15" y="99" w="47" h="83" oX="15" oY="99" oW="704" oH="405" tX="0" tY="0" />
+    <sprite n="8" x="67" y="99" w="74" h="83" oX="67" oY="99" oW="704" oH="405" tX="0" tY="0" />
+    <sprite n="9" x="144" y="117" w="96" h="65" oX="144" oY="117" oW="704" oH="405" tX="0" tY="9" />
+    <sprite n="10" x="247" y="99" w="47" h="80" oX="247" oY="99" oW="704" oH="405" tX="0" tY="1.5" />
+    <sprite n="11" x="299" y="100" w="74" h="79" oX="299" oY="100" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="12" x="377" y="118" w="95" h="61" oX="377" oY="118" oW="704" oH="405" tX="0" tY="11" />
+    <sprite n="13" x="16" y="189" w="47" h="76" oX="16" oY="189" oW="704" oH="405" tX="0" tY="3.5" />
+    <sprite n="14" x="69" y="192" w="74" h="73" oX="69" oY="192" oW="704" oH="405" tX="0" tY="5" />
+    <sprite n="15" x="148" y="210" w="96" h="55" oX="148" oY="210" oW="704" oH="405" tX="0" tY="14" />
+    <sprite n="16" x="248" y="190" w="47" h="75" oX="248" oY="190" oW="704" oH="405" tX="0" tY="4" />
+    <sprite n="17" x="299" y="190" w="74" h="75" oX="299" oY="190" oW="704" oH="405" tX="0" tY="4" />
+    <sprite n="18" x="376" y="208" w="96" h="57" oX="376" oY="208" oW="704" oH="405" tX="0" tY="13" />
+    <sprite n="19" x="15" y="275" w="47" h="76" oX="15" oY="275" oW="704" oH="405" tX="0" tY="3.5" />
+    <sprite n="20" x="67" y="276" w="74" h="75" oX="67" oY="276" oW="704" oH="405" tX="0" tY="4" />
+    <sprite n="21" x="146" y="294" w="94" h="57" oX="146" oY="294" oW="704" oH="405" tX="0" tY="13" />
+    <sprite n="22" x="248" y="275" w="47" h="79" oX="248" oY="275" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="23" x="299" y="276" w="74" h="78" oX="299" oY="276" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="24" x="377" y="294" w="96" h="60" oX="377" oY="294" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="25" x="15" y="358" w="47" h="79" oX="15" oY="358" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="26" x="66" y="359" w="74" h="78" oX="66" oY="359" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="27" x="145" y="377" w="96" h="60" oX="145" oY="377" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="28" x="250" y="358" w="47" h="79" oX="250" oY="358" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="29" x="302" y="359" w="74" h="78" oX="302" oY="359" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="30" x="382" y="377" w="96" h="60" oX="382" oY="377" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="31" x="14" y="446" w="49" h="80" oX="14" oY="446" oW="704" oH="405" tX="0" tY="1.5" />
+    <sprite n="32" x="70" y="447" w="74" h="79" oX="70" oY="447" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="33" x="149" y="465" w="96" h="61" oX="149" oY="465" oW="704" oH="405" tX="0" tY="11" />
+    <sprite n="34" x="252" y="446" w="48" h="79" oX="252" oY="446" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="35" x="306" y="447" w="74" h="78" oX="306" oY="447" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="36" x="386" y="465" w="96" h="60" oX="386" oY="465" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="37" x="16" y="537" w="47" h="79" oX="16" oY="537" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="38" x="69" y="538" w="79" h="78" oX="69" oY="538" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="39" x="155" y="556" w="96" h="60" oX="155" oY="556" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="40" x="260" y="537" w="48" h="79" oX="260" oY="537" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="41" x="315" y="538" w="74" h="78" oX="315" oY="538" oW="704" oH="405" tX="0" tY="2.5" />
+    <sprite n="42" x="394" y="556" w="96" h="60" oX="394" oY="556" oW="704" oH="405" tX="0" tY="11.5" />
+    <sprite n="43" x="117" y="624" w="49" h="80" oX="117" oY="624" oW="704" oH="405" tX="0" tY="1.5" />
+    <sprite n="44" x="172" y="625" w="74" h="79" oX="172" oY="625" oW="704" oH="405" tX="0" tY="2" />
+    <sprite n="45" x="252" y="643" w="96" h="61" oX="252" oY="643" oW="704" oH="405" tX="0" tY="11" />
+  </Animation>
+  <Animation name="launch" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="46" x="15" y="714" w="51" h="87" oX="15" oY="714" oW="893" oH="411" tX="0" tY="0" />
+    <sprite n="47" x="74" y="714" w="74" h="87" oX="74" oY="714" oW="893" oH="411" tX="0" tY="0" />
+    <sprite n="48" x="153" y="732" w="96" h="69" oX="153" oY="732" oW="893" oH="411" tX="0" tY="9" />
+    <sprite n="49" x="258" y="715" w="51" h="91" oX="258" oY="715" oW="893" oH="411" tX="0" tY="-2" />
+    <sprite n="50" x="315" y="716" w="79" h="90" oX="315" oY="716" oW="893" oH="411" tX="0" tY="-1.5" />
+    <sprite n="51" x="398" y="734" w="96" h="72" oX="398" oY="734" oW="893" oH="411" tX="0" tY="7.5" />
+    <sprite n="52" x="15" y="815" w="51" h="95" oX="15" oY="815" oW="893" oH="411" tX="0" tY="-4" />
+    <sprite n="53" x="70" y="816" w="74" h="94" oX="70" oY="816" oW="893" oH="411" tX="0" tY="-3.5" />
+    <sprite n="54" x="149" y="834" w="96" h="76" oX="149" oY="834" oW="893" oH="411" tX="0" tY="5.5" />
+    <sprite n="55" x="254" y="816" w="48" h="94" oX="254" oY="816" oW="893" oH="411" tX="0" tY="-3.5" />
+    <sprite n="56" x="309" y="816" w="79" h="94" oX="309" oY="816" oW="893" oH="411" tX="0" tY="-3.5" />
+    <sprite n="57" x="392" y="834" w="96" h="76" oX="392" oY="834" oW="893" oH="411" tX="0" tY="5.5" />
+    <sprite n="58" x="398" y="734" w="96" h="72" oX="398" oY="734" oW="893" oH="411" tX="0" tY="7.5" />
+    <sprite n="59" x="315" y="716" w="79" h="90" oX="315" oY="716" oW="893" oH="411" tX="0" tY="-1.5" />
+    <sprite n="60" x="258" y="715" w="51" h="91" oX="258" oY="715" oW="893" oH="411" tX="0" tY="-2" />
+    <sprite n="61" x="153" y="732" w="96" h="69" oX="153" oY="732" oW="893" oH="411" tX="0" tY="9" />
+    <sprite n="62" x="74" y="714" w="74" h="87" oX="74" oY="714" oW="893" oH="411" tX="0" tY="0" />
+    <sprite n="63" x="15" y="714" w="51" h="87" oX="15" oY="714" oW="893" oH="411" tX="0" tY="0" />
+  </Animation>
+  <Animation name="bee" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="64" x="5" y="1033" w="19" h="21" oX="5" oY="1033" oW="1054" oH="70" tX="0" tY="0" />
+    <sprite n="65" x="29" y="1035" w="22" h="19" oX="29" oY="1035" oW="1054" oH="70" tX="0" tY="0" />
+    <sprite n="66" x="56" y="1037" w="19" h="17" oX="56" oY="1037" oW="1054" oH="70" tX="0" tY="0" />
+  </Animation>
+  <Animation name="burst" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="67" x="293" y="1034" w="20" h="19" oX="293" oY="1034" oW="761" oH="166" tX="0" tY="0" />
+    <sprite n="68" x="315" y="1032" w="24" h="23" oX="315" oY="1032" oW="761" oH="166" tX="0" tY="0" />
+    <sprite n="69" x="342" y="1031" w="26" h="25" oX="342" oY="1031" oW="761" oH="166" tX="0" tY="0" />
+    <sprite n="70" x="371" y="1029" w="31" h="29" oX="371" oY="1029" oW="761" oH="166" tX="0" tY="0" />
+    <sprite n="71" x="407" y="1028" w="32" h="31" oX="407" oY="1028" oW="761" oH="166" tX="0" tY="0" />
+    <sprite n="72" x="445" y="1027" w="33" h="33" oX="445" oY="1027" oW="761" oH="166" tX="0" tY="0" />
+  </Animation>
+  <Animation name="parasitic" imagePath="BlastHornet.png" width="508" height="1221">
+    <sprite n="73" x="92" y="1038" w="15" h="14" oX="92" oY="1038" oW="960" oH="142" tX="0" tY="0" />
+    <sprite n="74" x="111" y="1038" w="15" h="14" oX="111" oY="1038" oW="960" oH="142" tX="0" tY="0" />
+    <sprite n="75" x="134" y="1034" w="23" h="24" oX="134" oY="1034" oW="960" oH="142" tX="0" tY="0" />
+    <sprite n="76" x="162" y="1034" w="23" h="24" oX="162" oY="1034" oW="960" oH="142" tX="0" tY="0" />
+    <sprite n="77" x="189" y="1030" w="31" h="30" oX="189" oY="1030" oW="960" oH="142" tX="0" tY="0" />
+    <sprite n="78" x="227" y="1030" w="31" h="30" oX="227" oY="1030" oW="960" oH="142" tX="0" tY="0" />
+  </Animation>
+</Animations>

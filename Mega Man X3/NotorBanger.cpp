@@ -1,19 +1,20 @@
 ﻿#include"NotorBanger.h"
 
-NotorBanger::NotorBanger(MegaMan *megaMan, Sprite* sprite_enemy, Sprite* sprite_Item, SpriteSheet* spriteSheet_Enemy, SpriteSheet* spriteSheet_Item)
+NotorBanger::NotorBanger(MegaMan *megaMan, Sprite* sprite_NotorBanger, Sprite* sprite_Item, Sprite* sprite_Explosion,
+	SpriteSheet* spriteSheet_NotorBanger, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
-	sprite = sprite_enemy;
-	animationEnemy = new Animation(spriteSheet_Enemy);
+	sprite = sprite_NotorBanger;
+	animationEnemy = new Animation(spriteSheet_NotorBanger);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_enemy, spriteSheet_Enemy);
+		bullets[i] = new Bullet(sprite_NotorBanger, spriteSheet_NotorBanger);
 	}
 	numBullet = 0;
 	item = new Item(megaMan, sprite_Item, spriteSheet_Item);
-	explosion = new Explosion(sprite_enemy, spriteSheet_Enemy);
-	collapse = new Collapse(sprite_enemy, spriteSheet_Enemy);
+	explosion = new Explosion(sprite_Explosion, spriteSheet_Explosion);
+	collapse = new Collapse(sprite_NotorBanger, spriteSheet_NotorBanger);
 }
 
 void NotorBanger::New(D3DXVECTOR2 pos)
@@ -32,28 +33,28 @@ void NotorBanger::ChangeAnimation(Keyboard* key)
 	switch (action)
 	{
 	case NotorBanger::Standing:
-		animationEnemy->SetFrame(position, flipFlag, 0, 34, 34, false);
-		break;
-	case NotorBanger::Moving:
-		animationEnemy->SetFrame(position, flipFlag, 5, 34, 38, false);
+		animationEnemy->SetFrame(position, flipFlag, 0, 0, 0, false);
 		break;
 	case NotorBanger::TargetSkew:
-		animationEnemy->SetFrame(position, flipFlag, 10, 39, 41, false);
+		animationEnemy->SetFrame(position, flipFlag, 5, 0, 2, false);
 		break;
 	case NotorBanger::TargetVertical:
-		animationEnemy->SetFrame(position, flipFlag, 5, 39, 43, false);
-		break;
-	case NotorBanger::ShootingSkew:
-		animationEnemy->SetFrame(position, flipFlag, 15, 46, 47, true);
-		break;
-	case NotorBanger::ShootingVertical:
-		animationEnemy->SetFrame(position, flipFlag, 15, 44, 45, true);
+		animationEnemy->SetFrame(position, flipFlag, 5, 0, 4, false);
 		break;
 	case NotorBanger::BackShootingSkew:
-		animationEnemy->SetFrame(position, flipFlag, 10, 50, 52, false);
+		animationEnemy->SetFrame(position, flipFlag, 10, 7, 9, false);
 		break;
 	case NotorBanger::BackShootingVertical:
-		animationEnemy->SetFrame(position, flipFlag, 10, 48, 52, false);
+		animationEnemy->SetFrame(position, flipFlag, 10, 5, 9, false);
+		break;
+	case NotorBanger::ShootingVertical:
+		animationEnemy->SetFrame(position, flipFlag, 15, 10, 11, true);
+		break;
+	case NotorBanger::ShootingSkew:
+		animationEnemy->SetFrame(position, flipFlag, 15, 12, 13, true);
+		break;
+	case NotorBanger::Moving:
+		animationEnemy->SetFrame(position, flipFlag, 10, 14, 18, false);
 		break;
 	}
 }

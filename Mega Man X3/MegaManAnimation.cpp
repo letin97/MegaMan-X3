@@ -123,32 +123,6 @@ void MegaManAnimation::BleedAnimation()
 	start = 62; end = 72;
 }
 
-//Lấy tọa độ cây súng so với vị trí vẽ
-D3DXVECTOR2 MegaManAnimation::GetGun(int index)
-{
-	if (flipFlag)
-		pGun.x = -spriteSheet->GetGun(index).x;
-	else
-		pGun.x = spriteSheet->GetGun(index).x;
-
-	pGun.y = spriteSheet->GetGun(index).y;
-
-	return pGun;
-}
-
-//Lấy tọa độ tia lửa so với vị trí vẽ
-D3DXVECTOR2 MegaManAnimation::GetSpark(int index)
-{
-	if (flipFlag)
-		pSpark.x = -spriteSheet->GetSpark(index).x;
-	else
-		pSpark.x = spriteSheet->GetSpark(index).x;
-
-	pSpark.y = spriteSheet->GetSpark(index).y;
-
-	return pSpark;
-}
-
 void MegaManAnimation::Update(float dt, Keyboard* keyboard)
 {
 	Animation::Update(dt, keyboard);

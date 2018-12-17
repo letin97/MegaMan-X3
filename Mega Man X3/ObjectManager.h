@@ -10,6 +10,8 @@
 #include "NotorBanger.h"
 #include "Helit.h"
 #include "Genjibo.h"
+#include "Byte.h"
+#include "BlastHornet.h"
 #include "Lifebar.h"
 
 class ObjectManager
@@ -27,20 +29,45 @@ protected:
 	vector <Object*> listObject;
 	D3DXVECTOR2 prePosView;
 
+	//Player
 	Sprite *sprite_MegaMan;
-	Sprite *sprite_Effect;
+	SpriteSheet* spriteSheet_MegaMan;
+
+	//Efect
+	Sprite *sprite_LightEnergy;
+	Sprite *sprite_Spark;
+	Sprite *sprite_Smoke;
+	Sprite *sprite_Explosion;
+	SpriteSheet* spriteSheet_LightEnergy;
+	SpriteSheet* spriteSheet_Spark;
+	SpriteSheet* spriteSheet_Smoke;
+	SpriteSheet* spriteSheet_Explosion;
+
+	//Bullet Item
 	Sprite *sprite_Weapons_And_Items;
-	Sprite *sprite_Enemy;
-	Sprite *sprite_Lifebar;
-	Sprite *sprite_Boss_Genjibo;
+	SpriteSheet* spriteSheet_Weapons_And_Items;
 
-	SpriteSheet* spriteSheetMegaMan;
-	SpriteSheet* spriteSheetEffect;
-	SpriteSheet* spriteSheetWeaponsAndItems;
-	SpriteSheet* spriteSheetEnemy;
-	SpriteSheet *spriteSheetBossGenjibo;
+	//Enemy
+	Sprite *sprite_HeadGunner;
+	Sprite *sprite_NotorBanger;
+	Sprite *sprite_Helit;
+	SpriteSheet* spriteSheet_HeadGunner;
+	SpriteSheet* spriteSheet_NotorBanger;
+	SpriteSheet* spriteSheet_Helit;
 
+	//Boss
 	Genjibo* mGenjibo;
+	Byte* mByte;
+	BlastHornet* mBlastHornet;
+	Sprite *sprite_Genjibo;
+	Sprite *sprite_Byte;
+	Sprite *sprite_BlastHornet;
+	SpriteSheet *spriteSheet_Genjibo;
+	SpriteSheet *spriteSheet_Byte;
+	SpriteSheet *spriteSheet_BlastHornet;
+
+	//Lifebar
+	Sprite *sprite_Lifebar;
 	
 public:
 	ObjectManager();

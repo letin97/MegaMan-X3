@@ -1,8 +1,10 @@
 ﻿#include "MegaMan.h"
 
 
-MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_Effect, Sprite* sprite_Weapons_And_Items,
-	SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_Effect, SpriteSheet* spriteSheet_Weapons_And_Items)
+MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
+	Sprite* sprite_Smoke, Sprite* sprite_Weapons_And_Items,
+	SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_LightEnergy, SpriteSheet* spriteSheet_Spark,
+	SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items)
 {
 	tag = Object::Player;
 	pathPNG = MegaManPNG;
@@ -12,11 +14,11 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_Effect, Sprite* sprite_W
 	animationMegaMan = new MegaManAnimation(spriteSheet_MegaMan);
 
 	//Tạo Animation Effect
-	lightEnergy = new LightEnergy(sprite_Effect, spriteSheet_Effect);
-	spark = new Spark(sprite_Effect, spriteSheet_Effect);
-	for (int i = 0; i < 6; i++)
+	lightEnergy = new LightEnergy(sprite_LightEnergy, spriteSheet_LightEnergy);
+	spark = new Spark(sprite_Spark, spriteSheet_Spark);
+	for (int i = 0; i < 8; i++)
 	{
-		smokes[i] = new Smoke(sprite_Effect, spriteSheet_Effect);
+		smokes[i] = new Smoke(sprite_Smoke, spriteSheet_Smoke);
 	}
 	numSmoke = 0;
 
@@ -32,7 +34,9 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_Effect, Sprite* sprite_W
 
 	// 16 1280
 	// 2350 900
-	position = D3DXVECTOR2(16, 1280);
+	// 5700 900
+	// 7734 120
+	position = D3DXVECTOR2(7734, 120);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
 	SetBound(30, 34);
@@ -274,7 +278,7 @@ void MegaMan::Update(float dt, Keyboard* key)
 		bool k = spark->GetIsDone();
 		if (!spark->GetIsDone() && !spark->GetAllowDraw())
 		{
-			spark->NewSpark(position + animationMegaMan->GetSpark(animationMegaMan->GetIndex()) / 2, flipFlag, stateMegaMan->GetStyleSpark());
+			spark->NewSpark(position + animationMegaMan->GetSmoke(animationMegaMan->GetIndex()) / 2, flipFlag, stateMegaMan->GetStyleSpark());
 		}		
 	}
 	else
@@ -289,17 +293,20 @@ void MegaMan::Update(float dt, Keyboard* key)
 	//Tạo khói khi lướt
 	if (stateMegaMan->GetAllowDrawSmoke())
 	{
-		if ((int)stateMegaMan->GetGlideWidth() % 20 == 0 || (int)stateMegaMan->GetClampHeight() % 10 == 0)
+		if (delay <= 0)
+			delay = 4;
+		delay--;
+		if (delay <= 0)
 		{
-			smokes[numSmoke]->NewSmoke(position + animationMegaMan->GetSpark(animationMegaMan->GetIndex()), flipFlag);
+			smokes[numSmoke]->NewSmoke(position + animationMegaMan->GetSmoke(animationMegaMan->GetIndex()), flipFlag);
 			numSmoke++;
-			if (numSmoke > 5)
+			if (numSmoke > 7)
 				numSmoke = 0;
 		}
 	}
 
 	//Update khói
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		if (smokes[i]->GetAllowDraw())
 			smokes[i]->Update(dt, key);
@@ -329,6 +336,10 @@ void MegaMan::Update(float dt, Keyboard* key)
 		{
 			bool flipBullet = stateMegaMan->IsClamping() ? !flipFlag : flipFlag;
 			bullets[numBullet]->NewBullet(position + animationMegaMan->GetGun(animationMegaMan->GetIndex()), flipBullet, stateMegaMan->GetEnergyLevel());
+			if (flipFlag)
+				bullets[numBullet]->SetVelocity(-BulletSpeed, 0);
+			else
+				bullets[numBullet]->SetVelocity(BulletSpeed, 0);
 			numBullet++;
 			if (numBullet > 2)
 				numBullet = 0;
@@ -361,7 +372,7 @@ void MegaMan::Render(Viewport *viewport)
 
 	spark->Render(viewport);
 
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		smokes[i]->Render(viewport);
 	}

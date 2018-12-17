@@ -14,34 +14,72 @@ ObjectManager::~ObjectManager()
 	delete lifebar;
 
 	delete sprite_MegaMan;
-	delete sprite_Effect;
+	delete sprite_LightEnergy;
+	delete sprite_Spark;
+	delete sprite_Smoke;
+	delete sprite_Explosion;
 	delete sprite_Weapons_And_Items;
-	delete sprite_Enemy;
+	delete sprite_HeadGunner;
+	delete sprite_NotorBanger;
+	delete sprite_Helit;
+	delete sprite_Genjibo;
+	delete sprite_Byte;
+	delete sprite_BlastHornet;
 
 	delete mGenjibo;
+	delete mByte;
+	delete mBlastHornet;
 
 }
 
 //Load Game
 void ObjectManager::Init(Graphic* graphic)
 {
+	//Player
 	sprite_MegaMan = new Sprite(graphic, MegaManPNG);
-	sprite_Effect = new Sprite(graphic, EffectPNG);
+	spriteSheet_MegaMan = new SpriteSheet(MegaManXML);
+
+	//Effect
+	sprite_LightEnergy = new Sprite(graphic, LightEnergyPNG);
+	sprite_Spark = new Sprite(graphic, SparkPNG);
+	sprite_Smoke = new Sprite(graphic, SmokePNG);
+	sprite_Explosion = new Sprite(graphic, ExplosionPNG);
+	spriteSheet_LightEnergy = new SpriteSheet(LightEnergyXML);
+	spriteSheet_Spark = new SpriteSheet(SparkXML);
+	spriteSheet_Smoke = new SpriteSheet(SmokeXML);
+	spriteSheet_Explosion = new SpriteSheet(ExplosionXML);
+
+	//Bullet Item
 	sprite_Weapons_And_Items = new Sprite(graphic, WeaponsAndItemsPNG);
-	sprite_Enemy = new Sprite(graphic, EnemyPNG);
+	spriteSheet_Weapons_And_Items = new SpriteSheet(WeaponsAndItemsEffectXML);
+
+	//Enemy
+	sprite_HeadGunner = new Sprite(graphic, HeadGunnerPNG);
+	sprite_NotorBanger = new Sprite(graphic, NotorBangerPNG);
+	sprite_Helit = new Sprite(graphic, HelitPNG);
+	spriteSheet_HeadGunner = new SpriteSheet(HeadGunnerXML);
+	spriteSheet_NotorBanger = new SpriteSheet(NotorBangerXML);
+	spriteSheet_Helit = new SpriteSheet(HelitXML);
+
+	//Boss
+	sprite_Genjibo = new Sprite(graphic, BossGenjiboPNG);
+	sprite_Byte = new Sprite(graphic, BossBytePNG);
+	sprite_BlastHornet = new Sprite(graphic, BossBlastHornetPNG);
+	spriteSheet_Genjibo = new SpriteSheet(BossGenjiboXML);
+	spriteSheet_Byte = new SpriteSheet(BossByteXML);
+	spriteSheet_BlastHornet = new SpriteSheet(BossBlastHornetXML);
+
+	//Lifebar
 	sprite_Lifebar = new Sprite(graphic, WeaponsAndItemsPNG);
-	sprite_Boss_Genjibo = new Sprite(graphic, BossGenjiboPNG);
+	
+	megaMan = new MegaMan(sprite_MegaMan, sprite_LightEnergy, sprite_Spark, sprite_Smoke, sprite_Weapons_And_Items,
+		spriteSheet_MegaMan, spriteSheet_LightEnergy, spriteSheet_Spark, spriteSheet_Smoke, spriteSheet_Weapons_And_Items);
 
-	spriteSheetMegaMan = new SpriteSheet(MegaManXML);
-	spriteSheetEffect = new SpriteSheet(EffectXML);
-	spriteSheetWeaponsAndItems = new SpriteSheet(WeaponsAndItemsEffectXML);
-	spriteSheetEnemy = new SpriteSheet(EnemyXML);
-	spriteSheetBossGenjibo = new SpriteSheet(BossGenjiboXML);
+	mGenjibo = new Genjibo(sprite_Genjibo, spriteSheet_Genjibo, D3DXVECTOR2(2480, 870));
 
-	megaMan = new MegaMan(sprite_MegaMan, sprite_Effect, sprite_Weapons_And_Items,
-		spriteSheetMegaMan, spriteSheetEffect, spriteSheetWeaponsAndItems);
+	mByte = new Byte(sprite_Byte, sprite_Smoke, sprite_Explosion,spriteSheet_Byte, spriteSheet_Smoke, spriteSheet_Explosion, D3DXVECTOR2(5830, 890));
 
-	mGenjibo = new Genjibo(sprite_Boss_Genjibo, spriteSheetBossGenjibo, D3DXVECTOR2(2480, 870));
+	mBlastHornet = new BlastHornet(megaMan, sprite_BlastHornet, spriteSheet_BlastHornet, D3DXVECTOR2(7880, 180));
 
 	viewport = new Viewport(0, 1248);
 
@@ -60,7 +98,7 @@ void ObjectManager::Init(Graphic* graphic)
 	mQuadTree->GetObjectsCollideAble(listObjectCollison, listWall, viewport->GetBound());
 	prePosView = viewport->GetPosition();
 
-	lifebar = new Lifebar(sprite_Lifebar, spriteSheetWeaponsAndItems);
+	lifebar = new Lifebar(sprite_Lifebar, spriteSheet_Weapons_And_Items);
 }
 
 //Update Game
@@ -80,17 +118,9 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	}
 	listObject.clear();
 
-	//Va chạm Man với tường
-	for (size_t i = 0; i < listWall.size(); i++)
-	{
-		D3DXVECTOR2 disMan = megaMan->Distance(dt);
-		megaMan->OnCollision(listWall.at(i), disMan, disMan);
-	}
-
 	//Va chạm Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
 	{
-
 		for (size_t j = 0; j < listWall.size(); j++)
 		{
 			D3DXVECTOR2 disEnemy = listObjectCollison.at(i)->Distance(dt);
@@ -127,28 +157,116 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	}
 
 	//Boss
-	if (mGenjibo->GetAllowDraw())
+	//if (mGenjibo->GetAllowDraw())
+	//{
+	//	//Va chạm boss với tường
+	//	for (size_t i = 0; i < listWall.size(); i++)
+	//	{
+	//		D3DXVECTOR2 disGenjibo = mGenjibo->Distance(dt);
+	//		mGenjibo->OnCollision(listWall.at(i), disGenjibo);
+	//	}
+
+	//	//Đạn Mega Man
+	//	for (int i = 0; i < 4; i++)
+	//	{
+	//		if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
+	//		{
+	//			if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mGenjibo->GetBound()))
+	//			{
+	//				mGenjibo->OnCollision(megaMan->bullets[i]);
+	//				megaMan->bullets[i]->OnCollision();
+	//			}
+	//		}
+	//	}
+	//	mGenjibo->Update(dt, keyboard);
+	//}
+
+	////Boss Byte
+	//if (mByte->GetAllowDraw())
+	//{
+	//	for (size_t i = 0; i < listWall.size(); i++)
+	//	{
+	//		//Va chạm boss với tường
+	//		D3DXVECTOR2 disByte = mByte->Distance(dt);
+	//		mByte->OnCollision(listWall.at(i), disByte);
+
+	//		//Đạn boss
+	//		D3DXVECTOR2 disBulletByte = mByte->bullet->Distance(dt);
+	//		mByte->bullet->OnCollision(listWall.at(i), disBulletByte);
+	//	}
+
+	//	//MegaMan
+	//	D3DXVECTOR2 disMan = megaMan->Distance(dt);
+	//	D3DXVECTOR2 distance = disMan - mByte->Distance(dt);
+	//	megaMan->OnCollision(mByte, distance, disMan);
+
+	//	//Đạn MegaMan
+	//	for (int i = 0; i < 4; i++)
+	//	{
+	//		if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
+	//		{
+	//			if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mByte->GetBound()))
+	//			{
+	//				mByte->OnCollision(megaMan->bullets[i]);
+	//				megaMan->bullets[i]->OnCollision();
+	//			}
+	//		}
+	//	}
+	//	mByte->Update(dt, keyboard);
+	//}
+
+	//Boss BlastHorner
+	if (mBlastHornet->GetAllowDraw())
 	{
-		//Va chạm boss với tường
 		for (size_t i = 0; i < listWall.size(); i++)
 		{
-			D3DXVECTOR2 disGenjibo = mGenjibo->Distance(dt);
-			mGenjibo->OnCollision(listWall.at(i), disGenjibo);
+			//Va chạm boss với tường
+			D3DXVECTOR2 disBlastHornet = mBlastHornet->Distance(dt);
+			mBlastHornet->OnCollision(listWall.at(i), disBlastHornet);
+
+			//Va chạm ong con với tường
+			for (int j = 0; j < 5; j++)
+			{
+				D3DXVECTOR2 disBee = mBlastHornet->listBee[j]->Distance(dt);
+				mBlastHornet->listBee[j]->OnCollision(listWall.at(i), disBee);
+			}
 		}
 
-		//Đạn Mega Man
+		//MegaMan
+		D3DXVECTOR2 disMan = megaMan->Distance(dt);
+		D3DXVECTOR2 distance = disMan - mBlastHornet->Distance(dt);
+		megaMan->OnCollision(mBlastHornet, distance, disMan);
+
+		//Đạn MegaMan
 		for (int i = 0; i < 4; i++)
 		{
 			if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
 			{
-				if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mGenjibo->GetBound()))
+				if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mBlastHornet->GetBound()))
 				{
-					mGenjibo->OnCollision(megaMan->bullets[i]);
+					mBlastHornet->OnCollision(megaMan->bullets[i]);
 					megaMan->bullets[i]->OnCollision();
+				}
+
+				for (int j = 0; j < 5; j++)
+				{
+					if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mBlastHornet->listBee[j]->GetBound()))
+					{
+						//megaMan->bullets[i]->OnCollision();
+						mBlastHornet->listBee[j]->OnCollision(megaMan->bullets[i]);
+					}
+						
 				}
 			}
 		}
-		mGenjibo->Update(dt, keyboard);
+		mBlastHornet->Update(dt, keyboard);
+	}
+
+	//Va chạm Man với tường
+	for (size_t i = 0; i < listWall.size(); i++)
+	{
+		D3DXVECTOR2 disMan = megaMan->Distance(dt);
+		megaMan->OnCollision(listWall.at(i), disMan, disMan);
 	}
 
 	megaMan->Update(dt, keyboard);
@@ -164,6 +282,10 @@ void ObjectManager::Render()
 	megaMan->Render(viewport);
 
 	mGenjibo->Render(viewport);
+
+	mByte->Render(viewport);
+
+	mBlastHornet->Render(viewport);
 
 	//Vẽ Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
@@ -230,23 +352,26 @@ void ObjectManager::ReadQuadTree(TiXmlElement *root, QuadTree *node, QuadTree *f
 			
 			if (name == "HeadGunner")
 			{
-				HeadGunner *enemy = new HeadGunner(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
-				enemy->New(D3DXVECTOR2(x, y));
-				enemy->SetName(name);
-				enemy->id = id;
-				//node->mListObject.push_back(enemy);
-			}
-			else if (name == "NotorBanger")
-			{
-				NotorBanger *enemy = new NotorBanger(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
+				HeadGunner *enemy = new HeadGunner(megaMan, sprite_HeadGunner, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_HeadGunner, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
 				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;
 				node->mListObject.push_back(enemy);
 			}
+			else if (name == "NotorBanger")
+			{
+				NotorBanger *enemy = new NotorBanger(megaMan, sprite_NotorBanger, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_NotorBanger, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				//node->mListObject.push_back(enemy);
+			}
 			else if (name == "Helit")
 			{
-				Helit *enemy = new Helit(megaMan, sprite_Enemy, sprite_Weapons_And_Items, spriteSheetEnemy, spriteSheetWeaponsAndItems);
+				Helit *enemy = new Helit(megaMan, sprite_Helit, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_Helit, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
 				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;

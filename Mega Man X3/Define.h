@@ -13,20 +13,34 @@ namespace Define
 	const char MegaManXML[] = "./Resource Files/MegaMan.xml";
 
 	//Effect
-	const char EffectPNG[] = "./Resource Files/Effect.png";
-	const char EffectXML[] = "./Resource Files/Effect.xml";
+	const char LightEnergyPNG[] = "./Resource Files/Light Energy.png";
+	const char LightEnergyXML[] = "./Resource Files/Light Energy.xml";
+	const char SparkPNG[] = "./Resource Files/Spark.png";
+	const char SparkXML[] = "./Resource Files/Spark.xml";
+	const char SmokePNG[] = "./Resource Files/Smoke.png";
+	const char SmokeXML[] = "./Resource Files/Smoke.xml";
+	const char ExplosionPNG[] = "./Resource Files/Explosion.png";
+	const char ExplosionXML[] = "./Resource Files/Explosion.xml";
 
 	//Bullet
 	const char WeaponsAndItemsPNG[] = "./Resource Files/Weapons and Items.png";
 	const char WeaponsAndItemsEffectXML[] = "./Resource Files/Weapons and Items.xml";
 
 	//Enemy
-	const char EnemyPNG[] = "./Resource Files/Enemy.png";
-	const char EnemyXML[] = "./Resource Files/Enemy.xml";
+	const char HeadGunnerPNG[] = "./Resource Files/HeadGunner.png";
+	const char HeadGunnerXML[] = "./Resource Files/HeadGunner.xml";
+	const char NotorBangerPNG[] = "./Resource Files/NotorBanger.png";
+	const char NotorBangerXML[] = "./Resource Files/NotorBanger.xml";
+	const char HelitPNG[] = "./Resource Files/Helit.png";
+	const char HelitXML[] = "./Resource Files/Helit.xml";
 
 	//Boss
-	const char BossGenjiboPNG[] = "./Resource Files/Boss Genjibo.png";
-	const char BossGenjiboXML[] = "./Resource Files/Boss Genjibo.xml";
+	const char BossGenjiboPNG[] = "./Resource Files/Genjibo.png";
+	const char BossGenjiboXML[] = "./Resource Files/Genjibo.xml";
+	const char BossBytePNG[] = "./Resource Files/Byte.png";
+	const char BossByteXML[] = "./Resource Files/Byte.xml";
+	const char BossBlastHornetPNG[] = "./Resource Files/BlastHornet.png";
+	const char BossBlastHornetXML[] = "./Resource Files/BlastHornet.xml";
 
 	//Map
 	const char TileSetPNG[] = "./Resource Files/Blast Hornet Stage.png";
