@@ -1,5 +1,6 @@
 ﻿#include "MegaMan.h"
-
+#include <iostream>
+using namespace std;
 
 MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
 	Sprite* sprite_Smoke, Sprite* sprite_Weapons_And_Items,
@@ -39,7 +40,7 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* spr
 	// 2350 900
 	// 5700 900
 	// 7734 120
-	position = D3DXVECTOR2(2300, 900);
+	position = D3DXVECTOR2(780, 1280);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
 	SetBound(30, 34);
@@ -246,6 +247,13 @@ void MegaMan::OnCollision(Object *other, D3DXVECTOR2 distance, D3DXVECTOR2 disMa
 				{
 					position.y += disMan.y * time;
 					velocity.y = 0;
+
+					if (other->tag == Object::Elevator)
+					{
+						stateMegaMan->SetState(MegaManState::Standing);
+						velocity.y = other->GetVelocity().y;
+						stateMegaMan->isElevator = true;
+					}
 				}
 
 				//Enemy
@@ -261,6 +269,8 @@ void MegaMan::OnCollision(Object *other, D3DXVECTOR2 distance, D3DXVECTOR2 disMa
 						stateMegaMan->BleedState(side, other->GetDamage());
 					}
 				}
+				
+				
 			}
 		}
 	}
@@ -270,7 +280,7 @@ void MegaMan::Update(float dt, Keyboard* key)
 {
 	//Chỉnh lại vị trí sau khi xét va chạm
 	Object::Update(dt, key);
-
+	dta = dt;
 	//Update Animation
 	animationMegaMan->SetFlipFlag(GetFlipFlag());
 	animationMegaMan->Update(dt, key);

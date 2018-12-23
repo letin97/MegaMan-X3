@@ -127,36 +127,46 @@ void MegaManState::StandState(Keyboard* keyboard)
 
 	if (keyboard->GIsKeyUp(DIK_A)) allowGlide = true;
 
-	if (keyboard->IsKeyDown(DIK_RIGHT))
+	if (keyboard->IsKeyDown(DIK_RIGHT) || keyboard->IsKeyDown(DIK_LEFT))
 	{
 		state = State::Running;
-	}
-	else if (keyboard->IsKeyDown(DIK_LEFT))
-	{
-		state = State::Running;
-	}
-	else if (keyboard->IsKeyDown(DIK_SPACE))
-	{
-		state = State::Jumping;
-	}
-	else if (keyboard->IsKeyDown(DIK_S))
-	{
-		state = State::StandingShoot;
-	}
-	else if (keyboard->IsKeyDown(DIK_A))
-	{
-		if (allowGlide) state = State::Gliding;
-	}
-	else
-	{
-		if (megaMan->GetVelocity().y == -Gravity)
+		if (keyboard->IsKeyDown(DIK_SPACE) && state != State::Gliding)
 		{
-			state = State::Falling;
+			state = State::Jumping;
 		}
-		else
+		else if (keyboard->IsKeyDown(DIK_S) && state != State::Gliding)
 		{
-			megaMan->SetVelocityY(-Gravity);
-			state = State::Standing;
+			state = State::RunningShoot;
+		}
+		else if (keyboard->IsKeyDown(DIK_A))
+		{
+			if (allowGlide) state = State::Gliding;
+		}
+	}
+	else {
+		if (keyboard->IsKeyDown(DIK_SPACE) && state != State::Gliding)
+		{
+			state = State::Jumping;
+		}
+		else if (keyboard->IsKeyDown(DIK_S) && state != State::Gliding)
+		{
+			state = State::StandingShoot;
+		}
+		else if (keyboard->IsKeyDown(DIK_A))
+		{
+			if (allowGlide) state = State::Gliding;
+		}
+		else {
+			if (megaMan->GetVelocity().y == -Gravity)
+			{
+				state = State::Falling;
+			}
+			else
+			{
+				if (!isElevator)
+					megaMan->SetVelocityY(-Gravity);
+				state = State::Standing;
+			}
 		}
 	}
 }
@@ -195,7 +205,8 @@ void MegaManState::RunState(Keyboard* keyboard)
 			}
 			else
 			{
-				megaMan->SetVelocityY(-Gravity);
+				if (!isElevator)
+					megaMan->SetVelocityY(-Gravity);
 				if (keyboard->IsKeyDown(DIK_S))			
 					state = State::RunningShoot;
 				else state = State::Running;
@@ -314,7 +325,7 @@ void MegaManState::GlideState(Keyboard* keyboard)
 		startGlide = megaMan->GetPosition().x;
 		if (!megaMan->GetFlipFlag()) megaMan->SetVelocityX(GlideSpeed);
 		else megaMan->SetVelocityX(-GlideSpeed);
-		megaMan->SetVelocityY(0);
+		if (!isElevator) megaMan->SetVelocityY(0);
 		isGlide = true;
 	}
 
@@ -340,7 +351,8 @@ void MegaManState::GlideState(Keyboard* keyboard)
 				}
 				else
 				{
-					megaMan->SetVelocityY(-Gravity);
+					if (!isElevator)
+						megaMan->SetVelocityY(-Gravity);
 					if (keyboard->IsKeyDown(DIK_S)) state = State::GlidingShoot;
 					else state = State::Gliding;
 				}

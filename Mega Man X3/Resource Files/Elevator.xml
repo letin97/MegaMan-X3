@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="elevator" imagePath="Elevator.png" width="396" height="52">
+    <sprite n="0" x="199" y="4" w="95" h="43" oX="199" oY="4" oW="-222" oH="192" tX ="0" tY="0"/>
+    <sprite n="1" x="296" y="4" w="95" h="44" oX="296" oY="4" oW="-222" oH="192" tX ="0" tY="0"/>
+  </Animation>
+</Animations>

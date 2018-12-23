@@ -159,6 +159,7 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="dsutil.h" />
     <ClInclude Include="dxutil.h" />
+    <ClInclude Include="Elevator.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="Game.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="Collapse.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="dsutil.cpp" />
+    <ClCompile Include="Elevator.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Game.cpp" />

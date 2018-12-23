@@ -49,6 +49,7 @@ public:
 	};
 
 	State state;
+	bool isElevator;
 
 	MegaManState(Object* megaman);
 	MegaManState();

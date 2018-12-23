@@ -12,6 +12,7 @@
 #include "Genjibo.h"
 #include "Byte.h"
 #include "BlastHornet.h"
+#include "Elevator.h"
 #include "Port.h"
 #include "Lifebar.h"
 #include "Sound.h"
@@ -70,6 +71,11 @@ protected:
 	SpriteSheet *spriteSheet_Genjibo;
 	SpriteSheet *spriteSheet_Byte;
 	SpriteSheet *spriteSheet_BlastHornet;
+
+	//Elevator
+	Elevator* mElevator;
+	Sprite *sprite_Elevator;
+	SpriteSheet *spriteSheet_Elevator;
 
 	//Lifebar
 	Sprite *sprite_Lifebar;

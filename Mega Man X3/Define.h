@@ -56,6 +56,10 @@ namespace Define
 	const char PortPNG[] = "./Resource Files/Port.png";
 	const char PortXML[] = "./Resource Files/Port.xml";
 
+	//Elevator
+	const char ElevatorPNG[] = "./Resource Files/Elevator.png";
+	const char ElevatorXML[] = "./Resource Files/Elevator.xml";
+
 	//QuadTree
 	const char QuadTreeXML[] = "./Resource Files/QuadTree.xml";
 

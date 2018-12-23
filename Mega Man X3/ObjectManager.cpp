@@ -25,10 +25,12 @@ ObjectManager::~ObjectManager()
 	delete sprite_Genjibo;
 	delete sprite_Byte;
 	delete sprite_BlastHornet;
+	delete sprite_Elevator;
 
 	delete mGenjibo;
 	delete mByte;
 	delete mBlastHornet;
+	delete mElevator;
 
 }
 
@@ -72,6 +74,10 @@ void ObjectManager::Init(Graphic* graphic, Sound *sound)
 	spriteSheet_Byte = new SpriteSheet(BossByteXML);
 	spriteSheet_BlastHornet = new SpriteSheet(BossBlastHornetXML);
 
+	//Elevator
+	sprite_Elevator = new Sprite(graphic, ElevatorPNG);
+	spriteSheet_Elevator = new SpriteSheet(ElevatorXML);
+
 	//Lifebar
 	sprite_Lifebar = new Sprite(graphic, WeaponsAndItemsPNG);
 	
@@ -84,6 +90,8 @@ void ObjectManager::Init(Graphic* graphic, Sound *sound)
 	mByte = new Byte(sprite_Byte, sprite_Smoke, sprite_Explosion,spriteSheet_Byte, spriteSheet_Smoke, spriteSheet_Explosion, sound, D3DXVECTOR2(5830, 890));
 
 	mBlastHornet = new BlastHornet(megaMan, sprite_BlastHornet, spriteSheet_BlastHornet, D3DXVECTOR2(7880, 180));
+
+	mElevator = new Elevator(megaMan, sprite_Elevator, spriteSheet_Elevator, sound, D3DXVECTOR2(896, 1086));
 
 	viewport = new Viewport(0, 1248);
 
@@ -266,6 +274,17 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 		mBlastHornet->Update(dt, keyboard);
 	}
 
+	//Elevator
+	if (mElevator->GetAllowDraw())
+	{
+		mElevator->OnCollision(megaMan);
+		//MegaMan
+		D3DXVECTOR2 disMan = megaMan->Distance(dt);
+		D3DXVECTOR2 distance = disMan - mElevator->Distance(dt);
+		megaMan->OnCollision(mElevator, distance, disMan);
+		mElevator->Update(dt, keyboard);
+	}
+
 	//Va chạm Man với tường
 	for (size_t i = 0; i < listWall.size(); i++)
 	{
@@ -292,6 +311,8 @@ void ObjectManager::Render()
 	mByte->Render(viewport);
 
 	mBlastHornet->Render(viewport);
+
+	mElevator->Render(viewport);
 
 	//Vẽ Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)

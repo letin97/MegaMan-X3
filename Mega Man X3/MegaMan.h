@@ -25,6 +25,7 @@ protected:
 	int numSmoke;
 	int delay;
 	
+	float dta;
 public:
 	MegaMan() {}
 	MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,

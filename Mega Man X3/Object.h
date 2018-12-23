@@ -32,6 +32,7 @@ public:
 		Enemys,
 		Items,
 		Port,
+		Elevator,
 		None
 	};
 	Tag tag;

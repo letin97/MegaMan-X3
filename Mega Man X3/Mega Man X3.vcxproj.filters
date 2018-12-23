@@ -50,6 +50,9 @@
     <Filter Include="Object\Port">
       <UniqueIdentifier>{4bdfca7e-6d0f-4c6a-9006-416fb233b860}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Elevator">
+      <UniqueIdentifier>{8fdf6bb4-5f8c-4182-b7ae-a3d0505719c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keyboard.h">
@@ -186,6 +189,9 @@
     </ClInclude>
     <ClInclude Include="Port.h">
       <Filter>Object\Port</Filter>
+    </ClInclude>
+    <ClInclude Include="Elevator.h">
+      <Filter>Object\Elevator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +332,9 @@
     </ClCompile>
     <ClCompile Include="Port.cpp">
       <Filter>Object\Port</Filter>
+    </ClCompile>
+    <ClCompile Include="Elevator.cpp">
+      <Filter>Object\Elevator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
