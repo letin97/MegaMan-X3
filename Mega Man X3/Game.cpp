@@ -90,10 +90,16 @@ void Game::InitKeyboard()
 	this->keyboard->Init();
 }
 
+void Game::InitSound()
+{
+	sound = new Sound(graphic->GetHwnd());
+	sound->Init_DirectSound();
+}
+
 void Game::InitScene()
 {
 	SceneManager = new Scene();
-	SceneManager->Init(graphic);
+	SceneManager->Init(graphic, sound);
 }
 
 void Game::Init()
@@ -101,6 +107,7 @@ void Game::Init()
 	InitWindow();
 	InitGraphic();
 	InitKeyboard();
+	InitSound();
 	InitScene();
 }
 

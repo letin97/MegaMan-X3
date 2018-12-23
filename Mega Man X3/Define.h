@@ -46,6 +46,16 @@ namespace Define
 	const char TileSetPNG[] = "./Resource Files/Blast Hornet Stage.png";
 	const char MapXML[] = "./Resource Files/Map.tmx";
 
+	//Sound
+	const LPTSTR BlastHornetSound = "./Resource Files/Sound/09 Blast Hornet.wav";
+	const LPTSTR Bullet1Sound = "./Resource Files/Sound/SE_01.wav";
+	const LPTSTR Bullet2Sound = "./Resource Files/Sound/SE_05.wav";
+	const LPTSTR Bullet3Sound = "./Resource Files/Sound/SE_06.wav";
+
+	//Port
+	const char PortPNG[] = "./Resource Files/Port.png";
+	const char PortXML[] = "./Resource Files/Port.xml";
+
 	//QuadTree
 	const char QuadTreeXML[] = "./Resource Files/QuadTree.xml";
 

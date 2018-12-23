@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="136">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="26" nextobjectid="190">
  <tileset firstgid="1" name="megaman_x3__blast_hornet_stage_by_darksamus993-d8lave3" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
   <image source="Blast Hornet Stage.png" width="7946" height="2846"/>
  </tileset>
@@ -94,13 +94,42 @@
   <object id="119" x="7680" y="1792" width="256" height="224"/>
  </objectgroup>
  <objectgroup id="20" name="NotorBanger">
-  <object id="105" x="237.875" y="907.708" width="28.25" height="31.25"/>
+  <object id="105" x="462.125" y="865.458" width="28.25" height="31.25"/>
+  <object id="137" x="704.542" y="914.708" width="28.25" height="31.25"/>
+  <object id="146" x="1825.88" y="656.042" width="28.25" height="31.25"/>
+  <object id="147" x="1957.21" y="785.708" width="28.25" height="31.25"/>
+  <object id="148" x="1959.21" y="912.375" width="28.25" height="31.25"/>
+  <object id="149" x="1852.54" y="1119.71" width="28.25" height="31.25"/>
+  <object id="173" x="3169.38" y="897.375" width="28.25" height="31.25"/>
+  <object id="174" x="3621.88" y="895.875" width="28.25" height="31.25"/>
+  <object id="177" x="6064.54" y="1536.71" width="28.25" height="31.25"/>
+  <object id="178" x="6090.63" y="1729.38" width="28.25" height="31.25"/>
+ </objectgroup>
+ <objectgroup id="23" name="NotorBangerFlip" visible="0">
+  <object id="143" x="1584.54" y="913.375" width="28.25" height="31.25"/>
+  <object id="144" x="1583.88" y="656.708" width="28.25" height="31.25"/>
+  <object id="145" x="1585.21" y="785.375" width="28.25" height="31.25"/>
+  <object id="176" x="6003.54" y="1344.04" width="28.25" height="31.25"/>
  </objectgroup>
  <objectgroup id="21" name="Helit" visible="0">
-  <object id="106" x="144.875" y="867.375" width="28.25" height="31.25"/>
+  <object id="106" x="3252.91" y="833.345" width="28.25" height="31.25"/>
+  <object id="169" x="3410.88" y="864.375" width="28.25" height="31.25"/>
+  <object id="171" x="3522.88" y="835.375" width="28.25" height="31.25"/>
+  <object id="172" x="3776.88" y="827.375" width="28.25" height="31.25"/>
  </objectgroup>
- <objectgroup id="19" name="HeadGunner" visible="0">
-  <object id="96" x="145.333" y="911.333" width="28.25" height="31.25"/>
+ <objectgroup id="24" name="HelitFlip" visible="0">
+  <object id="170" x="3003.88" y="878.375" width="28.25" height="31.25"/>
+ </objectgroup>
+ <objectgroup id="19" name="HeadGunner">
+  <object id="180" x="6373.38" y="1924.54" width="28.25" height="43.5833"/>
+  <object id="184" x="6116.21" y="1924.88" width="28.25" height="43.5833"/>
+  <object id="185" x="6627.54" y="1924.21" width="28.25" height="43.5833"/>
+  <object id="186" x="6834.54" y="1923.54" width="28.25" height="43.5833"/>
+  <object id="187" x="7043.54" y="1923.88" width="28.25" height="43.5833"/>
+  <object id="188" x="962.542" y="900.542" width="28.25" height="43.5833"/>
+ </objectgroup>
+ <objectgroup id="22" name="HeadGunnerFlip" visible="0">
+  <object id="142" x="804.542" y="651.042" width="28.25" height="31.25"/>
  </objectgroup>
  <objectgroup id="16" name="Wall">
   <object id="23" x="0" y="944" width="352" height="16"/>
@@ -115,7 +144,7 @@
   <object id="55" x="1712.5" y="688" width="287" height="31"/>
   <object id="56" x="2001.17" y="439.5" width="31" height="506.833"/>
   <object id="57" x="2001.17" y="416.833" width="272.667" height="21.6667"/>
-  <object id="58" x="2272.5" y="285.833" width="30.3337" height="155"/>
+  <object id="58" x="1614.5" y="258.833" width="691.334" height="31.3333"/>
   <object id="59" x="2080.67" y="336.167" width="45.0004" height="83.6667"/>
   <object id="61" x="1536.5" y="466.833" width="31" height="750.333"/>
   <object id="62" x="1567.83" y="817.167" width="319.667" height="31"/>
@@ -127,7 +156,7 @@
   <object id="69" x="1712.54" y="1120.88" width="111.917" height="80.75"/>
   <object id="70" x="1822.54" y="1153.88" width="64.917" height="61.25"/>
   <object id="71" x="1888.21" y="1200.79" width="1279.25" height="15"/>
-  <object id="72" x="768.333" y="253.25" width="32" height="529.5"/>
+  <object id="72" x="768.333" y="253.25" width="32" height="513"/>
   <object id="79" x="3072.5" y="1007.83" width="29" height="192.333"/>
   <object id="80" x="3072.5" y="982.167" width="1181.67" height="25.6663"/>
   <object id="81" x="3264" y="1203.17" width="349.333" height="25.6663"/>
@@ -137,7 +166,7 @@
   <object id="87" x="3136.5" y="1215.5" width="31" height="514.665"/>
   <object id="88" x="3265.33" y="1229.33" width="31" height="401.165"/>
   <object id="90" x="3680" y="1199.17" width="2303.34" height="25.6663"/>
-  <object id="107" x="2303.29" y="1039.96" width="15.8337" height="160"/>
+  <object id="107" x="2303.29" y="1039.96" width="15.8337" height="111.5"/>
   <object id="108" x="2303.04" y="1024.87" width="254.25" height="14.8864"/>
   <object id="109" x="2545.08" y="1040" width="15.8337" height="160"/>
   <object id="113" x="5617.95" y="1040.82" width="31" height="158.166"/>
@@ -158,5 +187,25 @@
   <object id="132" x="7921.83" y="1807.58" width="13" height="158.166"/>
   <object id="133" x="7663.17" y="1808.92" width="31" height="158.166"/>
   <object id="134" x="7662.58" y="1790.45" width="274" height="16.666"/>
+  <object id="150" x="3146.17" y="928.167" width="136.333" height="51.9997"/>
+  <object id="151" x="3596.33" y="927" width="136.333" height="51.9997"/>
+  <object id="152" x="3391.33" y="944.5" width="96.833" height="38.4997"/>
+  <object id="153" x="3838.25" y="943.417" width="96.833" height="38.4997"/>
+  <object id="154" x="4045.33" y="928.5" width="136.333" height="51.9997"/>
+  <object id="155" x="1392.5" y="193.833" width="222" height="155.833"/>
+  <object id="157" x="1264" y="35.0835" width="46" height="281.833"/>
+  <object id="158" x="1504.5" y="31.0835" width="32" height="161.833"/>
+  <object id="161" x="1264" y="-0.4165" width="271" height="31.333"/>
+  <object id="162" x="383" y="767.667" width="416.5" height="15.6667"/>
+  <object id="163" x="991.667" y="257.75" width="271.333" height="29.1663"/>
+  <object id="164" x="800.334" y="256.084" width="191.333" height="16.4996"/>
+  <object id="165" x="2275.5" y="281.167" width="30.3337" height="155"/>
+  <object id="166" x="2560.88" y="1136.56" width="318.25" height="14.8864"/>
+  <object id="167" x="5393.54" y="1135.89" width="225.583" height="14.8864"/>
+  <object id="168" x="7392.21" y="1903.22" width="270.917" height="14.8864"/>
+  <object id="175" x="5904.5" y="1025.42" width="238.5" height="30.166"/>
+ </objectgroup>
+ <objectgroup id="25" name="Port">
+  <object id="189" x="2289.08" y="1152.5" width="14.8337" height="47"/>
  </objectgroup>
 </map>

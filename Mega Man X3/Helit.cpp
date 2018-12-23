@@ -1,7 +1,7 @@
 ﻿#include"Helit.h"
 
 Helit::Helit(MegaMan *megaMan, Sprite* sprite_Helit, Sprite* sprite_Item, Sprite* sprite_Explosion,
-	SpriteSheet* spriteSheet_Helit, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
+	SpriteSheet* spriteSheet_Helit, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion, Sound* sound)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
@@ -9,7 +9,7 @@ Helit::Helit(MegaMan *megaMan, Sprite* sprite_Helit, Sprite* sprite_Item, Sprite
 	animationEnemy = new Animation(spriteSheet_Helit);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_Helit, spriteSheet_Helit);
+		bullets[i] = new Bullet(sprite_Helit, spriteSheet_Helit, sound);
 	}
 	numBullet = 0;
 
@@ -62,7 +62,7 @@ void Helit::Update(float dt, Keyboard* key)
 			{
 				if (!bullets[numBullet]->GetAllowDraw())
 				{
-					bullets[numBullet]->NewBullet(position + animationEnemy->GetGun(animationEnemy->GetIndex()), false, Bullet::BulletHelit);
+					bullets[numBullet]->NewBullet(position + animationEnemy->GetGun(animationEnemy->GetIndex()), flipFlag, Bullet::BulletHelit);
 					if (flipFlag) bullets[numBullet]->SetVelocity(2, 0);
 					else bullets[numBullet]->SetVelocity(-2, 0);
 					numBullet++;

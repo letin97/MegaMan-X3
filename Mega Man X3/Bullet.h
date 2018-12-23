@@ -12,6 +12,11 @@ protected:
 	Animation* animationBullet;
 	float timeBurst;
 
+	//Sound
+	GSound *soundBulletLv1;
+	GSound *soundBulletLv2;
+	GSound *soundBulletLv3;
+
 public:
 	enum BulletType
 	{
@@ -34,7 +39,7 @@ public:
 	BulletState bulletState;
 
 	Bullet();
-	Bullet(Sprite* sprite_bullet, SpriteSheet* sprite_sheet);
+	Bullet(Sprite* sprite_bullet, SpriteSheet* sprite_sheet, Sound* sound);
 	~Bullet();
 
 	BulletType GetBulletType();

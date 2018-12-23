@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "Graphic.h"
 #include "Keyboard.h"
+#include "Sound.h"
 #include "Scene.h"
 
 class Game
@@ -21,6 +22,8 @@ private:
 	
 	Keyboard* keyboard;		//Khai báo đối tượng Keyboard
 
+	Sound *sound;
+
 	Scene* SceneManager;
 
 public:
@@ -35,6 +38,9 @@ public:
 
 	//Tạo bàn phím
 	void InitKeyboard();
+
+	//Tạo âm thanh
+	void InitSound();
 
 	//Tạo SceneManager
 	void InitScene();

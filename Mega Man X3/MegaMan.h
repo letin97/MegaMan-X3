@@ -30,7 +30,8 @@ public:
 	MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
 		Sprite* sprite_Smoke, Sprite* sprite_Weapons_And_Items,
 		SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_LightEnergy, SpriteSheet* spriteSheet_Spark,
-		SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items);
+		SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items,
+		Sound *sound);
 	~MegaMan();
 
 	Bullet* bullets[3];

@@ -1,7 +1,7 @@
 ﻿#include"Byte.h"
 
 Byte::Byte(Sprite* sprite_Byte, Sprite* sprite_Smoke, Sprite* sprite_Explosion,
-	SpriteSheet* spriteSheet_Byte, SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Explosion, D3DXVECTOR2 pos)
+	SpriteSheet* spriteSheet_Byte, SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Explosion, Sound* sound, D3DXVECTOR2 pos)
 {
 	positionStart = pos;
 	transform = D3DXVECTOR2(0, 0);
@@ -16,7 +16,7 @@ Byte::Byte(Sprite* sprite_Byte, Sprite* sprite_Smoke, Sprite* sprite_Explosion,
 	delay = 200;
 	HP = 20;
 	damage = 4;
-	bullet = new Bullet(sprite_Byte, spriteSheet_Byte);
+	bullet = new Bullet(sprite_Byte, spriteSheet_Byte, sound);
 	for (int i = 0; i < 6; i++)
 	{
 		smokes[i] = new Smoke(sprite_Smoke, spriteSheet_Smoke);

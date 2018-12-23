@@ -183,7 +183,7 @@ void QuadTree::GetAllObject(std::vector<Object*> &listObject, RECT rect)
 	for (auto child : mListObject)
 	{
 		RECT r = child->GetBound();
-		if (!(r.right < rect.left || r.left > rect.right || r.top < rect.bottom || r.bottom > rect.top))
+		if (!(r.right < rect.left || r.left > rect.right || r.top < rect.bottom || r.bottom > rect.top) || child->tag == Object::Tag::Port)
 		{
 			listObject.push_back(child);			
 		}
@@ -241,7 +241,7 @@ void QuadTree::GetObjectsCollideAble(std::vector<Object*> &listObject, std::vect
 
 			if (!isExists)
 			{
-				if (child->tag == Object::Tag::Wall)
+				if (child->tag == Object::Tag::Wall || child->tag == Object::Tag::Port)
 				{
 					listWall.push_back(child);
 				}

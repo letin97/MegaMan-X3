@@ -13,7 +13,7 @@ public:
 	~Scene();
 
 	//Load Data Game
-	void Init(Graphic* graphic);
+	void Init(Graphic* graphic, Sound *sound);
 
 	//Update Game sau khoảng thời gian dt
 	void Update(float dt, Keyboard* key);

@@ -4,8 +4,11 @@
 MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
 	Sprite* sprite_Smoke, Sprite* sprite_Weapons_And_Items,
 	SpriteSheet* spriteSheet_MegaMan, SpriteSheet* spriteSheet_LightEnergy, SpriteSheet* spriteSheet_Spark,
-	SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items)
+	SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Weapons_And_Items,
+	Sound *sound)
 {
+	this->sound = sound;
+
 	tag = Object::Player;
 	pathPNG = MegaManPNG;
 	sprite = sprite_MegaMan;
@@ -25,7 +28,7 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* spr
 	//Tạo đạn
 	for (int i = 0; i < 3; i++)
 	{
-		bullets[i] = new Bullet(sprite_Weapons_And_Items, spriteSheet_Weapons_And_Items);
+		bullets[i] = new Bullet(sprite_Weapons_And_Items, spriteSheet_Weapons_And_Items, sound);
 	}
 	numBullet = 0;
 
@@ -36,7 +39,7 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* spr
 	// 2350 900
 	// 5700 900
 	// 7734 120
-	position = D3DXVECTOR2(7734, 120);
+	position = D3DXVECTOR2(2300, 900);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
 	SetBound(30, 34);
@@ -336,7 +339,7 @@ void MegaMan::Update(float dt, Keyboard* key)
 		{
 			bool flipBullet = stateMegaMan->IsClamping() ? !flipFlag : flipFlag;
 			bullets[numBullet]->NewBullet(position + animationMegaMan->GetGun(animationMegaMan->GetIndex()), flipBullet, stateMegaMan->GetEnergyLevel());
-			if (flipFlag)
+			if (flipBullet)
 				bullets[numBullet]->SetVelocity(-BulletSpeed, 0);
 			else
 				bullets[numBullet]->SetVelocity(BulletSpeed, 0);

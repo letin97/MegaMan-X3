@@ -44,6 +44,12 @@
     <Filter Include="Object\Boss">
       <UniqueIdentifier>{47096851-f9d5-4f02-8265-3bd08a299929}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{47869c51-095e-4603-84da-5ea91475e39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Port">
+      <UniqueIdentifier>{4bdfca7e-6d0f-4c6a-9006-416fb233b860}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keyboard.h">
@@ -168,6 +174,18 @@
     </ClInclude>
     <ClInclude Include="Parasitic.h">
       <Filter>Object\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="dsutil.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="dxutil.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Port.h">
+      <Filter>Object\Port</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +317,15 @@
     </ClCompile>
     <ClCompile Include="Parasitic.cpp">
       <Filter>Object\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="dsutil.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Port.cpp">
+      <Filter>Object\Port</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

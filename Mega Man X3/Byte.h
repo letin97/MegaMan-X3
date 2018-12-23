@@ -24,7 +24,7 @@ public:
 	Byte() {}
 	~Byte() {}
 	Byte(Sprite* sprite_Byte, Sprite* sprite_Smoke, Sprite* sprite_Explosion,
-		SpriteSheet* spriteSheet_Byte, SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Explosion, D3DXVECTOR2 pos);
+		SpriteSheet* spriteSheet_Byte, SpriteSheet* spriteSheet_Smoke, SpriteSheet* spriteSheet_Explosion, Sound* sound, D3DXVECTOR2 pos);
 
 	void Update(float dt, Keyboard* key);
 	void Render(Viewport* viewport);

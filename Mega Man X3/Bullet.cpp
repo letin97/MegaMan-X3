@@ -5,8 +5,13 @@ Bullet::Bullet()
 {
 }
 
-Bullet::Bullet(Sprite* sprite_bullet, SpriteSheet* sprite_sheet)
+Bullet::Bullet(Sprite* sprite_bullet, SpriteSheet* sprite_sheet, Sound* sound)
 {
+	this->sound = sound;
+	soundBulletLv1 = sound->LoadSound(Bullet1Sound);
+	soundBulletLv2 = sound->LoadSound(Bullet2Sound);
+	soundBulletLv3 = sound->LoadSound(Bullet3Sound);
+
 	tag = Object::Bullets;
 
 	sprite = sprite_bullet;
@@ -35,18 +40,21 @@ void Bullet::NewBullet(D3DXVECTOR2 position, bool flipflag, int energyLevel)
 	{
 		bulletType = BulletLv1;
 		damage = 1;
+		sound->PlaySoundA(soundBulletLv1);
 		break;
 	}
 	case 1:
 	{
 		bulletType = BulletLv2;
 		damage = 2;
+		sound->PlaySoundA(soundBulletLv2);
 		break;
 	}
 	case 2:
 	{
 		bulletType = BulletLv3;
 		damage = 3;
+		sound->PlaySoundA(soundBulletLv3);
 		break;
 	}
 	case 3:

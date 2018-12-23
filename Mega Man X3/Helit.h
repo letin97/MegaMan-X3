@@ -19,7 +19,7 @@ public:
 	Helit() {}
 	~Helit() {}
 	Helit(MegaMan *megaMan, Sprite* sprite_Helit, Sprite* sprite_Item, Sprite* sprite_Explosion,
-		SpriteSheet* spriteSheet_Helit, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion);
+		SpriteSheet* spriteSheet_Helit, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion, Sound* sound);
 
 	void New(D3DXVECTOR2 pos);
 	void ChangeAnimation(Keyboard* key);

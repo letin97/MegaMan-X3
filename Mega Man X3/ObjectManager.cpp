@@ -33,8 +33,11 @@ ObjectManager::~ObjectManager()
 }
 
 //Load Game
-void ObjectManager::Init(Graphic* graphic)
+void ObjectManager::Init(Graphic* graphic, Sound *sound)
 {
+	this->sound = sound;
+	soundBlastHornet = sound->LoadSound(BlastHornetSound);
+
 	//Player
 	sprite_MegaMan = new Sprite(graphic, MegaManPNG);
 	spriteSheet_MegaMan = new SpriteSheet(MegaManXML);
@@ -73,11 +76,12 @@ void ObjectManager::Init(Graphic* graphic)
 	sprite_Lifebar = new Sprite(graphic, WeaponsAndItemsPNG);
 	
 	megaMan = new MegaMan(sprite_MegaMan, sprite_LightEnergy, sprite_Spark, sprite_Smoke, sprite_Weapons_And_Items,
-		spriteSheet_MegaMan, spriteSheet_LightEnergy, spriteSheet_Spark, spriteSheet_Smoke, spriteSheet_Weapons_And_Items);
+		spriteSheet_MegaMan, spriteSheet_LightEnergy, spriteSheet_Spark, spriteSheet_Smoke, spriteSheet_Weapons_And_Items,
+		sound);
 
 	mGenjibo = new Genjibo(sprite_Genjibo, spriteSheet_Genjibo, D3DXVECTOR2(2480, 870));
 
-	mByte = new Byte(sprite_Byte, sprite_Smoke, sprite_Explosion,spriteSheet_Byte, spriteSheet_Smoke, spriteSheet_Explosion, D3DXVECTOR2(5830, 890));
+	mByte = new Byte(sprite_Byte, sprite_Smoke, sprite_Explosion,spriteSheet_Byte, spriteSheet_Smoke, spriteSheet_Explosion, sound, D3DXVECTOR2(5830, 890));
 
 	mBlastHornet = new BlastHornet(megaMan, sprite_BlastHornet, spriteSheet_BlastHornet, D3DXVECTOR2(7880, 180));
 
@@ -181,39 +185,39 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	//	mGenjibo->Update(dt, keyboard);
 	//}
 
-	////Boss Byte
-	//if (mByte->GetAllowDraw())
-	//{
-	//	for (size_t i = 0; i < listWall.size(); i++)
-	//	{
-	//		//Va chạm boss với tường
-	//		D3DXVECTOR2 disByte = mByte->Distance(dt);
-	//		mByte->OnCollision(listWall.at(i), disByte);
+	//Boss Byte
+	if (mByte->GetAllowDraw())
+	{
+		for (size_t i = 0; i < listWall.size(); i++)
+		{
+			//Va chạm boss với tường
+			D3DXVECTOR2 disByte = mByte->Distance(dt);
+			mByte->OnCollision(listWall.at(i), disByte);
 
-	//		//Đạn boss
-	//		D3DXVECTOR2 disBulletByte = mByte->bullet->Distance(dt);
-	//		mByte->bullet->OnCollision(listWall.at(i), disBulletByte);
-	//	}
+			//Đạn boss
+			D3DXVECTOR2 disBulletByte = mByte->bullet->Distance(dt);
+			mByte->bullet->OnCollision(listWall.at(i), disBulletByte);
+		}
 
-	//	//MegaMan
-	//	D3DXVECTOR2 disMan = megaMan->Distance(dt);
-	//	D3DXVECTOR2 distance = disMan - mByte->Distance(dt);
-	//	megaMan->OnCollision(mByte, distance, disMan);
+		//MegaMan
+		D3DXVECTOR2 disMan = megaMan->Distance(dt);
+		D3DXVECTOR2 distance = disMan - mByte->Distance(dt);
+		megaMan->OnCollision(mByte, distance, disMan);
 
-	//	//Đạn MegaMan
-	//	for (int i = 0; i < 4; i++)
-	//	{
-	//		if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
-	//		{
-	//			if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mByte->GetBound()))
-	//			{
-	//				mByte->OnCollision(megaMan->bullets[i]);
-	//				megaMan->bullets[i]->OnCollision();
-	//			}
-	//		}
-	//	}
-	//	mByte->Update(dt, keyboard);
-	//}
+		//Đạn MegaMan
+		for (int i = 0; i < 4; i++)
+		{
+			if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
+			{
+				if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mByte->GetBound()))
+				{
+					mByte->OnCollision(megaMan->bullets[i]);
+					megaMan->bullets[i]->OnCollision();
+				}
+			}
+		}
+		mByte->Update(dt, keyboard);
+	}
 
 	//Boss BlastHorner
 	if (mBlastHornet->GetAllowDraw())
@@ -272,6 +276,8 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	megaMan->Update(dt, keyboard);
 
 	viewport->Update(dt, keyboard, megaMan->GetPosition(), megaMan->GetVelocity(), map->listStage);
+
+	sound->LoopSound(soundBlastHornet);
 }
 
 //Vẽ
@@ -353,7 +359,17 @@ void ObjectManager::ReadQuadTree(TiXmlElement *root, QuadTree *node, QuadTree *f
 			if (name == "HeadGunner")
 			{
 				HeadGunner *enemy = new HeadGunner(megaMan, sprite_HeadGunner, sprite_Weapons_And_Items, sprite_Explosion,
-					spriteSheet_HeadGunner, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
+					spriteSheet_HeadGunner, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				node->mListObject.push_back(enemy);
+			}
+			else if (name == "HeadGunnerFlip")
+			{
+				HeadGunner *enemy = new HeadGunner(megaMan, sprite_HeadGunner, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_HeadGunner, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
+				enemy->SetFlipFlag(true);
 				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;
@@ -362,20 +378,40 @@ void ObjectManager::ReadQuadTree(TiXmlElement *root, QuadTree *node, QuadTree *f
 			else if (name == "NotorBanger")
 			{
 				NotorBanger *enemy = new NotorBanger(megaMan, sprite_NotorBanger, sprite_Weapons_And_Items, sprite_Explosion,
-					spriteSheet_NotorBanger, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
+					spriteSheet_NotorBanger, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
 				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;
-				//node->mListObject.push_back(enemy);
+				node->mListObject.push_back(enemy);
+			}
+			else if (name == "NotorBangerFlip")
+			{
+				NotorBanger *enemy = new NotorBanger(megaMan, sprite_NotorBanger, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_NotorBanger, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
+				enemy->SetFlipFlag(true);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				node->mListObject.push_back(enemy);
 			}
 			else if (name == "Helit")
 			{
 				Helit *enemy = new Helit(megaMan, sprite_Helit, sprite_Weapons_And_Items, sprite_Explosion,
-					spriteSheet_Helit, spriteSheet_Weapons_And_Items, spriteSheet_Explosion);
+					spriteSheet_Helit, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
 				enemy->New(D3DXVECTOR2(x, y));
 				enemy->SetName(name);
 				enemy->id = id;
-				//node->mListObject.push_back(enemy);
+				node->mListObject.push_back(enemy);
+			}
+			else if (name == "HelitFlip")
+			{
+				Helit *enemy = new Helit(megaMan, sprite_Helit, sprite_Weapons_And_Items, sprite_Explosion,
+					spriteSheet_Helit, spriteSheet_Weapons_And_Items, spriteSheet_Explosion, sound);
+				enemy->SetFlipFlag(true);
+				enemy->New(D3DXVECTOR2(x, y));
+				enemy->SetName(name);
+				enemy->id = id;
+				node->mListObject.push_back(enemy);
 			}
 			else
 			{

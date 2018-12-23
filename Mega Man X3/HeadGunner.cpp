@@ -1,7 +1,7 @@
 ﻿#include"HeadGunner.h"
 
 HeadGunner::HeadGunner(MegaMan *megaMan, Sprite* sprite_HeadGunner, Sprite* sprite_Item, Sprite* sprite_Explosion,
-	SpriteSheet* spriteSheet_HeadGunner, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
+	SpriteSheet* spriteSheet_HeadGunner, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion, Sound* sound)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
@@ -9,7 +9,7 @@ HeadGunner::HeadGunner(MegaMan *megaMan, Sprite* sprite_HeadGunner, Sprite* spri
 	animationEnemy = new Animation(spriteSheet_HeadGunner);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_HeadGunner, spriteSheet_HeadGunner);
+		bullets[i] = new Bullet(sprite_HeadGunner, spriteSheet_HeadGunner,sound);
 	}
 	numBullet = 0;
 
@@ -50,7 +50,7 @@ void HeadGunner::Update(float dt, Keyboard* key)
 	if (enemyState != Dying)
 	{
 		if (delay <= 0)
-			delay = 40;
+			delay = 20;
 		delay--;
 
 		if (delay <= 0)
@@ -59,7 +59,7 @@ void HeadGunner::Update(float dt, Keyboard* key)
 			{
 			case HeadGunner::Standing:
 			{
-				if (abs(megaMan->GetPosition().x - position.x) < 150 && !isShoot)
+				if (abs(megaMan->GetPosition().x - position.x) < 200 && !isShoot)
 				{
 					isShoot = true;
 					action = Shooting;
@@ -70,7 +70,7 @@ void HeadGunner::Update(float dt, Keyboard* key)
 			{
 				if (!bullets[numBullet]->GetAllowDraw())
 				{
-					bullets[numBullet]->NewBullet(position + animationEnemy->GetGun(animationEnemy->GetIndex()), false, Bullet::BulletHeadGunner);
+					bullets[numBullet]->NewBullet(position + animationEnemy->GetGun(animationEnemy->GetIndex()), flipFlag, Bullet::BulletHeadGunner);
 					if (flipFlag) bullets[numBullet]->SetVelocity(2, 0);
 					else bullets[numBullet]->SetVelocity(-2, 0);
 					numBullet++;

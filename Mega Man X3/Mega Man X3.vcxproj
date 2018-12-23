@@ -157,6 +157,8 @@
     <ClInclude Include="Byte.h" />
     <ClInclude Include="Collapse.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="dsutil.h" />
+    <ClInclude Include="dxutil.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="Game.h" />
@@ -171,12 +173,14 @@
     <ClInclude Include="MapObjectGroup.h" />
     <ClInclude Include="NotorBanger.h" />
     <ClInclude Include="Parasitic.h" />
+    <ClInclude Include="Port.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Smoke.h" />
     <ClInclude Include="LightEnergy.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Spark.h" />
     <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="Keyboard.h" />
@@ -199,6 +203,7 @@
     <ClCompile Include="Byte.cpp" />
     <ClCompile Include="Collapse.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="dsutil.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -214,9 +219,11 @@
     <ClCompile Include="MapObjectGroup.cpp" />
     <ClCompile Include="NotorBanger.cpp" />
     <ClCompile Include="Parasitic.cpp" />
+    <ClCompile Include="Port.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Smoke.cpp" />
     <ClCompile Include="BlastHornet.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Spark.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="Keyboard.cpp" />

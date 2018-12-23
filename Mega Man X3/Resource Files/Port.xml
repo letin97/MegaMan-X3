@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="port" imagePath="Port.png" width="308" height="108">
+    <sprite x="2" y="59" w="15" h="47" oX="2" oY="59" oW="88" oH="302" />
+    <sprite x="20" y="59" w="15" h="47" oX="20" oY="59" oW="88" oH="302" />
+    <sprite x="38" y="59" w="15" h="47" oX="38" oY="59" oW="88" oH="302" />
+    <sprite x="56" y="59" w="16" h="47" oX="56" oY="59" oW="88" oH="302" />
+    <sprite x="74" y="59" w="16" h="47" oX="74" oY="59" oW="88" oH="302" />
+    <sprite x="92" y="59" w="16" h="47" oX="92" oY="59" oW="88" oH="302" />
+    <sprite x="110" y="59" w="16" h="47" oX="110" oY="59" oW="88" oH="302" />
+    <sprite x="128" y="59" w="16" h="47" oX="128" oY="59" oW="88" oH="302" />
+    <sprite x="146" y="59" w="16" h="47" oX="146" oY="59" oW="88" oH="302" />
+    <sprite x="164" y="59" w="16" h="47" oX="164" oY="59" oW="88" oH="302" />
+    <sprite x="182" y="59" w="16" h="47" oX="182" oY="59" oW="88" oH="302" />
+    <sprite x="200" y="59" w="16" h="47" oX="200" oY="59" oW="88" oH="302" />
+    <sprite x="218" y="59" w="16" h="47" oX="218" oY="59" oW="88" oH="302" />
+    <sprite x="236" y="59" w="16" h="47" oX="236" oY="59" oW="88" oH="302" />
+    <sprite x="254" y="59" w="16" h="47" oX="254" oY="59" oW="88" oH="302" />
+    <sprite x="272" y="59" w="16" h="47" oX="272" oY="59" oW="88" oH="302" />
+    <sprite x="290" y="59" w="16" h="47" oX="290" oY="59" oW="88" oH="302" />
+  </Animation>
+</Animations>

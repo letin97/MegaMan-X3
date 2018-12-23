@@ -12,10 +12,10 @@ Scene::~Scene()
 }
 
 //Load Data Game
-void Scene::Init(Graphic* graphic)
+void Scene::Init(Graphic* graphic, Sound *sound)
 {
 	objManager = new ObjectManager();
-	objManager->Init(graphic);
+	objManager->Init(graphic, sound);
 }
 
 //Update Game sau khoảng thời gian dt

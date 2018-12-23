@@ -1,7 +1,7 @@
 ﻿#include"NotorBanger.h"
 
 NotorBanger::NotorBanger(MegaMan *megaMan, Sprite* sprite_NotorBanger, Sprite* sprite_Item, Sprite* sprite_Explosion,
-	SpriteSheet* spriteSheet_NotorBanger, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion)
+	SpriteSheet* spriteSheet_NotorBanger, SpriteSheet* spriteSheet_Item, SpriteSheet* spriteSheet_Explosion, Sound* sound)
 {
 	tag = Tag::Enemys;
 	this->megaMan = megaMan;
@@ -9,7 +9,7 @@ NotorBanger::NotorBanger(MegaMan *megaMan, Sprite* sprite_NotorBanger, Sprite* s
 	animationEnemy = new Animation(spriteSheet_NotorBanger);
 	for (int i = 0; i < 4; i++)
 	{
-		bullets[i] = new Bullet(sprite_NotorBanger, spriteSheet_NotorBanger);
+		bullets[i] = new Bullet(sprite_NotorBanger, spriteSheet_NotorBanger, sound);
 	}
 	numBullet = 0;
 	item = new Item(megaMan, sprite_Item, spriteSheet_Item);
@@ -68,7 +68,7 @@ void NotorBanger::Update(float dt, Keyboard* key)
 		if (!isJump)
 		{
 			if (delay <= 0)
-				delay = 40;
+				delay = 20;
 			delay--;
 
 			if (delay <= 0)
@@ -77,7 +77,7 @@ void NotorBanger::Update(float dt, Keyboard* key)
 				{
 				case NotorBanger::Standing:
 				{
-					if (abs(megaMan->GetPosition().x - position.x) < 150)
+					if (abs(megaMan->GetPosition().x - position.x) < 120)
 					{
 						action = Moving;
 						if (abs(megaMan->GetPosition().x - position.x) < 100 && !isShoot)

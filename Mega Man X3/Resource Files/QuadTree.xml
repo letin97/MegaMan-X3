@@ -3,100 +3,163 @@
     <node level="2" left="0" top="7936" right="3968" bottom="3968" numObj="0" />
     <node level="2" left="3968" top="7936" right="7936" bottom="3968" numObj="0" />
     <node level="2" left="0" top="3968" right="3968" bottom="0" numObj="0">
-        <node level="3" left="0" top="3968" right="1984" bottom="1984" numObj="0" />
+        <node level="3" left="0" top="3968" right="1984" bottom="1984" numObj="3">
+            <obj id="157" name="Wall" x="1287" y="1872" w="46" h="281" />
+            <obj id="158" name="Wall" x="1520" y="1936" w="32" h="161" />
+            <obj id="161" name="Wall" x="1399" y="2032" w="271" h="31" />
+        </node>
         <node level="3" left="1984" top="3968" right="3968" bottom="1984" numObj="0" />
         <node level="3" left="0" top="1984" right="1984" bottom="0" numObj="0">
             <node level="4" left="0" top="1984" right="992" bottom="992" numObj="0">
                 <node level="5" left="0" top="1984" right="496" bottom="1488" numObj="0" />
-                <node level="5" left="496" top="1984" right="992" bottom="1488" numObj="2">
+                <node level="5" left="496" top="1984" right="992" bottom="1488" numObj="4">
                     <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
-                    <obj id="72" name="Wall" x="784" y="1530" w="32" h="529" />
+                    <obj id="72" name="Wall" x="784" y="1538" w="32" h="513" />
+                    <obj id="163" name="Wall" x="1127" y="1775" w="271" h="29" />
+                    <obj id="164" name="Wall" x="896" y="1783" w="191" h="16" />
                 </node>
-                <node level="5" left="0" top="1488" right="496" bottom="992" numObj="5">
-                    <obj id="105" name="NotorBanger" x="252" y="1124" w="28" h="31" />
-                    <obj id="106" name="Helit" x="159" y="1165" w="28" h="31" />
-                    <obj id="96" name="HeadGunner" x="159" y="1121" w="28" h="31" />
+                <node level="5" left="0" top="1488" right="496" bottom="992" numObj="4">
+                    <obj id="26" name="Wall" x="432" y="1118" w="160" h="64" />
                     <obj id="23" name="Wall" x="176" y="1096" w="352" h="16" />
-                    <obj id="26" name="Wall" x="432" y="1118" w="160" h="64" />
+                    <obj id="105" name="NotorBanger" x="476" y="1166" w="28" h="31" />
+                    <obj id="162" name="Wall" x="591" y="1272" w="416" h="15" />
                 </node>
-                <node level="5" left="496" top="1488" right="992" bottom="992" numObj="5">
-                    <obj id="26" name="Wall" x="432" y="1118" w="160" h="64" />
-                    <obj id="39" name="Wall" x="576" y="1142" w="128" h="113" />
-                    <obj id="40" name="Wall" x="816" y="1094" w="352" h="16" />
-                    <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
-                    <obj id="72" name="Wall" x="784" y="1530" w="32" h="529" />
+                <node level="5" left="496" top="1488" right="992" bottom="992" numObj="0">
+                    <node level="6" left="496" top="1488" right="744" bottom="1240" numObj="1">
+                        <obj id="162" name="Wall" x="591" y="1272" w="416" h="15" />
+                    </node>
+                    <node level="6" left="744" top="1488" right="992" bottom="1240" numObj="4">
+                        <obj id="142" name="HeadGunnerFlip" x="818" y="1381" w="28" h="31" />
+                        <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
+                        <obj id="72" name="Wall" x="784" y="1538" w="32" h="513" />
+                        <obj id="162" name="Wall" x="591" y="1272" w="416" h="15" />
+                    </node>
+                    <node level="6" left="496" top="1240" right="744" bottom="992" numObj="4">
+                        <obj id="40" name="Wall" x="816" y="1094" w="352" h="16" />
+                        <obj id="39" name="Wall" x="576" y="1142" w="128" h="113" />
+                        <obj id="137" name="NotorBanger" x="718" y="1117" w="28" h="31" />
+                        <obj id="26" name="Wall" x="432" y="1118" w="160" h="64" />
+                    </node>
+                    <node level="6" left="744" top="1240" right="992" bottom="992" numObj="3">
+                        <obj id="40" name="Wall" x="816" y="1094" w="352" h="16" />
+                        <obj id="188" name="HeadGunner" x="976" y="1125" w="28" h="43" />
+                        <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
+                    </node>
                 </node>
             </node>
             <node level="4" left="992" top="1984" right="1984" bottom="992" numObj="0">
-                <node level="5" left="992" top="1984" right="1488" bottom="1488" numObj="5">
-                    <obj id="54" name="Wall" x="1472" y="1590" w="448" h="16" />
-                    <obj id="53" name="Wall" x="1216" y="1606" w="64" h="47" />
-                    <obj id="52" name="Wall" x="1136" y="1631" w="96" h="63" />
-                    <obj id="49" name="Wall" x="1055" y="1607" w="65" h="16" />
-                    <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
+                <node level="5" left="992" top="1984" right="1488" bottom="1488" numObj="0">
+                    <node level="6" left="992" top="1984" right="1240" bottom="1736" numObj="1">
+                        <obj id="163" name="Wall" x="1127" y="1775" w="271" h="29" />
+                    </node>
+                    <node level="6" left="1240" top="1984" right="1488" bottom="1736" numObj="3">
+                        <obj id="155" name="Wall" x="1503" y="1776" w="222" h="155" />
+                        <obj id="157" name="Wall" x="1287" y="1872" w="46" h="281" />
+                        <obj id="163" name="Wall" x="1127" y="1775" w="271" h="29" />
+                    </node>
+                    <node level="6" left="992" top="1736" right="1240" bottom="1488" numObj="4">
+                        <obj id="53" name="Wall" x="1216" y="1606" w="64" h="47" />
+                        <obj id="52" name="Wall" x="1136" y="1631" w="96" h="63" />
+                        <obj id="49" name="Wall" x="1055" y="1607" w="65" h="16" />
+                        <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
+                    </node>
+                    <node level="6" left="1240" top="1736" right="1488" bottom="1488" numObj="4">
+                        <obj id="155" name="Wall" x="1503" y="1776" w="222" h="155" />
+                        <obj id="54" name="Wall" x="1472" y="1590" w="448" h="16" />
+                        <obj id="53" name="Wall" x="1216" y="1606" w="64" h="47" />
+                        <obj id="157" name="Wall" x="1287" y="1872" w="46" h="281" />
+                    </node>
                 </node>
-                <node level="5" left="1488" top="1984" right="1984" bottom="1488" numObj="2">
+                <node level="5" left="1488" top="1984" right="1984" bottom="1488" numObj="5">
                     <obj id="54" name="Wall" x="1472" y="1590" w="448" h="16" />
+                    <obj id="58" name="Wall" x="1960" y="1773" w="691" h="31" />
                     <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
+                    <obj id="155" name="Wall" x="1503" y="1776" w="222" h="155" />
+                    <obj id="158" name="Wall" x="1520" y="1936" w="32" h="161" />
                 </node>
                 <node level="5" left="992" top="1488" right="1488" bottom="992" numObj="2">
-                    <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
                     <obj id="40" name="Wall" x="816" y="1094" w="352" h="16" />
+                    <obj id="45" name="Wall" x="1008" y="1351" w="32" h="529" />
                 </node>
                 <node level="5" left="1488" top="1488" right="1984" bottom="992" numObj="0">
-                    <node level="6" left="1488" top="1488" right="1736" bottom="1240" numObj="3">
+                    <node level="6" left="1488" top="1488" right="1736" bottom="1240" numObj="5">
+                        <obj id="144" name="NotorBangerFlip" x="1598" y="1375" w="28" h="31" />
+                        <obj id="145" name="NotorBangerFlip" x="1599" y="1247" w="28" h="31" />
+                        <obj id="55" name="Wall" x="1856" y="1344" w="287" h="31" />
+                        <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
                         <obj id="64" name="Wall" x="1599" y="1335" w="62" h="45" />
+                    </node>
+                    <node level="6" left="1736" top="1488" right="1984" bottom="1240" numObj="3">
+                        <obj id="147" name="NotorBanger" x="1971" y="1246" w="28" h="31" />
+                        <obj id="146" name="NotorBanger" x="1840" y="1376" w="28" h="31" />
+                        <obj id="55" name="Wall" x="1856" y="1344" w="287" h="31" />
+                    </node>
+                    <node level="6" left="1488" top="1240" right="1736" bottom="992" numObj="6">
+                        <obj id="143" name="NotorBangerFlip" x="1598" y="1119" w="28" h="31" />
+                        <obj id="145" name="NotorBangerFlip" x="1599" y="1247" w="28" h="31" />
                         <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
-                        <obj id="55" name="Wall" x="1856" y="1344" w="287" h="31" />
-                    </node>
-                    <node level="6" left="1736" top="1488" right="1984" bottom="1240" numObj="1">
-                        <obj id="55" name="Wall" x="1856" y="1344" w="287" h="31" />
-                    </node>
-                    <node level="6" left="1488" top="1240" right="1736" bottom="992" numObj="4">
-                        <obj id="63" name="Wall" x="1856" y="1088" w="287" h="31" />
                         <obj id="62" name="Wall" x="1727" y="1215" w="319" h="31" />
-                        <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
+                        <obj id="63" name="Wall" x="1856" y="1088" w="287" h="31" />
                         <obj id="66" name="Wall" x="1600" y="1080" w="62" h="45" />
                     </node>
-                    <node level="6" left="1736" top="1240" right="1984" bottom="992" numObj="3">
-                        <obj id="65" name="Wall" x="1968" y="1207" w="62" h="45" />
-                        <obj id="63" name="Wall" x="1856" y="1088" w="287" h="31" />
+                    <node level="6" left="1736" top="1240" right="1984" bottom="992" numObj="5">
+                        <obj id="148" name="NotorBanger" x="1973" y="1120" w="28" h="31" />
+                        <obj id="147" name="NotorBanger" x="1971" y="1246" w="28" h="31" />
                         <obj id="62" name="Wall" x="1727" y="1215" w="319" h="31" />
+                        <obj id="63" name="Wall" x="1856" y="1088" w="287" h="31" />
+                        <obj id="65" name="Wall" x="1968" y="1207" w="62" h="45" />
                     </node>
                 </node>
             </node>
             <node level="4" left="0" top="992" right="992" bottom="0" numObj="0" />
-            <node level="4" left="992" top="992" right="1984" bottom="0" numObj="5">
-                <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
-                <obj id="67" name="Wall" x="1640" y="839" w="144" h="16" />
-                <obj id="69" name="Wall" x="1768" y="886" w="111" h="80" />
-                <obj id="70" name="Wall" x="1854" y="863" w="64" h="61" />
-                <obj id="71" name="Wall" x="2527" y="839" w="1279" h="15" />
+            <node level="4" left="992" top="992" right="1984" bottom="0" numObj="0">
+                <node level="5" left="992" top="992" right="1488" bottom="496" numObj="0" />
+                <node level="5" left="1488" top="992" right="1984" bottom="496" numObj="0">
+                    <node level="6" left="1488" top="992" right="1736" bottom="744" numObj="3">
+                        <obj id="61" name="Wall" x="1552" y="1206" w="31" h="750" />
+                        <obj id="67" name="Wall" x="1640" y="839" w="144" h="16" />
+                        <obj id="69" name="Wall" x="1768" y="886" w="111" h="80" />
+                    </node>
+                    <node level="6" left="1736" top="992" right="1984" bottom="744" numObj="4">
+                        <obj id="149" name="NotorBanger" x="1866" y="912" w="28" h="31" />
+                        <obj id="69" name="Wall" x="1768" y="886" w="111" h="80" />
+                        <obj id="70" name="Wall" x="1854" y="863" w="64" h="61" />
+                        <obj id="71" name="Wall" x="2527" y="839" w="1279" h="15" />
+                    </node>
+                    <node level="6" left="1488" top="744" right="1736" bottom="496" numObj="0" />
+                    <node level="6" left="1736" top="744" right="1984" bottom="496" numObj="0" />
+                </node>
+                <node level="5" left="992" top="496" right="1488" bottom="0" numObj="0" />
+                <node level="5" left="1488" top="496" right="1984" bottom="0" numObj="0" />
             </node>
         </node>
         <node level="3" left="1984" top="1984" right="3968" bottom="0" numObj="0">
             <node level="4" left="1984" top="1984" right="2976" bottom="992" numObj="0">
-                <node level="5" left="1984" top="1984" right="2480" bottom="1488" numObj="4">
-                    <obj id="56" name="Wall" x="2016" y="1355" w="31" h="506" />
+                <node level="5" left="1984" top="1984" right="2480" bottom="1488" numObj="5">
+                    <obj id="58" name="Wall" x="1960" y="1773" w="691" h="31" />
                     <obj id="57" name="Wall" x="2137" y="1620" w="272" h="21" />
-                    <obj id="58" name="Wall" x="2287" y="1684" w="30" h="155" />
+                    <obj id="56" name="Wall" x="2016" y="1355" w="31" h="506" />
                     <obj id="59" name="Wall" x="2103" y="1669" w="45" h="83" />
+                    <obj id="165" name="Wall" x="2290" y="1689" w="30" h="155" />
                 </node>
                 <node level="5" left="2480" top="1984" right="2976" bottom="1488" numObj="0" />
                 <node level="5" left="1984" top="1488" right="2480" bottom="992" numObj="0">
-                    <node level="6" left="1984" top="1488" right="2232" bottom="1240" numObj="2">
-                        <obj id="56" name="Wall" x="2016" y="1355" w="31" h="506" />
+                    <node level="6" left="1984" top="1488" right="2232" bottom="1240" numObj="3">
+                        <obj id="147" name="NotorBanger" x="1971" y="1246" w="28" h="31" />
                         <obj id="55" name="Wall" x="1856" y="1344" w="287" h="31" />
+                        <obj id="56" name="Wall" x="2016" y="1355" w="31" h="506" />
                     </node>
                     <node level="6" left="2232" top="1488" right="2480" bottom="1240" numObj="0" />
-                    <node level="6" left="1984" top="1240" right="2232" bottom="992" numObj="3">
+                    <node level="6" left="1984" top="1240" right="2232" bottom="992" numObj="5">
                         <obj id="65" name="Wall" x="1968" y="1207" w="62" h="45" />
                         <obj id="63" name="Wall" x="1856" y="1088" w="287" h="31" />
+                        <obj id="148" name="NotorBanger" x="1973" y="1120" w="28" h="31" />
+                        <obj id="147" name="NotorBanger" x="1971" y="1246" w="28" h="31" />
                         <obj id="56" name="Wall" x="2016" y="1355" w="31" h="506" />
                     </node>
                     <node level="6" left="2232" top="1240" right="2480" bottom="992" numObj="2">
+                        <obj id="107" name="Wall" x="2311" y="952" w="15" h="111" />
                         <obj id="108" name="Wall" x="2430" y="1015" w="254" h="14" />
-                        <obj id="107" name="Wall" x="2311" y="928" w="15" h="160" />
                     </node>
                 </node>
                 <node level="5" left="2480" top="1488" right="2976" bottom="992" numObj="2">
@@ -104,14 +167,51 @@
                     <obj id="109" name="Wall" x="2552" y="928" w="15" h="160" />
                 </node>
             </node>
-            <node level="4" left="2976" top="1984" right="3968" bottom="992" numObj="2">
-                <obj id="79" name="Wall" x="3087" y="944" w="29" h="192" />
-                <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+            <node level="4" left="2976" top="1984" right="3968" bottom="992" numObj="0">
+                <node level="5" left="2976" top="1984" right="3472" bottom="1488" numObj="0" />
+                <node level="5" left="3472" top="1984" right="3968" bottom="1488" numObj="0" />
+                <node level="5" left="2976" top="1488" right="3472" bottom="992" numObj="0">
+                    <node level="6" left="2976" top="1488" right="3224" bottom="1240" numObj="0" />
+                    <node level="6" left="3224" top="1488" right="3472" bottom="1240" numObj="0" />
+                    <node level="6" left="2976" top="1240" right="3224" bottom="992" numObj="5">
+                        <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+                        <obj id="79" name="Wall" x="3087" y="944" w="29" h="192" />
+                        <obj id="170" name="HelitFlip" x="3018" y="1154" w="28" h="31" />
+                        <obj id="173" name="NotorBanger" x="3183" y="1135" w="28" h="31" />
+                        <obj id="150" name="Wall" x="3214" y="1093" w="136" h="51" />
+                    </node>
+                    <node level="6" left="3224" top="1240" right="3472" bottom="992" numObj="5">
+                        <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+                        <obj id="169" name="Helit" x="3425" y="1168" w="28" h="31" />
+                        <obj id="106" name="Helit" x="3267" y="1199" w="28" h="31" />
+                        <obj id="150" name="Wall" x="3214" y="1093" w="136" h="51" />
+                        <obj id="152" name="Wall" x="3439" y="1084" w="96" h="38" />
+                    </node>
+                </node>
+                <node level="5" left="3472" top="1488" right="3968" bottom="992" numObj="0">
+                    <node level="6" left="3472" top="1488" right="3720" bottom="1240" numObj="0" />
+                    <node level="6" left="3720" top="1488" right="3968" bottom="1240" numObj="0" />
+                    <node level="6" left="3472" top="1240" right="3720" bottom="992" numObj="5">
+                        <obj id="152" name="Wall" x="3439" y="1084" w="96" h="38" />
+                        <obj id="151" name="Wall" x="3664" y="1095" w="136" h="51" />
+                        <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+                        <obj id="174" name="NotorBanger" x="3636" y="1136" w="28" h="31" />
+                        <obj id="171" name="Helit" x="3537" y="1197" w="28" h="31" />
+                    </node>
+                    <node level="6" left="3720" top="1240" right="3968" bottom="992" numObj="4">
+                        <obj id="151" name="Wall" x="3664" y="1095" w="136" h="51" />
+                        <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+                        <obj id="172" name="Helit" x="3791" y="1205" w="28" h="31" />
+                        <obj id="153" name="Wall" x="3886" y="1085" w="96" h="38" />
+                    </node>
+                </node>
             </node>
-            <node level="4" left="1984" top="992" right="2976" bottom="0" numObj="3">
+            <node level="4" left="1984" top="992" right="2976" bottom="0" numObj="5">
                 <obj id="71" name="Wall" x="2527" y="839" w="1279" h="15" />
-                <obj id="107" name="Wall" x="2311" y="928" w="15" h="160" />
+                <obj id="107" name="Wall" x="2311" y="952" w="15" h="111" />
                 <obj id="109" name="Wall" x="2552" y="928" w="15" h="160" />
+                <obj id="166" name="Wall" x="2720" y="903" w="318" h="14" />
+                <obj id="189" name="Port" x="2296" y="872" w="14" h="47" />
             </node>
             <node level="4" left="2976" top="992" right="3968" bottom="0" numObj="0">
                 <node level="5" left="2976" top="992" right="3472" bottom="496" numObj="5">
@@ -144,30 +244,35 @@
         <node level="3" left="3968" top="3968" right="5952" bottom="1984" numObj="0" />
         <node level="3" left="5952" top="3968" right="7936" bottom="1984" numObj="0" />
         <node level="3" left="3968" top="1984" right="5952" bottom="0" numObj="0">
-            <node level="4" left="3968" top="1984" right="4960" bottom="992" numObj="1">
+            <node level="4" left="3968" top="1984" right="4960" bottom="992" numObj="2">
                 <obj id="80" name="Wall" x="3663" y="1052" w="1181" h="25" />
+                <obj id="154" name="Wall" x="4113" y="1093" w="136" h="51" />
             </node>
-            <node level="4" left="4960" top="1984" right="5952" bottom="992" numObj="3">
-                <obj id="113" name="Wall" x="5633" y="928" w="31" h="158" />
-                <obj id="114" name="Wall" x="5889" y="927" w="31" h="158" />
+            <node level="4" left="4960" top="1984" right="5952" bottom="992" numObj="4">
                 <obj id="115" name="Wall" x="5761" y="1015" w="286" h="16" />
+                <obj id="114" name="Wall" x="5889" y="927" w="31" h="158" />
+                <obj id="113" name="Wall" x="5633" y="928" w="31" h="158" />
+                <obj id="175" name="Wall" x="6023" y="1007" w="238" h="30" />
             </node>
             <node level="4" left="3968" top="992" right="4960" bottom="0" numObj="1">
                 <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
             </node>
             <node level="4" left="4960" top="992" right="5952" bottom="0" numObj="0">
-                <node level="5" left="4960" top="992" right="5456" bottom="496" numObj="1">
+                <node level="5" left="4960" top="992" right="5456" bottom="496" numObj="2">
                     <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                    <obj id="167" name="Wall" x="5506" y="904" w="225" h="14" />
                 </node>
                 <node level="5" left="5456" top="992" right="5952" bottom="496" numObj="0">
-                    <node level="6" left="5456" top="992" right="5704" bottom="744" numObj="2">
-                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                    <node level="6" left="5456" top="992" right="5704" bottom="744" numObj="3">
                         <obj id="113" name="Wall" x="5633" y="928" w="31" h="158" />
-                    </node>
-                    <node level="6" left="5704" top="992" right="5952" bottom="744" numObj="3">
                         <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                        <obj id="167" name="Wall" x="5506" y="904" w="225" h="14" />
+                    </node>
+                    <node level="6" left="5704" top="992" right="5952" bottom="744" numObj="4">
                         <obj id="114" name="Wall" x="5889" y="927" w="31" h="158" />
+                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
                         <obj id="123" name="Wall" x="5896" y="567" w="17" h="370" />
+                        <obj id="175" name="Wall" x="6023" y="1007" w="238" h="30" />
                     </node>
                     <node level="6" left="5456" top="744" right="5704" bottom="496" numObj="0" />
                     <node level="6" left="5704" top="744" right="5952" bottom="496" numObj="3">
@@ -186,42 +291,71 @@
             </node>
         </node>
         <node level="3" left="5952" top="1984" right="7936" bottom="0" numObj="0">
-            <node level="4" left="5952" top="1984" right="6944" bottom="992" numObj="0" />
+            <node level="4" left="5952" top="1984" right="6944" bottom="992" numObj="1">
+                <obj id="175" name="Wall" x="6023" y="1007" w="238" h="30" />
+            </node>
             <node level="4" left="6944" top="1984" right="7936" bottom="992" numObj="0" />
             <node level="4" left="5952" top="992" right="6944" bottom="0" numObj="0">
                 <node level="5" left="5952" top="992" right="6448" bottom="496" numObj="0">
-                    <node level="6" left="5952" top="992" right="6200" bottom="744" numObj="3">
+                    <node level="6" left="5952" top="992" right="6200" bottom="744" numObj="4">
                         <obj id="121" name="Wall" x="6128" y="829" w="29" h="320" />
-                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
                         <obj id="120" name="Wall" x="6015" y="839" w="61" h="109" />
+                        <obj id="90" name="Wall" x="4831" y="835" w="2303" h="25" />
+                        <obj id="175" name="Wall" x="6023" y="1007" w="238" h="30" />
                     </node>
                     <node level="6" left="6200" top="992" right="6448" bottom="744" numObj="0" />
-                    <node level="6" left="5952" top="744" right="6200" bottom="496" numObj="4">
-                        <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
-                        <obj id="124" name="Wall" x="6000" y="560" w="129" h="30" />
+                    <node level="6" left="5952" top="744" right="6200" bottom="496" numObj="6">
                         <obj id="122" name="Wall" x="6048" y="655" w="191" h="31" />
                         <obj id="121" name="Wall" x="6128" y="829" w="29" h="320" />
+                        <obj id="177" name="NotorBanger" x="6078" y="495" w="28" h="31" />
+                        <obj id="176" name="NotorBangerFlip" x="6017" y="688" w="28" h="31" />
+                        <obj id="124" name="Wall" x="6000" y="560" w="129" h="30" />
+                        <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
                     </node>
                     <node level="6" left="6200" top="744" right="6448" bottom="496" numObj="0" />
                 </node>
                 <node level="5" left="6448" top="992" right="6944" bottom="496" numObj="0" />
-                <node level="5" left="5952" top="496" right="6448" bottom="0" numObj="5">
-                    <obj id="125" name="Wall" x="6032" y="464" w="129" h="30" />
-                    <obj id="126" name="Wall" x="5975" y="366" w="176" h="30" />
-                    <obj id="127" name="Wall" x="6071" y="271" w="176" h="30" />
-                    <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
-                    <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                <node level="5" left="5952" top="496" right="6448" bottom="0" numObj="0">
+                    <node level="6" left="5952" top="496" right="6200" bottom="248" numObj="6">
+                        <obj id="126" name="Wall" x="5975" y="366" w="176" h="30" />
+                        <obj id="125" name="Wall" x="6032" y="464" w="129" h="30" />
+                        <obj id="177" name="NotorBanger" x="6078" y="495" w="28" h="31" />
+                        <obj id="178" name="NotorBanger" x="6104" y="302" w="28" h="31" />
+                        <obj id="127" name="Wall" x="6071" y="271" w="176" h="30" />
+                        <obj id="128" name="Wall" x="6137" y="464" w="17" h="355" />
+                    </node>
+                    <node level="6" left="6200" top="496" right="6448" bottom="248" numObj="0" />
+                    <node level="6" left="5952" top="248" right="6200" bottom="0" numObj="2">
+                        <obj id="184" name="HeadGunner" x="6130" y="101" w="28" h="43" />
+                        <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                    </node>
+                    <node level="6" left="6200" top="248" right="6448" bottom="0" numObj="2">
+                        <obj id="180" name="HeadGunner" x="6387" y="101" w="28" h="43" />
+                        <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
+                    </node>
                 </node>
-                <node level="5" left="6448" top="496" right="6944" bottom="0" numObj="2">
+                <node level="5" left="6448" top="496" right="6944" bottom="0" numObj="4">
+                    <obj id="185" name="HeadGunner" x="6641" y="101" w="28" h="43" />
+                    <obj id="186" name="HeadGunner" x="6848" y="102" w="28" h="43" />
                     <obj id="130" name="Wall" x="6214" y="70" w="592" h="18" />
                     <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
                 </node>
             </node>
-            <node level="4" left="6944" top="992" right="7936" bottom="0" numObj="4">
-                <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
-                <obj id="132" name="Wall" x="7928" y="161" w="13" h="158" />
-                <obj id="133" name="Wall" x="7678" y="159" w="31" h="158" />
-                <obj id="134" name="Wall" x="7799" y="249" w="274" h="16" />
+            <node level="4" left="6944" top="992" right="7936" bottom="0" numObj="0">
+                <node level="5" left="6944" top="992" right="7440" bottom="496" numObj="0" />
+                <node level="5" left="7440" top="992" right="7936" bottom="496" numObj="0" />
+                <node level="5" left="6944" top="496" right="7440" bottom="0" numObj="3">
+                    <obj id="168" name="Wall" x="7527" y="137" w="270" h="14" />
+                    <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
+                    <obj id="187" name="HeadGunner" x="7057" y="102" w="28" h="43" />
+                </node>
+                <node level="5" left="7440" top="496" right="7936" bottom="0" numObj="5">
+                    <obj id="168" name="Wall" x="7527" y="137" w="270" h="14" />
+                    <obj id="134" name="Wall" x="7799" y="249" w="274" h="16" />
+                    <obj id="133" name="Wall" x="7678" y="159" w="31" h="158" />
+                    <obj id="132" name="Wall" x="7928" y="161" w="13" h="158" />
+                    <obj id="131" name="Wall" x="7248" y="67" w="1374" h="25" />
+                </node>
             </node>
         </node>
     </node>

@@ -12,7 +12,9 @@
 #include "Genjibo.h"
 #include "Byte.h"
 #include "BlastHornet.h"
+#include "Port.h"
 #include "Lifebar.h"
+#include "Sound.h"
 
 class ObjectManager
 {
@@ -23,6 +25,9 @@ protected:
 	Map* map;
 	QuadTree  *mQuadTree;
 	Lifebar *lifebar;
+
+	Sound* sound;
+	GSound* soundBlastHornet;
 
 	vector <Object*> listObjectCollison;
 	vector <Object*> listWall;
@@ -73,7 +78,7 @@ public:
 	ObjectManager();
 	~ObjectManager();
 
-	void Init(Graphic* graphic);
+	void Init(Graphic* graphic, Sound *sound);
 
 	//Update Game sau khoảng thời gian dt
 	void Update(float dt, Keyboard* key);

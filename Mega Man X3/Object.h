@@ -1,11 +1,13 @@
 ﻿#pragma once
 #include "Sprite.h"
 #include "Collision.h"
+#include "Sound.h"
 
 class Object
 {
 protected:
 	Sprite* sprite;
+	Sound* sound;
 	float width;		
 	float height;
 	D3DXVECTOR2 position;			//Vị trí vẽ
@@ -29,6 +31,7 @@ public:
 		Wall,
 		Enemys,
 		Items,
+		Port,
 		None
 	};
 	Tag tag;
