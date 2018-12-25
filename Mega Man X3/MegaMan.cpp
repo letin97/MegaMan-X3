@@ -36,11 +36,11 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* spr
 	//Tạo StateSamus lấy state
 	stateMegaMan = new MegaManState(this);
 
-	// 16 1280
+	// 16 1280	2100 900
 	// 2350 900
 	// 5700 900
 	// 7734 120
-	position = D3DXVECTOR2(780, 1280);
+	position = D3DXVECTOR2(2100, 900);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
 	SetBound(30, 34);
@@ -59,131 +59,149 @@ MegaManState* MegaMan::GetMegaManState()
 	return stateMegaMan;
 }
 
+//Khóa chuyển động
+void MegaMan::LockAnimation(bool lock)
+{
+	if (lock)
+	{
+		SetVelocity(0, 0);
+		animationMegaMan->SetPause(true, animationMegaMan->GetIndex());
+		this->lock = true;
+	}
+	else
+	{
+		animationMegaMan->SetPause(false);
+		this->lock = false;
+	}
+}
 
 void MegaMan::ChangeAnimation(float dt, Keyboard* keyboard)
 {
-	stateMegaMan->CheckSide(keyboard);
+	if (!lock)
+	{
+		stateMegaMan->CheckSide(keyboard);
 
-	switch (stateMegaMan->GetState())
-	{
-	case MegaManState::Standing:
-	{
-		stateMegaMan->StandState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->StandAnimation();
-		else animationMegaMan->StandShootAnimation();
-		break;
-	}
-	case MegaManState::Running:
-	{
-		stateMegaMan->RunState(keyboard);
-		if(!stateMegaMan->GetIsDelayShoot()) animationMegaMan->RunAnimation();
-		else animationMegaMan->RunShootAnimation();
-		break;
-	}
-	case MegaManState::Jumping:
-	{
-		stateMegaMan->JumpState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->JumpAnimation();
-		else animationMegaMan->JumpShootAnimation();
-		//SetBound(24, 46);
-		break;
-	}
-	case MegaManState::Falling:
-	{
-		stateMegaMan->FallState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->FallAnimation();
-		else animationMegaMan->FallShootAnimation();
-		break;
-	}
-	case MegaManState::Gliding:
-	{
-		stateMegaMan->GlideState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->GlideAnimation();
-		else animationMegaMan->GlideShootAnimation();
-		break;
-	}
-	case MegaManState::GlidingAerial:
-	{
-		stateMegaMan->GlidingAerialState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->GlideAnimation();
-		else animationMegaMan->GlideShootAnimation();
-		break;
-	}
-	case MegaManState::Clamping:
-	{
-		stateMegaMan->ClampState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->ClampAnimation();
-		else animationMegaMan->ClampShootAnimation();
-		break;
-	}
-	case MegaManState::Kicking:
-	{
-		stateMegaMan->KickState(keyboard);
-		if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->KickAnimation();
-		else animationMegaMan->KickShootAnimation();
-		break;
-	}
-	case MegaManState::Jouncing:
-	{
-		stateMegaMan->JounceState(keyboard);
-		animationMegaMan->JouncingAnimation();
-		break;
-	}
-	case MegaManState::StandingShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->StandAnimation();
-		else animationMegaMan->StandShootAnimation();
-		break;
-	}
-	case MegaManState::RunningShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->RunAnimation();
-		else animationMegaMan->RunShootAnimation();
-		break;
-	}
-	case MegaManState::JumpingShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->JumpAnimation();
-		else animationMegaMan->JumpShootAnimation();
-		break;
-	}
-	case MegaManState::FallingShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->FallAnimation();
-		else animationMegaMan->FallShootAnimation();
-		break;
-	}
-	case MegaManState::GlidingShoot:
-	case MegaManState::GlidingAerialShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->GlideAnimation();
-		else animationMegaMan->GlideShootAnimation();
-		break;
-	}
-	case MegaManState::ClampingShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->ClampAnimation();
-		else animationMegaMan->ClampShootAnimation();
-		break;
-	}
-	case MegaManState::KickingShoot:
-	{
-		stateMegaMan->ShootState(keyboard);
-		if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->KickAnimation();
-		else animationMegaMan->KickShootAnimation();
-		break;
-	}
-	}
+		switch (stateMegaMan->GetState())
+		{
+		case MegaManState::Standing:
+		{
+			stateMegaMan->StandState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->StandAnimation();
+			else animationMegaMan->StandShootAnimation();
+			break;
+		}
+		case MegaManState::Running:
+		{
+			stateMegaMan->RunState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->RunAnimation();
+			else animationMegaMan->RunShootAnimation();
+			break;
+		}
+		case MegaManState::Jumping:
+		{
+			stateMegaMan->JumpState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->JumpAnimation();
+			else animationMegaMan->JumpShootAnimation();
+			//SetBound(24, 46);
+			break;
+		}
+		case MegaManState::Falling:
+		{
+			stateMegaMan->FallState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->FallAnimation();
+			else animationMegaMan->FallShootAnimation();
+			break;
+		}
+		case MegaManState::Gliding:
+		{
+			stateMegaMan->GlideState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->GlideAnimation();
+			else animationMegaMan->GlideShootAnimation();
+			break;
+		}
+		case MegaManState::GlidingAerial:
+		{
+			stateMegaMan->GlidingAerialState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->GlideAnimation();
+			else animationMegaMan->GlideShootAnimation();
+			break;
+		}
+		case MegaManState::Clamping:
+		{
+			stateMegaMan->ClampState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->ClampAnimation();
+			else animationMegaMan->ClampShootAnimation();
+			break;
+		}
+		case MegaManState::Kicking:
+		{
+			stateMegaMan->KickState(keyboard);
+			if (!stateMegaMan->GetIsDelayShoot()) animationMegaMan->KickAnimation();
+			else animationMegaMan->KickShootAnimation();
+			break;
+		}
+		case MegaManState::Jouncing:
+		{
+			stateMegaMan->JounceState(keyboard);
+			animationMegaMan->JouncingAnimation();
+			break;
+		}
+		case MegaManState::StandingShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->StandAnimation();
+			else animationMegaMan->StandShootAnimation();
+			break;
+		}
+		case MegaManState::RunningShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->RunAnimation();
+			else animationMegaMan->RunShootAnimation();
+			break;
+		}
+		case MegaManState::JumpingShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->JumpAnimation();
+			else animationMegaMan->JumpShootAnimation();
+			break;
+		}
+		case MegaManState::FallingShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->FallAnimation();
+			else animationMegaMan->FallShootAnimation();
+			break;
+		}
+		case MegaManState::GlidingShoot:
+		case MegaManState::GlidingAerialShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->GlideAnimation();
+			else animationMegaMan->GlideShootAnimation();
+			break;
+		}
+		case MegaManState::ClampingShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->ClampAnimation();
+			else animationMegaMan->ClampShootAnimation();
+			break;
+		}
+		case MegaManState::KickingShoot:
+		{
+			stateMegaMan->ShootState(keyboard);
+			if (stateMegaMan->GetEnergyLevel() != 1) animationMegaMan->KickAnimation();
+			else animationMegaMan->KickShootAnimation();
+			break;
+		}
+		}
 
-	//Bị thương
-	if (stateMegaMan->IsBleeding())
-		animationMegaMan->BleedAnimation();
+		//Bị thương
+		if (stateMegaMan->IsBleeding())
+			animationMegaMan->BleedAnimation();
+	}
 
 	stateMegaMan->Update(dt, keyboard);
 
@@ -280,7 +298,6 @@ void MegaMan::Update(float dt, Keyboard* key)
 {
 	//Chỉnh lại vị trí sau khi xét va chạm
 	Object::Update(dt, key);
-	dta = dt;
 	//Update Animation
 	animationMegaMan->SetFlipFlag(GetFlipFlag());
 	animationMegaMan->Update(dt, key);

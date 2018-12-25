@@ -33,6 +33,7 @@ public:
 		Items,
 		Port,
 		Elevator,
+		Stage,
 		None
 	};
 	Tag tag;

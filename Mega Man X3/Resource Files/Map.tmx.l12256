@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="27" nextobjectid="202">
- <tileset firstgid="1" name="Blast Hornet Stage" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="27" nextobjectid="197">
+ <tileset firstgid="1" name="megaman_x3__blast_hornet_stage_by_darksamus993-d8lave3" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
   <image source="Blast Hornet Stage.png" width="7946" height="2846"/>
  </tileset>
  <layer id="18" name="Background" width="248" height="64">
@@ -71,7 +71,7 @@
 15625,15626,15627,15628,15629,15630,15631,15632,15633,15634,15635,15636,15637,15638,15639,15640,15641,15642,15643,15644,15645,15646,15647,15648,15649,15650,15651,15652,15653,15654,15655,15656,15657,15658,15659,15660,15661,15662,15663,15664,15665,15666,15667,15668,15669,15670,15671,15672,15673,15674,15675,15676,15677,15678,15679,15680,15681,15682,15683,15684,15685,15686,15687,15688,15689,15690,15691,15692,15693,15694,15695,15696,15697,15698,15699,15700,15701,15702,15703,15704,15705,15706,15707,15708,15709,15710,15711,15712,15713,15714,15715,15716,15717,15718,15719,15720,15721,15722,15723,15724,15725,15726,15727,15728,15729,15730,15731,15732,15733,15734,15735,15736,15737,15738,15739,15740,15741,15742,15743,15744,15745,15746,15747,15748,15749,15750,15751,15752,15753,15754,15755,15756,15757,15758,15759,15760,15761,15762,15763,15764,15765,15766,15767,15768,15769,15770,15771,15772,15773,15774,15775,15776,15777,15778,15779,15780,15781,15782,15783,15784,15785,15786,15787,15788,15789,15790,15791,15792,15793,15794,15795,15796,15797,15798,15799,15800,15801,15802,15803,15804,15805,15806,15807,15808,15809,15810,15811,15812,15813,15814,15815,15816,15817,15818,15819,15820,15821,15822,15823,15824,15825,15826,15827,15828,15829,15830,15831,15832,15833,15834,15835,15836,15837,15838,15839,15840,15841,15842,15843,15844,15845,15846,15847,15848,15849,15850,15851,15852,15853,15854,15855,15856,15857,15858,15859,15860,15861,15862,15863,15864,15865,15866,15867,15868,15869,15870,15871,15872
 </data>
  </layer>
- <objectgroup id="15" name="Stage">
+ <objectgroup id="15" name="Stage" visible="0">
   <object id="100" x="0" y="768" width="768" height="224"/>
   <object id="101" x="768" y="256" width="256" height="736"/>
   <object id="102" x="1024" y="256" width="288" height="224"/>
@@ -88,14 +88,14 @@
   <object id="113" x="3552" y="1024" width="256" height="736"/>
   <object id="114" x="3680" y="1024" width="576" height="224"/>
   <object id="115" x="4256" y="768" width="1376" height="480"/>
+  <object id="116" x="5632" y="1024" width="256" height="224"/>
   <object id="117" x="5888" y="1024" width="256" height="1024"/>
   <object id="118" x="6144" y="1792" width="1536" height="224"/>
+  <object id="119" x="7680" y="1792" width="256" height="224"/>
   <object id="195" x="2560" y="1024" width="320" height="224"/>
  </objectgroup>
  <objectgroup id="26" name="StageBoss">
   <object id="194" x="2304" y="1024" width="256" height="224"/>
-  <object id="197" x="5632" y="1024" width="256" height="224"/>
-  <object id="198" x="7680" y="1792" width="256" height="224"/>
  </objectgroup>
  <objectgroup id="20" name="NotorBanger" visible="0">
   <object id="105" x="462.125" y="865.458" width="28.25" height="31.25"/>
@@ -132,7 +132,7 @@
   <object id="187" x="7043.54" y="1923.88" width="28.25" height="43.5833"/>
   <object id="188" x="962.542" y="900.542" width="28.25" height="43.5833"/>
  </objectgroup>
- <objectgroup id="22" name="HeadGunnerFlip" visible="0">
+ <objectgroup id="22" name="HeadGunnerFlip">
   <object id="142" x="804.542" y="651.042" width="28.25" height="31.25"/>
  </objectgroup>
  <objectgroup id="16" name="Wall">
@@ -169,12 +169,12 @@
   <object id="84" x="3138.17" y="1730.33" width="606.167" height="30.666"/>
   <object id="87" x="3136.5" y="1215.5" width="31" height="514.665"/>
   <object id="88" x="3265.33" y="1229.33" width="31" height="401.165"/>
-  <object id="90" x="3680" y="1200.17" width="2303.34" height="16.9996"/>
+  <object id="90" x="3680" y="1199.17" width="2303.34" height="25.6663"/>
   <object id="107" x="2272" y="1039.96" width="48" height="111.5"/>
   <object id="108" x="2303.04" y="1024.87" width="254.25" height="14.8864"/>
   <object id="109" x="2544" y="1040" width="16" height="112"/>
-  <object id="113" x="5616" y="1040" width="32" height="112"/>
-  <object id="114" x="5872" y="1040" width="48" height="112"/>
+  <object id="113" x="5617.95" y="1040.82" width="31" height="158.166"/>
+  <object id="114" x="5874" y="1040.92" width="31" height="158.166"/>
   <object id="115" x="5618.5" y="1023.92" width="286" height="16.666"/>
   <object id="120" x="5984.5" y="1153.58" width="61" height="109.499"/>
   <object id="121" x="6113.5" y="1057.58" width="29.5" height="320.999"/>
@@ -189,7 +189,7 @@
   <object id="130" x="5918.42" y="1968.75" width="592.5" height="18.499"/>
   <object id="131" x="6560.75" y="1967.75" width="1374.5" height="25.499"/>
   <object id="132" x="7921.83" y="1807.58" width="13" height="158.166"/>
-  <object id="133" x="7664" y="1808" width="32" height="112"/>
+  <object id="133" x="7663.17" y="1808.92" width="31" height="158.166"/>
   <object id="134" x="7662.58" y="1790.45" width="274" height="16.666"/>
   <object id="150" x="3146.17" y="928.167" width="136.333" height="51.9997"/>
   <object id="151" x="3596.33" y="927" width="136.333" height="51.9997"/>
@@ -205,19 +205,16 @@
   <object id="164" x="800.334" y="256.084" width="191.333" height="16.4996"/>
   <object id="165" x="2275.5" y="281.167" width="30.3337" height="155"/>
   <object id="166" x="2560.88" y="1136.56" width="318.25" height="14.8864"/>
-  <object id="167" x="5393.54" y="1135.89" width="222.128" height="14.8864"/>
+  <object id="167" x="5393.54" y="1135.89" width="225.583" height="14.8864"/>
   <object id="168" x="7392.21" y="1903.22" width="270.917" height="14.8864"/>
-  <object id="175" x="5919.83" y="1025.42" width="223.167" height="30.166"/>
+  <object id="175" x="5904.5" y="1025.42" width="238.5" height="30.166"/>
   <object id="190" x="800" y="689.333" width="48" height="25.3333"/>
   <object id="191" x="944" y="690" width="48" height="25.3333"/>
   <object id="192" x="944.667" y="432.667" width="48" height="25.3333"/>
   <object id="193" x="800" y="433.333" width="48" height="25.3333"/>
  </objectgroup>
- <objectgroup id="25" name="Port" visible="0">
+ <objectgroup id="25" name="Port">
   <object id="189" x="2288" y="1152" width="16" height="48"/>
   <object id="196" x="2544" y="1152" width="16" height="48"/>
-  <object id="199" x="5616" y="1152" width="16" height="48"/>
-  <object id="200" x="5872" y="1152" width="16" height="48"/>
-  <object id="201" x="7664" y="1920" width="16" height="48"/>
  </objectgroup>
 </map>

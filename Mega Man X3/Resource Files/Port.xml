@@ -1,22 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Animations>
-  <Animation name="port" imagePath="Port.png" width="308" height="108">
-    <sprite x="2" y="59" w="15" h="47" oX="2" oY="59" oW="88" oH="302" />
-    <sprite x="20" y="59" w="15" h="47" oX="20" oY="59" oW="88" oH="302" />
-    <sprite x="38" y="59" w="15" h="47" oX="38" oY="59" oW="88" oH="302" />
-    <sprite x="56" y="59" w="16" h="47" oX="56" oY="59" oW="88" oH="302" />
-    <sprite x="74" y="59" w="16" h="47" oX="74" oY="59" oW="88" oH="302" />
-    <sprite x="92" y="59" w="16" h="47" oX="92" oY="59" oW="88" oH="302" />
-    <sprite x="110" y="59" w="16" h="47" oX="110" oY="59" oW="88" oH="302" />
-    <sprite x="128" y="59" w="16" h="47" oX="128" oY="59" oW="88" oH="302" />
-    <sprite x="146" y="59" w="16" h="47" oX="146" oY="59" oW="88" oH="302" />
-    <sprite x="164" y="59" w="16" h="47" oX="164" oY="59" oW="88" oH="302" />
-    <sprite x="182" y="59" w="16" h="47" oX="182" oY="59" oW="88" oH="302" />
-    <sprite x="200" y="59" w="16" h="47" oX="200" oY="59" oW="88" oH="302" />
-    <sprite x="218" y="59" w="16" h="47" oX="218" oY="59" oW="88" oH="302" />
-    <sprite x="236" y="59" w="16" h="47" oX="236" oY="59" oW="88" oH="302" />
-    <sprite x="254" y="59" w="16" h="47" oX="254" oY="59" oW="88" oH="302" />
-    <sprite x="272" y="59" w="16" h="47" oX="272" oY="59" oW="88" oH="302" />
-    <sprite x="290" y="59" w="16" h="47" oX="290" oY="59" oW="88" oH="302" />
+  <Animation name="close" imagePath="Port.png" width="308" height="108">
+    <sprite n="0" x="2" y="59" w="15" h="47" oX="2" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="1" x="20" y="59" w="15" h="47" oX="20" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="2" x="38" y="59" w="15" h="47" oX="38" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="3" x="56" y="59" w="16" h="47" oX="56" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="4" x="74" y="59" w="16" h="47" oX="74" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="5" x="92" y="59" w="16" h="47" oX="92" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="6" x="110" y="59" w="16" h="47" oX="110" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="7" x="128" y="59" w="16" h="47" oX="128" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="8" x="146" y="59" w="16" h="47" oX="146" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="9" x="164" y="59" w="16" h="47" oX="164" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="10" x="182" y="59" w="16" h="47" oX="182" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="11" x="200" y="59" w="16" h="47" oX="200" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="12" x="218" y="59" w="16" h="47" oX="218" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="13" x="236" y="59" w="16" h="47" oX="236" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="14" x="254" y="59" w="16" h="47" oX="254" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="15" x="272" y="59" w="16" h="47" oX="272" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="16" x="290" y="59" w="16" h="47" oX="290" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
   </Animation>
+  <Animation name="open" imagePath="Port.png" width="308" height="108">    
+    <sprite n="17" x="290" y="59" w="16" h="47" oX="290" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="18" x="272" y="59" w="16" h="47" oX="272" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="19" x="254" y="59" w="16" h="47" oX="254" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="20" x="236" y="59" w="16" h="47" oX="236" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="21" x="218" y="59" w="16" h="47" oX="218" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="22" x="200" y="59" w="16" h="47" oX="200" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="23" x="182" y="59" w="16" h="47" oX="182" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="24" x="164" y="59" w="16" h="47" oX="164" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="25" x="146" y="59" w="16" h="47" oX="146" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="26" x="128" y="59" w="16" h="47" oX="128" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="27" x="110" y="59" w="16" h="47" oX="110" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="28" x="92" y="59" w="16" h="47" oX="92" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="29" x="74" y="59" w="16" h="47" oX="74" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="30" x="56" y="59" w="16" h="47" oX="56" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="31" x="38" y="59" w="15" h="47" oX="38" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="32" x="20" y="59" w="15" h="47" oX="20" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+    <sprite n="33" x="2" y="59" w="15" h="47" oX="2" oY="59" oW="88" oH="302" tX ="0" tY="0"/>
+  </Animation>
+  
 </Animations>

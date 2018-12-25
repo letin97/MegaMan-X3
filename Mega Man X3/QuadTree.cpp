@@ -183,7 +183,7 @@ void QuadTree::GetAllObject(std::vector<Object*> &listObject, RECT rect)
 	for (auto child : mListObject)
 	{
 		RECT r = child->GetBound();
-		if (!(r.right < rect.left || r.left > rect.right || r.top < rect.bottom || r.bottom > rect.top) || child->tag == Object::Tag::Port)
+		if (!(r.right < rect.left || r.left > rect.right || r.top < rect.bottom || r.bottom > rect.top))
 		{
 			listObject.push_back(child);			
 		}

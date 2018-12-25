@@ -190,6 +190,7 @@
     <ClInclude Include="MegaManState.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TileSet.h" />
     <ClInclude Include="TinyXML\tinystr.h" />
@@ -226,6 +227,7 @@
     <ClCompile Include="Smoke.cpp" />
     <ClCompile Include="BlastHornet.cpp" />
     <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Spark.cpp" />
     <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="Keyboard.cpp" />

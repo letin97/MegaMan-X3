@@ -3,6 +3,7 @@
 #include <vector>
 #include "Keyboard.h"
 #include "Define.h"
+#include "Stage.h"
 
 using namespace Define;
 
@@ -14,13 +15,13 @@ protected:
 	D3DXVECTOR2 positionWorld;
 	float width;
 	float height;
-	RECT Stage0 = { 0, 1280, 768, 1056 };
-	int i = 0;
-	RECT Stage = Stage0;
+	RECT stage0 = { 0, 1280, 768, 1056 };
+	RECT stage = stage0;
 	int start = 0, end = 1024;
 	int top = 1280, bottom = 1056;
-	int moveTop = 0;
-	int moveBottom = 0;
+	bool moveBossStage = false;
+	int newStart;
+	bool inStageBoss;
 
 public:
 	Viewport();
@@ -36,6 +37,10 @@ public:
 	void SetPositionY(float y);
 	float GetWidth();
 	float GetHeight();
+	int GetStart();
+
+	bool GetInStageBoos();
+	void SetInStageBoss(bool b);
 
 	D3DXVECTOR2 TransformPosition(D3DXVECTOR2 position);
 
@@ -46,6 +51,6 @@ public:
 	RECT GetBound();
 
 	//Update View theo 1 đối tượng
-	void Update(float gameTime, Keyboard* key, D3DXVECTOR2 &posMegaMan, D3DXVECTOR2 velocityMan, std::vector <RECT> listStage);
+	void Update(float gameTime, Keyboard* key, D3DXVECTOR2 &posMegaMan, D3DXVECTOR2 velocityMan, std::vector<Stage*> listStage);
 };
 

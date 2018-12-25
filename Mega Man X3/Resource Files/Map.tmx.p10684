@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="248" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="27" nextobjectid="202">
- <tileset firstgid="1" name="Blast Hornet Stage" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
+ <tileset firstgid="1" name="megaman_x3__blast_hornet_stage_by_darksamus993-d8lave3" tilewidth="32" tileheight="32" margin="5" tilecount="21824" columns="248">
   <image source="Blast Hornet Stage.png" width="7946" height="2846"/>
  </tileset>
  <layer id="18" name="Background" width="248" height="64">

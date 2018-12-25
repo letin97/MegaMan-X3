@@ -77,6 +77,10 @@ protected:
 	Sprite *sprite_Elevator;
 	SpriteSheet *spriteSheet_Elevator;
 
+	//Port
+	Sprite *sprite_Port;
+	SpriteSheet *spriteSheet_Port;
+
 	//Lifebar
 	Sprite *sprite_Lifebar;
 	

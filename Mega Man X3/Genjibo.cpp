@@ -22,6 +22,7 @@ void Genjibo::New()
 	SetVelocity(-2, 0);
 	HP = 20;
 	damage = 4;
+	stage = { 2304, 1024, 2560, 800 };
 }
 
 void Genjibo::ChangeAnimation(Keyboard* key)
@@ -61,7 +62,10 @@ void Genjibo::Update(float dt, Keyboard* key)
 
 	if (state == Dying)
 	{
-		allowDraw = false;
+		SetVelocity(0, 0);
+		delay--;
+		if (delay < 0)
+			stage = { 0, 0, 0, 0 };
 	}
 	else
 	{

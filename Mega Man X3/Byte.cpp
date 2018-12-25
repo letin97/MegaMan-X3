@@ -23,6 +23,7 @@ Byte::Byte(Sprite* sprite_Byte, Sprite* sprite_Smoke, Sprite* sprite_Explosion,
 	}
 	numSmoke = 0;
 	explosion = new Explosion(sprite_Explosion, spriteSheet_Explosion);
+	stage = { 5632, 1024, 5888, 800 };
 }
 
 void Byte::ChangeAnimation(Keyboard* key)
@@ -56,7 +57,10 @@ void Byte::Update(float dt, Keyboard* key)
 
 	if (state == Dying)
 	{
-		allowDraw = false;
+		SetVelocity(0, 0);
+		delay--;
+		if (delay < 0)
+			stage = { 0, 0, 0, 0 };
 	}
 	else
 	{

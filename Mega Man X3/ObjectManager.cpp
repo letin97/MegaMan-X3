@@ -26,6 +26,7 @@ ObjectManager::~ObjectManager()
 	delete sprite_Byte;
 	delete sprite_BlastHornet;
 	delete sprite_Elevator;
+	delete sprite_Port;
 
 	delete mGenjibo;
 	delete mByte;
@@ -78,6 +79,10 @@ void ObjectManager::Init(Graphic* graphic, Sound *sound)
 	sprite_Elevator = new Sprite(graphic, ElevatorPNG);
 	spriteSheet_Elevator = new SpriteSheet(ElevatorXML);
 
+	//Port
+	sprite_Port = new Sprite(graphic, PortPNG);
+	spriteSheet_Port = new SpriteSheet(PortXML);
+
 	//Lifebar
 	sprite_Lifebar = new Sprite(graphic, WeaponsAndItemsPNG);
 	
@@ -85,6 +90,7 @@ void ObjectManager::Init(Graphic* graphic, Sound *sound)
 		spriteSheet_MegaMan, spriteSheet_LightEnergy, spriteSheet_Spark, spriteSheet_Smoke, spriteSheet_Weapons_And_Items,
 		sound);
 
+	//2480 870
 	mGenjibo = new Genjibo(sprite_Genjibo, spriteSheet_Genjibo, D3DXVECTOR2(2480, 870));
 
 	mByte = new Byte(sprite_Byte, sprite_Smoke, sprite_Explosion,spriteSheet_Byte, spriteSheet_Smoke, spriteSheet_Explosion, sound, D3DXVECTOR2(5830, 890));
@@ -118,7 +124,7 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 {
 	megaMan->ChangeAnimation(dt, keyboard);
 
-	//Kiểm tra va chạm
+	//Kiểm tra dịch chuyển
 	if (prePosView != viewport->GetPosition())
 	{
 		prePosView = viewport->GetPosition();
@@ -130,15 +136,11 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 	}
 	listObject.clear();
 
-	//Va chạm Object
+#pragma region Object
+
+	//Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
 	{
-		for (size_t j = 0; j < listWall.size(); j++)
-		{
-			D3DXVECTOR2 disEnemy = listObjectCollison.at(i)->Distance(dt);
-			listObjectCollison.at(i)->OnCollision(listWall.at(j), disEnemy);
-		}
-
 		//Va chạm của quái
 		if (listObjectCollison.at(i)->tag == Object::Tag::Enemys && listObjectCollison.at(i)->GetAllowDraw())
 		{
@@ -149,7 +151,7 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 
 			//Đạn Mega Man
 			for (int j = 0; j < 4; j++)
-			{	
+			{
 				if (megaMan->bullets[j]->GetAllowDraw() && megaMan->bullets[j]->GetBulletState() == Bullet::Firing)
 				{
 					if (Collision::isCollision(megaMan->bullets[j]->GetBound(), listObjectCollison.at(i)->GetBound()))
@@ -163,50 +165,63 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 			if (viewport->isContains(listObjectCollison.at(i)->GetBound()))
 				listObject.push_back(listObjectCollison.at(i));
 		}
-
+		//Tường
+		for (size_t j = 0; j < listWall.size(); j++)
+		{
+			D3DXVECTOR2 disEnemy = listObjectCollison.at(i)->Distance(dt);
+			listObjectCollison.at(i)->OnCollision(listWall.at(j), disEnemy);
+		}
 		//Update
 		listObjectCollison.at(i)->Update(dt, keyboard);
 	}
 
-	//Boss
-	//if (mGenjibo->GetAllowDraw())
-	//{
-	//	//Va chạm boss với tường
-	//	for (size_t i = 0; i < listWall.size(); i++)
-	//	{
-	//		D3DXVECTOR2 disGenjibo = mGenjibo->Distance(dt);
-	//		mGenjibo->OnCollision(listWall.at(i), disGenjibo);
-	//	}
+#pragma endregion
 
-	//	//Đạn Mega Man
-	//	for (int i = 0; i < 4; i++)
-	//	{
-	//		if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
-	//		{
-	//			if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mGenjibo->GetBound()))
-	//			{
-	//				mGenjibo->OnCollision(megaMan->bullets[i]);
-	//				megaMan->bullets[i]->OnCollision();
-	//			}
-	//		}
-	//	}
-	//	mGenjibo->Update(dt, keyboard);
-	//}
+#pragma region Genjibo
+
+	//Boss Genjibo
+	if (mGenjibo->GetAllowDraw())
+	{
+		//MegaMan
+		D3DXVECTOR2 disMan = megaMan->Distance(dt);
+		D3DXVECTOR2 distance = disMan - mGenjibo->Distance(dt);
+		megaMan->OnCollision(mGenjibo, distance, disMan);
+
+		//Đạn Mega Man
+		for (int i = 0; i < 4; i++)
+		{
+			if (megaMan->bullets[i]->GetAllowDraw() && megaMan->bullets[i]->GetBulletState() == Bullet::Firing)
+			{
+				if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mGenjibo->GetBound()))
+				{
+					mGenjibo->OnCollision(megaMan->bullets[i]);
+					megaMan->bullets[i]->OnCollision();
+				}
+			}
+		}
+		//Tường
+		for (size_t i = 0; i < listWall.size(); i++)
+		{
+			D3DXVECTOR2 disGenjibo = mGenjibo->Distance(dt);
+			mGenjibo->OnCollision(listWall.at(i), disGenjibo);
+		}
+		//Update
+		mGenjibo->Update(dt, keyboard);
+	}
+
+	//Kiểm tra xuất hiện
+	if (Collision::isCollision(megaMan->GetPosition().x, megaMan->GetPosition().y, mGenjibo->stage))
+		mGenjibo->SetAllowDraw(true);
+	else
+		mGenjibo->SetAllowDraw(false);
+
+#pragma endregion
+
+#pragma region Byte
 
 	//Boss Byte
 	if (mByte->GetAllowDraw())
 	{
-		for (size_t i = 0; i < listWall.size(); i++)
-		{
-			//Va chạm boss với tường
-			D3DXVECTOR2 disByte = mByte->Distance(dt);
-			mByte->OnCollision(listWall.at(i), disByte);
-
-			//Đạn boss
-			D3DXVECTOR2 disBulletByte = mByte->bullet->Distance(dt);
-			mByte->bullet->OnCollision(listWall.at(i), disBulletByte);
-		}
-
 		//MegaMan
 		D3DXVECTOR2 disMan = megaMan->Distance(dt);
 		D3DXVECTOR2 distance = disMan - mByte->Distance(dt);
@@ -224,26 +239,35 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 				}
 			}
 		}
+		
+		//Tường
+		for (size_t i = 0; i < listWall.size(); i++)
+		{
+			//Boss
+			D3DXVECTOR2 disByte = mByte->Distance(dt);
+			mByte->OnCollision(listWall.at(i), disByte);
+
+			//Đạn boss
+			D3DXVECTOR2 disBulletByte = mByte->bullet->Distance(dt);
+			mByte->bullet->OnCollision(listWall.at(i), disBulletByte);
+		}
+		//Update
 		mByte->Update(dt, keyboard);
 	}
 
-	//Boss BlastHorner
+	//Kiểm tra xuất hiện
+	if (Collision::isCollision(megaMan->GetPosition().x, megaMan->GetPosition().y, mByte->stage))
+		mByte->SetAllowDraw(true);
+	else
+		mByte->SetAllowDraw(false);
+
+#pragma endregion
+		
+#pragma region Blast Hornet
+
+	//Boss BlastHornet
 	if (mBlastHornet->GetAllowDraw())
 	{
-		for (size_t i = 0; i < listWall.size(); i++)
-		{
-			//Va chạm boss với tường
-			D3DXVECTOR2 disBlastHornet = mBlastHornet->Distance(dt);
-			mBlastHornet->OnCollision(listWall.at(i), disBlastHornet);
-
-			//Va chạm ong con với tường
-			for (int j = 0; j < 5; j++)
-			{
-				D3DXVECTOR2 disBee = mBlastHornet->listBee[j]->Distance(dt);
-				mBlastHornet->listBee[j]->OnCollision(listWall.at(i), disBee);
-			}
-		}
-
 		//MegaMan
 		D3DXVECTOR2 disMan = megaMan->Distance(dt);
 		D3DXVECTOR2 distance = disMan - mBlastHornet->Distance(dt);
@@ -264,15 +288,38 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 				{
 					if (Collision::isCollision(megaMan->bullets[i]->GetBound(), mBlastHornet->listBee[j]->GetBound()))
 					{
-						//megaMan->bullets[i]->OnCollision();
+						megaMan->bullets[i]->OnCollision();
 						mBlastHornet->listBee[j]->OnCollision(megaMan->bullets[i]);
 					}
-						
 				}
 			}
 		}
+
+		//Tường
+		for (size_t i = 0; i < listWall.size(); i++)
+		{
+			D3DXVECTOR2 disBlastHornet = mBlastHornet->Distance(dt);
+			mBlastHornet->OnCollision(listWall.at(i), disBlastHornet);
+
+			for (int j = 0; j < 5; j++)
+			{
+				D3DXVECTOR2 disBee = mBlastHornet->listBee[j]->Distance(dt);
+				mBlastHornet->listBee[j]->OnCollision(listWall.at(i), disBee);
+			}
+		}
+		//Update
 		mBlastHornet->Update(dt, keyboard);
 	}
+
+	//Kiểm tra xuất hiện
+	if (Collision::isCollision(megaMan->GetPosition().x, megaMan->GetPosition().y, mBlastHornet->stage))
+		mBlastHornet->SetAllowDraw(true);
+	else
+		mBlastHornet->SetAllowDraw(false);
+
+#pragma endregion
+
+#pragma region Elevator
 
 	//Elevator
 	if (mElevator->GetAllowDraw())
@@ -285,14 +332,31 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 		mElevator->Update(dt, keyboard);
 	}
 
+#pragma endregion
+
+#pragma region MegaMan
+
 	//Va chạm Man với tường
 	for (size_t i = 0; i < listWall.size(); i++)
 	{
 		D3DXVECTOR2 disMan = megaMan->Distance(dt);
 		megaMan->OnCollision(listWall.at(i), disMan, disMan);
+
+		//Kiểm tra cổng
+		if (listWall.at(i)->tag == Object::Port)
+		{
+			if (mGenjibo->GetAllowDraw() || mByte->GetAllowDraw())
+				listWall.at(i)->OnCollision();
+			else
+				listWall.at(i)->New();
+		}
+
+		listWall.at(i)->Update(dt, keyboard);
 	}
 
 	megaMan->Update(dt, keyboard);
+
+#pragma endregion
 
 	viewport->Update(dt, keyboard, megaMan->GetPosition(), megaMan->GetVelocity(), map->listStage);
 
@@ -316,9 +380,11 @@ void ObjectManager::Render()
 
 	//Vẽ Object
 	for (size_t i = 0; i < listObjectCollison.size(); i++)
-	{
 		listObjectCollison.at(i)->Render(viewport);
-	}
+
+	//Vẽ Port
+	for (size_t i = 0; i < listWall.size(); i++)
+		listWall.at(i)->Render(viewport);
 
 	lifebar->Render(megaMan->GetHP(),megaMan->GetHPMax());
 
@@ -433,6 +499,14 @@ void ObjectManager::ReadQuadTree(TiXmlElement *root, QuadTree *node, QuadTree *f
 				enemy->SetName(name);
 				enemy->id = id;
 				node->mListObject.push_back(enemy);
+			}
+			else if (name == "Port")
+			{
+				Port *port = new Port(megaMan, sprite_Port, spriteSheet_Port, sound);
+				port->New(D3DXVECTOR2(x, y));
+				port->SetName(name);
+				port->id = id;
+				node->mListObject.push_back(port);
 			}
 			else
 			{

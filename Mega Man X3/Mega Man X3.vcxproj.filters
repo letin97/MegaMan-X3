@@ -53,6 +53,9 @@
     <Filter Include="Object\Elevator">
       <UniqueIdentifier>{8fdf6bb4-5f8c-4182-b7ae-a3d0505719c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stage">
+      <UniqueIdentifier>{a31dddfe-8e31-49a9-97ae-9ce375f62daf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Keyboard.h">
@@ -192,6 +195,9 @@
     </ClInclude>
     <ClInclude Include="Elevator.h">
       <Filter>Object\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>Stage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -335,6 +341,9 @@
     </ClCompile>
     <ClCompile Include="Elevator.cpp">
       <Filter>Object\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

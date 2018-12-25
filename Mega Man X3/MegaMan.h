@@ -25,7 +25,8 @@ protected:
 	int numSmoke;
 	int delay;
 	
-	float dta;
+	bool lock;
+
 public:
 	MegaMan() {}
 	MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* sprite_Spark,
@@ -42,6 +43,7 @@ public:
 
 	MegaManState* GetMegaManState();
 
+	void LockAnimation(bool lock);
 	void ChangeAnimation(float dt, Keyboard* key);
 
 	void OnCollision(Object *obj, D3DXVECTOR2 distance, D3DXVECTOR2 disMan);

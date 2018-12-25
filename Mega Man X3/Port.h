@@ -9,18 +9,28 @@ using namespace Define;
 class Port : public Object
 {
 protected:
-	Animation* animationPort;
+	Animation* animation;
 	MegaMan *megaMan;
-	Map *map;
+
+	bool moveStage, slip;
+	bool active;
 
 public:
+
+	enum PortState
+	{
+		Init,
+		Opening,
+		Closing
+	};
+	PortState state;
 	
 	Port();
-	Port(Map* *map, MegaMan *man, Sprite* sprite_port, SpriteSheet* spriteSheet_Port, Sound* sound);
+	Port(MegaMan *man, Sprite* sprite_port, SpriteSheet* spriteSheet_Port, Sound* sound);
 	~Port();
 
 	void New();
-	void NewPort(D3DXVECTOR2 pos);
+	void New(D3DXVECTOR2 pos);
 	void ChangeAnimation(Keyboard* key);
 	void Update(float gameTime, Keyboard *key);
 	void Render(Viewport *view);

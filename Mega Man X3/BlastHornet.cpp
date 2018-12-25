@@ -27,6 +27,8 @@ BlastHornet::BlastHornet(MegaMan *megaMan, Sprite* sprite_BlastHornet,
 		listBee[i] = new Bee(sprite_BlastHornet, spriteSheet_BlastHornet);
 
 	parasitic = new Parasitic(sprite_BlastHornet, spriteSheet_BlastHornet);
+
+	stage = { 7680, 256, 7936, 32 };
 }
 
 void BlastHornet::ChangeAnimation(Keyboard* key)
@@ -64,7 +66,10 @@ void BlastHornet::Update(float dt, Keyboard* key)
 
 	if (state == Dying)
 	{
-		allowDraw = false;
+		SetVelocity(0, 0);
+		delay--;
+		if (delay < 0)
+			stage = { 0, 0, 0, 0 };
 	}
 	else
 	{

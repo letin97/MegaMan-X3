@@ -147,18 +147,35 @@ void Map::ReadXML(Graphic* graphic, const char *path)
 	MapObjectGroup *stage = new MapObjectGroup(objStage);
 	for (int i = 0; i < stage->numObjects; i++)
 	{
-		Object *obj = new Object();
+		Stage *obj = new Stage();
 		float x = stage->objects.at(i)->x;
 		float y = stage->objects.at(i)->y;
 		float w = stage->objects.at(i)->width;
 		float h = stage->objects.at(i)->height;
 		RECT r = { x, height * tileHeight - y, x + w, height * tileHeight - y - h };
-		listStage.push_back(r);
+		obj->SetName(stage->objects.at(i)->name);
+		obj->SetBound(r);
+		listStage.push_back(obj);
+	}
+
+	TiXmlElement* objStageBoss = objStage->NextSiblingElement();
+	MapObjectGroup *stageBoss = new MapObjectGroup(objStageBoss);
+	for (int i = 0; i < stageBoss->numObjects; i++)
+	{
+		Stage *obj = new Stage();
+		float x = stageBoss->objects.at(i)->x;
+		float y = stageBoss->objects.at(i)->y;
+		float w = stageBoss->objects.at(i)->width;
+		float h = stageBoss->objects.at(i)->height;
+		RECT r = { x, height * tileHeight - y, x + w, height * tileHeight - y - h };
+		obj->SetName(stageBoss->objects.at(i)->name);
+		obj->SetBound(r);
+		listStage.push_back(obj);
 	}
 
 	TiXmlElement* indexml = NULL;
 	numObjectGroups = 0;
-	for (indexml = objStage->NextSiblingElement(); indexml != NULL; indexml = indexml->NextSiblingElement())
+	for (indexml = objStageBoss->NextSiblingElement(); indexml != NULL; indexml = indexml->NextSiblingElement())
 	{
 		numObjectGroups++;
 		MapObjectGroup *obj = new MapObjectGroup(indexml);

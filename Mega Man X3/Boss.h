@@ -13,7 +13,7 @@ protected:
 	Animation *animationBoss;
 
 public:
-	
+	RECT stage;
 	Boss();
 	~Boss();
 	virtual void Update(float gameTime, Keyboard* key);

@@ -5,6 +5,7 @@
 #include "TileSet.h"
 #include "MapObjectGroup.h"
 #include "Object.h"
+#include "Stage.h"
 #include "QuadTree.h"
 using namespace Define;
 
@@ -23,7 +24,7 @@ protected:
 	QuadTree *mQuadTree;
 public:
 
-	std::vector<RECT> listStage;
+	std::vector<Stage*> listStage;
 
 	Map();
 	Map(Graphic* graphic);
