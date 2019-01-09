@@ -14,7 +14,8 @@ Byte::Byte(Sprite* sprite_Byte, Sprite* sprite_Smoke, Sprite* sprite_Explosion,
 	flipFlag = false;
 	state = Standing;
 	delay = 200;
-	HP = 20;
+	HP = 24;
+	HPMax = 24;
 	damage = 4;
 	bullet = new Bullet(sprite_Byte, spriteSheet_Byte, sound);
 	for (int i = 0; i < 6; i++)

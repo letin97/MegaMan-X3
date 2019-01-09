@@ -18,7 +18,8 @@ BlastHornet::BlastHornet(MegaMan *megaMan, Sprite* sprite_BlastHornet,
 	flipFlag = false;
 	state = Flying;
 	delay = 50;
-	HP = 20;
+	HP = 30;
+	HPMax = 30;
 	damage = 4;
 	numRound = 0;
 
@@ -193,6 +194,7 @@ void BlastHornet::Update(float dt, Keyboard* key)
 							listBee[i]->SetVelocity(-1, 0.5 - 0.4*i);
 					}
 				}
+				velocity.y = -1.2f;
 				state = FlyingRound;
 			}	
 			break;
@@ -205,6 +207,17 @@ void BlastHornet::Update(float dt, Keyboard* key)
 		if (listBee[i]->GetAllowDraw())
 		{
 			listBee[i]->Update(dt, key);
+
+			if (Collision::isCollision(listBee[i]->GetBound(), megaMan->GetBound()))
+			{
+				int side;
+				if (position.x > megaMan->GetPosition().x)
+					side = 1;
+				else
+					side = -1;
+				megaMan->GetMegaManState()->BleedState(side, damage);
+				listBee[i]->OnCollision(megaMan);
+			}
 
 			if (parasitic->isCling)
 			{

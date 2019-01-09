@@ -16,7 +16,8 @@ public:
 	enum ElevatorState
 	{
 		Standing,
-		Running
+		Running,
+		Stopping,
 	};
 	ElevatorState state;
 	

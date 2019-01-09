@@ -25,7 +25,8 @@ protected:
 	Viewport* viewport;
 	Map* map;
 	QuadTree  *mQuadTree;
-	Lifebar *lifebar;
+	Lifebar *lifebarMegaMan;
+	Lifebar *lifebarBoss;
 
 	Sound* sound;
 	GSound* soundBlastHornet;

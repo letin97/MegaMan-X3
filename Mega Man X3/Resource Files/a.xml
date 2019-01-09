@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Animations>
-  <Animation name="parasitic" imagePath="BlastHornet.png" width="508" height="1221">
-    <sprite x="92" y="1038" w="15" h="14" oX="92" oY="1038" oW="960" oH="142" />
-    <sprite x="111" y="1038" w="15" h="14" oX="111" oY="1038" oW="960" oH="142" />
-    <sprite x="134" y="1034" w="23" h="22" oX="134" oY="1034" oW="960" oH="142" />
-    <sprite x="162" y="1034" w="23" h="22" oX="162" oY="1034" oW="960" oH="142" />
-    <sprite x="189" y="1030" w="31" h="30" oX="189" oY="1030" oW="960" oH="142" />
-    <sprite x="227" y="1030" w="31" h="30" oX="227" oY="1030" oW="960" oH="142" />
+  <Animation name="boss" imagePath="Weapons and Items.png" width="914" height="1744">
+    <sprite x="98" y="55" w="14" h="15" oX="98" oY="55" oW="-28" oH="14" />
   </Animation>
 </Animations>

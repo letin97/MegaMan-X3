@@ -11,7 +11,7 @@ ObjectManager::~ObjectManager()
 	delete viewport;
 	mQuadTree->Clear();
 	delete mQuadTree;
-	delete lifebar;
+	delete lifebarMegaMan;
 
 	delete sprite_MegaMan;
 	delete sprite_LightEnergy;
@@ -116,7 +116,9 @@ void ObjectManager::Init(Graphic* graphic, Sound *sound)
 	mQuadTree->GetObjectsCollideAble(listObjectCollison, listWall, viewport->GetBound());
 	prePosView = viewport->GetPosition();
 
-	lifebar = new Lifebar(sprite_Lifebar, spriteSheet_Weapons_And_Items);
+	lifebarMegaMan = new Lifebar(sprite_Lifebar, spriteSheet_Weapons_And_Items, Lifebar::LifebarMegaMan);
+
+	lifebarBoss = new Lifebar(sprite_Lifebar, spriteSheet_Weapons_And_Items, Lifebar::LifebarBoss);
 }
 
 //Update Game
@@ -328,7 +330,7 @@ void ObjectManager::Update(float dt, Keyboard* keyboard)
 		//MegaMan
 		D3DXVECTOR2 disMan = megaMan->Distance(dt);
 		D3DXVECTOR2 distance = disMan - mElevator->Distance(dt);
-		megaMan->OnCollision(mElevator, distance, disMan);
+		megaMan->OnCollision(mElevator, distance, disMan);	
 		mElevator->Update(dt, keyboard);
 	}
 
@@ -386,7 +388,16 @@ void ObjectManager::Render()
 	for (size_t i = 0; i < listWall.size(); i++)
 		listWall.at(i)->Render(viewport);
 
-	lifebar->Render(megaMan->GetHP(),megaMan->GetHPMax());
+	lifebarMegaMan->Render(megaMan->GetHP(),megaMan->GetHPMax());
+
+	if (mByte->GetAllowDraw())
+	{
+		lifebarBoss->Render(mByte->GetHP(), mByte->GetHPMax());
+	}
+	else if (mBlastHornet->GetAllowDraw())
+	{
+		lifebarBoss->Render(mBlastHornet->GetHP(), mBlastHornet->GetHPMax());
+	}
 
 }
 

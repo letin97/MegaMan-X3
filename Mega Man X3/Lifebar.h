@@ -8,7 +8,14 @@ protected:
 	Sprite* sprite;
 	SpriteSheet* spriteSheetLifebar;
 public:
-	Lifebar(Sprite *sprite, SpriteSheet* spriteSheet);
+	enum LifebarType
+	{
+		LifebarMegaMan,
+		LifebarBoss,
+	};
+	LifebarType type;
+
+	Lifebar(Sprite *sprite, SpriteSheet* spriteSheet, LifebarType type);
 	Lifebar();
 	~Lifebar();
 	void Render(int HP, int HPMax);

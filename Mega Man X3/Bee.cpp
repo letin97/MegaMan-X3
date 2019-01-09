@@ -43,7 +43,6 @@ void Bee::OnCollision(Object *obj, D3DXVECTOR2 distance)
 		{
 			this->SetVelocity(0, 0);
 			isCollision = true;
-			bound = { 0, 0, 0, 0 };
 		}
 	}
 }
@@ -52,6 +51,7 @@ void Bee::OnCollision(Object *obj)
 {
 	this->SetVelocity(0, 0);
 	state = Dying;
+	SetBound(0, 0);
 }
 
 void Bee::ChangeAnimation(Keyboard* key)
@@ -74,6 +74,8 @@ void Bee::ChangeAnimation(Keyboard* key)
 
 void Bee::Update(float dt, Keyboard* key)
 {
+	if (!allowDraw) return;
+
 	ChangeAnimation(key);
 	Object::Update(dt, key);
 	animation->Update(dt, key);
@@ -83,6 +85,8 @@ void Bee::Update(float dt, Keyboard* key)
 		timeExist += dt;
 		if (timeExist > 5.0f)
 		{
+			isCollision = false;
+			SetBound(0, 0);
 			state = Dying;		
 		}
 	}
@@ -92,7 +96,6 @@ void Bee::Update(float dt, Keyboard* key)
 		timeBurst += dt;
 		if (timeBurst > 0.3f)
 		{
-			bound = { 0, 0, 0, 0 };
 			timeBurst = 0.0f;
 			timeExist = 0.0f;
 			allowDraw = false;

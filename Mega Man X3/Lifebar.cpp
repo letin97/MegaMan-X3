@@ -1,9 +1,10 @@
 ﻿#include "Lifebar.h"
 
-Lifebar::Lifebar(Sprite *sprite, SpriteSheet* spriteSheet)
+Lifebar::Lifebar(Sprite *sprite, SpriteSheet* spriteSheet, LifebarType type)
 {
 	this->sprite = sprite;
 	spriteSheetLifebar = spriteSheet;
+	this->type = type;
 }
 
 Lifebar::Lifebar()
@@ -23,12 +24,26 @@ void Lifebar::Render(int HP, int HPMax)
 	float x = 15.0f;
 	float y = 30 + HPMax * height;
 
+	switch (type)
+	{
+	case LifebarType::LifebarMegaMan:
+		x = 15.0f;
+		sprite->SetRect(spriteSheetLifebar->GetRect(32));
+		sprite->SetPosition(D3DXVECTOR2(x, y));
+		sprite->Render();
+		break;
+	case LifebarType::LifebarBoss:
+		x = 226.0f;
+		sprite->SetRect(spriteSheetLifebar->GetRect(33));
+		sprite->SetPosition(D3DXVECTOR2(x, y));
+		sprite->Render();
+		break;
+	default:
+		break;
+	}
+
 	sprite->SetRect(spriteSheetLifebar->GetRect(29));
 	sprite->SetPosition(D3DXVECTOR2(x, 30 - 4));
-	sprite->Render();
-
-	sprite->SetRect(spriteSheetLifebar->GetRect(32));
-	sprite->SetPosition(D3DXVECTOR2(x, y));
 	sprite->Render();
 
 	float xRender = x, yRender = y;

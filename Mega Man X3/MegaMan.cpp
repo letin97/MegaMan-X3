@@ -40,7 +40,7 @@ MegaMan::MegaMan(Sprite* sprite_MegaMan, Sprite* sprite_LightEnergy, Sprite* spr
 	// 2350 900
 	// 5700 900
 	// 7734 120
-	position = D3DXVECTOR2(2100, 900);
+	position = D3DXVECTOR2(16, 1280);
 	velocity = D3DXVECTOR2(0, -1);
 	allowDraw = true;
 	SetBound(30, 34);

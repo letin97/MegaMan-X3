@@ -44,5 +44,6 @@
     <sprite n ="30" x="2" y="19" w="14" h="16" oX="2" oY="19" oW="55" oH="13" tX ="0" tY="0"/>
     <sprite n ="31" x="2" y="37" w="14" h="16" oX="2" oY="37" oW="55" oH="13" tX ="0" tY="0"/>
     <sprite n ="32" x="2" y="55" w="14" h="16" oX="2" oY="55" oW="55" oH="13" tX ="0" tY="0"/>
+    <sprite n ="33" x="98" y="55" w="14" h="15" oX="98" oY="55" oW="-28" oH="14" tX ="0" tY="0"/>
   </Animation>
 </Animations>

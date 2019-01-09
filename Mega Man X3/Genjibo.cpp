@@ -21,6 +21,7 @@ void Genjibo::New()
 	delay = 200;
 	SetVelocity(-2, 0);
 	HP = 20;
+	HPMax = 20;
 	damage = 4;
 	stage = { 2304, 1024, 2560, 800 };
 }
@@ -108,7 +109,7 @@ void Genjibo::Update(float dt, Keyboard* key)
 
 				if (delay <= 0)
 				{
-					SetVelocity(-2, 2);
+					SetVelocity(-2, -1);
 					state = Attack3;
 				}
 			}

@@ -9,7 +9,7 @@ Elevator::Elevator(MegaMan* man, Sprite* sprite_Elevator, SpriteSheet* spriteShe
 	this->animation = new Animation(spriteSheet_Elevator);
 	tag = Tag::Elevator;
 	position = positionStart;
-	SetBound(95, 44);
+	SetBound(95, 30);
 	allowDraw = true;
 	flipFlag = false;
 	state = Standing;
@@ -20,6 +20,7 @@ void Elevator::ChangeAnimation(Keyboard* key)
 	switch (state)
 	{
 	case Elevator::Standing:
+	case Elevator::Stopping:
 		animation->SetFrame(position, flipFlag, 0, 0, 0, false);
 		break;
 	case Elevator::Running:
@@ -38,14 +39,14 @@ void Elevator::Update(float dt, Keyboard* key)
 
 	if (position.y > 1600)
 	{
-		state = Standing;
+		state = Stopping;
 	}
 
-	if (state == Standing)
+	if (state == Stopping)
 	{
 		velocity.y = 0.0f;
 	}
-	else
+	else if (state == Running)
 	{
 		velocity.y = 0.3f;
 	}
@@ -56,7 +57,7 @@ void Elevator::OnCollision(Object *obj)
 	if (Collision::isCollision(GetBound(), obj->GetBound()))
 	{
 		man->GetMegaManState()->isElevator = true;
-		state = Running;
+		if(state != Stopping) state = Running;
 	}
 	else
 	{
@@ -85,8 +86,5 @@ void Elevator::Render(Viewport* viewport)
 		allowDraw = false;
 		man->GetMegaManState()->isElevator = false;
 	}
-
-	
-
 }
 
